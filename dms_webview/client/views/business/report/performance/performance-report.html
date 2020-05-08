@@ -1,0 +1,68 @@
+<basic-view>
+
+    <div class="row title-bar">
+        <div class="col-xs-12">
+            <h3> {{ title | translate }} </h3>
+        </div>
+    </div>
+
+    <section class="panel panel-default wrapper">
+        <form name="form">
+            <div class="max-w-md margin-auto">
+                <div class="row">
+
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label> {{ 'month' | translate }} </label>
+                            <div class="input-group ui-datepicker">
+                                <input type="text"
+                                       class="form-control"
+                                       datepicker-mode="'month'"
+                                       datepicker-popup="MM-yyyy"
+                                       ng-model="date.date"
+                                       is-open="date.opened"
+                                       datepicker-options="{startingDay: 1 , minMode:'month'}"
+                                       close-text="{{ 'close' | translate }}"
+                                       required>
+                                <span class="input-group-addon" ng-click="open($event, date)">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12" ng-if="isUseDistributorFilter()">
+                        <div class="form-group">
+                            <label> {{ 'distributor' | translate }} </label>
+                            <name-category-combobox
+                                placeholder="{{ 'please.select.distributor' | translate }}"
+                                ng-model="filter.distributorId"
+                                datas="distributors"
+                                ng-change="changeDistributor()"
+                                required>
+                            </name-category-combobox>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12" ng-if="isDisplaySalesman()">
+                        <div class="form-group">
+                            <label> {{ 'salesman' | translate }} </label>
+                            <user-combobox
+                                placeholder="{{ 'please.select.salesman' | translate }}"
+                                ng-model="filter.salesmanId"
+                                datas="salesmen"
+                                required>
+                            </user-combobox>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 text-right">
+                        <button class="btn btn-primary" ng-click="goToReport()"> {{ 'report' | translate }} </button>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </section>
+
+</basic-view>

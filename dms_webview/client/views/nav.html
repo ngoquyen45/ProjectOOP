@@ -1,0 +1,27 @@
+<div id="nav-wrapper">
+    <ul id="nav"
+        slim-scroll
+        collapse-nav>
+        <li ng-repeat="menu in menus"
+            nav-menu="menu"
+            ng-class="{'active' : isMenuActive(menu)}"
+            ng-if="checkMenuByRole(menu)">
+            <a ng-href="{{menu.href != null ? menu.href : 'javascript:void(0)'}}">
+                <i ng-class="menu.icon"></i>
+                <span> {{ menu.name | translate }} </span>
+            </a>
+            <ul>
+                <li ng-repeat="child in menu.children"
+                    ng-class="{'active' : isMenuActive(child)}"
+                    ng-if="checkMenuByRole(child)">
+                    <a ng-href="{{child.href}}">
+                        <i class="fa fa-circle"></i>
+                        <span> {{ child.name | translate }} </span>
+                    </a>
+                </li>
+            </ul>
+            <i class="fa fa-caret-right icon-has-ul" ng-if="menu.children != null"></i>
+            <i class="fa fa-caret-down icon-has-ul" ng-if="menu.children != null"></i>
+        </li>
+    </ul>
+</div>

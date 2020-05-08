@@ -1,0 +1,6 @@
+<resources>
+    <!-- hungp1 app key-->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
+        AIzaSyDEE3COcEWPZte_cpPlxSfeV6hr8L2Cm_A
+    </string>
+</resources>

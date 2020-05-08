@@ -1,0 +1,85 @@
+<category-detail class="sales-report-detail">
+
+    <section class="panel panel-default" ng-if="isDisplayChart()">
+        <div class="panel-body">
+            <div class="chart-container chart-long-label">
+                <div data-flot-chart
+                     data-data="chart.data"
+                     data-options="chart.options"
+                     class="chart-default"
+                    ></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel panel-default">
+        <div class="panel-body">
+            <table class="table table-middle table-striped">
+                <thead>
+                <tr>
+                    <th>
+                        {{ 'distributor' | translate }}
+                    </th>
+                    <th class="text-right">
+                        {{ 'visit' | translate }}
+                    </th>
+                    <th class="text-right">
+                        {{ 'visit.error.duration' | translate }}
+                    </th>
+                    <th class="text-right">
+                        {{ 'visit.error.position' | translate }}
+                    </th>
+                    <th class="text-right">
+                        {{ 'customer' | translate }}
+                    </th>
+                    <th class="text-right">
+                        {{ 'salesman' | translate }}
+                    </th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr ng-repeat="record in records">
+                    <td>
+                        {{ record.name }}
+                    </td>
+                    <td class="text-right">
+                        {{ record.visitResult.nbVisit | number : 0  }}
+                    </td>
+                    <td class="text-right">
+                        {{ record.visitResult.nbVisitErrorDuration | number : 0  }}
+                    </td>
+                    <td class="text-right">
+                        {{ record.visitResult.nbVisitErrorPosition | number : 0  }}
+                    </td>
+                    <td class="text-right">
+                        {{ record.visitResult.nbCustomer | number : 0 }}
+                    </td>
+                    <td class="text-right">
+                        {{ record.visitResult.nbSalesman | number : 0 }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>{{ 'total' | translate }}</strong>
+                    </td>
+                    <td class="text-right">
+                        <strong>{{ total.nbVisit | number : 0  }}</strong>
+                    </td>
+                    <td class="text-right">
+                        <strong>{{ total.nbVisitErrorDuration | number : 0 }}</strong>
+                    </td>
+                    <td class="text-right">
+                        <strong>{{ total.nbVisitErrorPosition | number : 0 }}</strong>
+                    </td>
+                    <td class="text-right">
+                    </td>
+                    <td class="text-right">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</category-detail>

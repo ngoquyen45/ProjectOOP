@@ -1,0 +1,94 @@
+<basic-view>
+    <div>
+        <div class="row title-bar">
+            <div class="col-xs-9">
+                <h3> {{ title | translate }} </h3>
+            </div>
+            <div class="col-xs-3 title-btn-bar">
+                <button type="button" class="btn btn-info" ng-click="reloadData()">
+                    <span class="fa fa-refresh"></span>
+                </button>
+            </div>
+        </div>
+
+        <section class="panel panel-default table-dynamic">
+            <table class="table table-middle">
+                <thead class="hidden-xs">
+                <tr>
+                    <th>
+                        {{ 'name' | translate }}
+                    </th>
+                    <th class="text-center">
+                        {{ 'start.date' | translate }}
+                    </th>
+                    <th class="text-center">
+                        {{ 'end.date' | translate }}
+                    </th>
+                    <th class="text-center">
+                        {{ 'status' | translate }}
+                    </th>
+                    <th class="w-sm"></th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr ng-repeat="record in records">
+                    <td>
+                        {{ record.name }}
+                    </td>
+                    <td class="text-center">
+                        {{ record.startDate | isoDate }}
+                    </td>
+                    <td class="text-center">
+                        {{ record.endDate | isoDate }}
+                    </td>
+                    <td class="text-center">
+                        <span class="label label-danger" ng-if="record.dateStatus == 0">
+                            {{ 'survey.report.not.process' | translate }}
+                        </span>
+                        <span class="label label-warning" ng-if="record.dateStatus == 1">
+                            {{ 'survey.report.status.processing' | translate }}
+                        </span>
+                        <span class="label label-info" ng-if="record.dateStatus == 2">
+                            {{ 'survey.report.status.processed' | translate }}
+                        </span>
+                    </td>
+                    <td class="text-right no-padder col-action">
+                        <button class="btn" ng-click="export(record)">
+                            <span class="fa fa-lg fa-file-excel-o text-primary"></span>
+                        </button>
+                        <button class="btn" ng-click="goToReport(record)">
+                            <span class="fa fa-lg fa-pie-chart text-info"></span>
+                        </button>
+                    </td>
+                </tr>
+                <tr ng-if="isEmpty()">
+                    <td colspan=" {{ 2 + columns.length }} ">
+                        {{ 'no.data' | translate }}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="wrapper-sm pagination-container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <hr class="m-b-sm m-t-none m-l-n-sm m-r-n-sm">
+                    </div>
+
+                    <div class="col-xs-12 text-right">
+                        <pagination class="pagination pagination-sm pagination-right m-n"
+                                    boundary-links="true"
+                                    total-items="pagingData.count"
+                                    max-size="pagingData.pagingMaxSize"
+                                    items-per-page="pagingData.itemsPerPage"
+                                    ng-model="pagingData.currentPage"
+                                    previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"
+                                    ng-change="pageChange()">
+                        </pagination>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</basic-view>

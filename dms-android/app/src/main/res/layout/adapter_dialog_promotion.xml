@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center_vertical"
+              android:orientation="vertical"
+              android:layout_margin="10dp"
+              android:paddingLeft="@dimen/padding_standard"
+              android:paddingRight="@dimen/padding_standard"
+    >
+
+    <TextView
+        android:id="@+id/tvPromotionName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginTop="@dimen/margin_short"
+        android:textAppearance="@style/TextAppearance.Medium.14.PrimaryColor"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_short"
+        android:gravity="left"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/promotion_available_dialog_time"
+            android:textAppearance="@style/TextAppearance.Regular.14.Black54"
+            />
+
+        <TextView
+            android:id="@+id/tvPromotionDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Regular.14.Black87"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_short"
+        android:gravity="left"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:text="@string/promotion_available_dialog_focus_to"
+            android:textAppearance="@style/TextAppearance.Regular.14.Black54"
+            />
+
+        <TextView
+            android:id="@+id/tvApplyTo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Regular.14.Black87"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_short"
+        android:layout_marginTop="@dimen/margin_short"
+        android:gravity="left"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:text="@string/promotion_available_dialog_content"
+            android:textAppearance="@style/TextAppearance.Regular.14.Black54"
+            />
+
+        <TextView
+            android:id="@+id/tvContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Regular.14.Black87"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

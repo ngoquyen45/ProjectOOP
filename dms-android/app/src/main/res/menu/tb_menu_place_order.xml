@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      android:animateLayoutChanges="true"
+      tools:context="com.viettel.dms.ui.fragment.PlaceOrderProductListMBFragment">
+    <item
+        android:id="@+id/action_view_promotion"
+        android:icon="@drawable/ic_loyalty_white_24dp"
+        android:orderInCategory="2"
+        android:title="Promotion"
+        android:animateLayoutChanges="true"
+        app:showAsAction="always"></item>
+    <item
+        android:id="@+id/action_next"
+        android:icon="@drawable/ic_arrow_forward_white_24dp"
+        android:orderInCategory="3"
+        android:animateLayoutChanges="true"
+        android:title="Next"
+        app:showAsAction="always"></item>
+</menu>

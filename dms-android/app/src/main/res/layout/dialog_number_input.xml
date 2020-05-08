@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="?colorPrimaryDark"
+        android:gravity="center_vertical"
+        android:paddingLeft="12dp">
+
+        <TextView
+            android:id="@+id/tvCaption"
+            style="@style/TextAppearance.MediumRegular.20.White"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/number_input_dialog_title" />
+
+        <ImageButton
+            android:id="@+id/btnClose"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@null"
+            android:src="@drawable/ic_close_white_24dp"
+            android:tint="@android:color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <TextView
+                android:id="@+id/tvValue"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="@drawable/bg_dialog_number_input_textbox"
+                android:gravity="center_vertical|right"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textAppearance="@style/TextAppearance.CondensedRegular.36.Black54" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/list_tile_height_avatar_text_icon"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnOne"
+                style="@style/TextAppearance.CondensedRegular.36.CustomState"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_dialog_number_button_selector"
+                android:gravity="center"
+                android:text="1" />
+
+            <Button
+                android:id="@+id/btnTwo"
+                style="@style/TextAppearance.CondensedRegular.36.CustomState"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_dialog_number_button_selector"
+                android:gravity="center"
+                android:text="2" />
+
+            <Button
+                android:id="@+id/btnThree"
+                style="@style/TextAppearance.CondensedRegular.36.CustomState"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_dialog_number_button_selector"
+                android:gravity="center"
+                android:text="3" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/list_tile_height_avatar_text_icon"
+            android:layout_marginTop="1dp">
+
+            <Button
+                android:id="@+id/btnFour"
+                style="@style/TextAppearance.CondensedRegular.36.CustomState"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_dialog_number_button_selector"
+                android:gravity="center"
+                android:text="4" />
+
+            <Button
+                android:id="@+id/btnFive"
+                style="@style/TextAppearance.CondensedRegular.36.CustomState"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_dialog_number_button_selector"
+                android:gravity="center"
+                android:text="5" />
+
+            <Button
+                android:id="@+id/btnSix"
+                style="@style/TextAppearance.CondensedRegular.36.CustomState"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_dialog_number_button_selector"
+                android:gravity="center"
+                android:text="6" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp">
+
+            <Button
+                android:id="@+id/btnSeven"
+                style="@style/TextAppearance.CondensedRegular.36.CustomState"
+                android:layout_width="0dp"
+                android:layout_height="72dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_dialog_number_button_selector"
+                android:gravity="center"
+                android:text="7" />
+
+            <Button
+                android:id="@+id/btnEight"
+                style="@style/TextAppearance.CondensedRegular.36.CustomState"
+                android:layout_width="0dp"
+                android:layout_height="72dp"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_dialog_number_button_selector"
+                android:gravity="center"
+                android:text="8" />
+
+            <Button
+                android:id="@+id/btnNine"
+                style="@style/TextAppearance.CondensedRegular.36.CustomState"
+                android:layout_width="0dp"
+                android:layout_height="72dp"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_dialog_number_button_selector"
+                android:gravity="center"
+                android:text="9" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginBottom="1dp"
+            android:layout_marginTop="1dp">
+
+
+            <com.joanzapata.iconify.widget.IconTextView
+                android:id="@+id/btnDelete"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_dialog_number_button_selector"
+                android:gravity="center"
+                android:textColor="@color/Black54"
+                android:text="{md-backspace 36dp }" />
+
+            <Button
+                android:id="@+id/btnZero"
+                style="@style/TextAppearance.CondensedRegular.36.CustomState"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_dialog_number_button_selector"
+                android:gravity="center"
+                android:text="0" />
+
+            <com.joanzapata.iconify.widget.IconTextView
+                android:id="@+id/btnSave"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_dialog_number_button_selector"
+                android:gravity="center"
+                android:textColor="?colorPrimary"
+                android:text="{md-done 36dp}" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

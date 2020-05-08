@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <View
+        android:id="@+id/border_bottom_normal"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="80dp"
+        android:background="#e0e0e0" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:orientation="vertical"
+        android:paddingBottom="14dp"
+        android:paddingTop="14dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:text="@string/promotion_available_dialog_time"
+                android:textAppearance="@style/TextAppearance.Regular.14.Black54" />
+
+            <TextView
+                android:id="@+id/tv_Time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Tu ngay den ngay"
+                android:textAppearance="@style/TextAppearance.Regular.14.Black87" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:gravity="top"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:text="@string/promotion_available_dialog_focus_to"
+                android:textAppearance="@style/TextAppearance.Regular.14.Black54" />
+
+            <TextView
+                android:id="@+id/tv_Apply_To"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Ha Noi Thanh pho ho chi minh"
+                android:textAppearance="@style/TextAppearance.Regular.14.Black87" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:gravity="top"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:text="@string/promotion_available_dialog_content"
+                android:textAppearance="@style/TextAppearance.Regular.14.Black54" />
+
+            <TextView
+                android:id="@+id/tv_Content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:lineSpacingMultiplier="1.15"
+                android:singleLine="false"
+                android:text="bla blabl lbalb lblablay"
+                android:textAppearance="@style/TextAppearance.Regular.14.Black87" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

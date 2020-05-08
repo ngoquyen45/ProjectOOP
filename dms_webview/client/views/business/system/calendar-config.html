@@ -1,0 +1,110 @@
+<category-detail class="calendar-config no-back no-enable">
+
+    <section class="panel panel-default wrapper">
+        <form name="form">
+            <div class="row">
+                <div class="col-sm-6">
+                    <table class="table table-bordered table-responsive table-middle">
+                        <thead>
+                        <tr>
+                            <th colspan="2"> {{ 'calendar.config.working.days' | translate }} </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td> {{ 'monday' | translate }} </td>
+                            <td class="col-checkbox">
+                                <i-check ng-model="record.monday" ng-change="changeStatus.markAsChanged()"></i-check>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> {{ 'tuesday' | translate }} </td>
+                            <td class="col-checkbox">
+                                <i-check ng-model="record.tuesday" ng-change="changeStatus.markAsChanged()"></i-check>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> {{ 'wednesday' | translate }} </td>
+                            <td class="col-checkbox">
+                                <i-check ng-model="record.wednesday" ng-change="changeStatus.markAsChanged()"></i-check>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> {{ 'thursday' | translate }} </td>
+                            <td class="col-checkbox">
+                                <i-check ng-model="record.thursday" ng-change="changeStatus.markAsChanged()"></i-check>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> {{ 'friday' | translate }} </td>
+                            <td class="col-checkbox">
+                                <i-check ng-model="record.friday" ng-change="changeStatus.markAsChanged()"></i-check>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> {{ 'saturday' | translate }} </td>
+                            <td class="col-checkbox">
+                                <i-check ng-model="record.saturday" ng-change="changeStatus.markAsChanged()"></i-check>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> {{ 'sunday' | translate }} </td>
+                            <td class="col-checkbox">
+                                <i-check ng-model="record.sunday" ng-change="changeStatus.markAsChanged()"></i-check>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-sm-6">
+                    <table class="table table-bordered table-responsive table-middle">
+                        <thead>
+                        <tr>
+                            <th>
+                                {{ 'calendar.config.holidays' | translate }}
+                            </th>
+                            <th class="col-checkbox">
+                                <a href="javascript:void(0)" class="btn-icon btn-icon-xs btn-primary" ng-click="addHoliday()">
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="2" ng-if="holidaysEmpty()">
+                                    {{ 'no.data' | translate }}
+                                </td>
+                            </tr>
+                            <tr ng-repeat="holidayDate in record.holidayDates">
+                                <td>
+                                    <div class="input-group ui-datepicker">
+                                        <input type="text"
+                                               class="form-control"
+                                               datepicker-popup="{{ dateFormat }}"
+                                               ng-model="holidayDate.date"
+                                               ng-change="changeStatus.markAsChanged()"
+                                               is-open="holidayDate.opened"
+                                               datepicker-options="dateOptions"
+                                               close-text="{{ 'close' | translate }}"
+                                               required>
+                                        <span class="input-group-addon" ng-click="open($event, holidayDate)">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <a href="javascript:void(0)" class="btn-icon btn-icon-xs btn-danger" ng-click="removeHoliday(holidayDate)">
+                                        <i class="fa fa-remove"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </form>
+    </section>
+
+</category-detail>

@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.viettel.dms.ui.fragment.ExchangeReturnFragment">
+
+    <com.viettel.dms.helper.layout.GeneralSwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/view_exchange_return_list_header" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_Exchange_Return"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:scrollbars="vertical" />
+        </LinearLayout>
+    </com.viettel.dms.helper.layout.GeneralSwipeRefreshLayout>
+
+    <com.melnykov.fab.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="@dimen/list_avatar_circle_size"
+        android:layout_height="@dimen/list_avatar_circle_size"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="@dimen/margin_standard"
+        android:src="@drawable/ic_add_white_24dp"
+        fab:fab_colorNormal="?colorSecondary"
+        fab:fab_colorPressed="?colorSecondaryDark"
+        fab:fab_colorRipple="@color/white" />
+
+    <com.viettel.dms.helper.layout.ViewEmptyStateLayout
+        android:id="@+id/view_State"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.viettel.dms.helper.layout.ViewEmptyStateLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/drawer_shadow_top"></View>
+
+</RelativeLayout>

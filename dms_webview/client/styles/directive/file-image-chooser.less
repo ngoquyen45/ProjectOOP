@@ -1,0 +1,110 @@
+.single-image {
+
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border: 1px solid @input-border;
+
+  cursor: pointer;
+
+  > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 148px;
+    height: 148px;
+
+    .fa {
+      text-align: center;
+
+      line-height: 148px;
+      width: 148px;
+      font-size: 70px;
+    }
+
+    img {
+      width: 148px;
+      height: 148px;
+    }
+  }
+
+  .hover-layer {
+    z-index: 999;
+    background: #eee;
+    cursor: pointer;
+    display: none;
+
+    input[type="file"] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 148px;
+      height: 148px;
+      opacity: 0;
+      cursor: pointer;
+    }
+  }
+
+  &:hover {
+    .hover-layer {
+      display: block;
+    }
+  }
+
+  &.mini-display {
+    width: 80px;
+    height: 80px;
+
+    > div {
+      width: 78px;
+      height: 78px;
+
+      .fa {
+        text-align: center;
+
+        line-height: 78px;
+        width: 78px;
+        font-size: 32px;
+      }
+
+      img {
+        width: 78px;
+        height: 78px;
+      }
+    }
+
+    .hover-layer input[type="file"] {
+        width: 78px;
+        height: 78px;
+    }
+
+  }
+
+}
+
+.single-file {
+  position: relative;
+
+  .btn {
+    position: relative;
+    height: 34px;
+    cursor: pointer;
+
+    .fa {
+      cursor: pointer;
+    }
+  }
+
+  input[type="file"] {
+    z-index: 999;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+}

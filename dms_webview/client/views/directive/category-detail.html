@@ -1,0 +1,30 @@
+<basic-view ng-class="{ 'use-map': useMap }">
+    <div class="category-detail"
+         ng-class="{ 'new': isNew(), 'edit': isEdit(), 'draft': isDraft(), 'changed': isChanged() }">
+        <div class="row title-bar">
+            <div class="col-xs-6">
+                <h3> {{ title | translate }} </h3>
+            </div>
+
+            <div class="col-xs-6 title-btn-bar">
+                <button id="back" class="btn btn-warning" ng-click="back()">
+                    <span class="fa fa-arrow-left"></span>
+                </button>
+
+                <button id="refresh" class="btn btn-info" ng-click="refresh()">
+                    <span class="fa fa-refresh"></span>
+                </button>
+
+                <button id="enable" class="btn btn-primary" ng-click="enable()">
+                    <span class="fa fa-check"></span>
+                </button>
+
+                <button id="save" class="btn btn-success" ng-click="save()">
+                    <span class="fa fa-save"></span>
+                </button>
+            </div>
+        </div>
+
+        <ng-transclude></ng-transclude>
+    </div>
+</basic-view>

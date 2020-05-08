@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="@dimen/margin_standard"
+              android:layout_marginLeft="@dimen/second_keyline"
+              android:layout_marginRight="@dimen/margin_standard"
+              android:gravity="left"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_Product_Name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="@style/TextAppearance.Regular.14.Black54"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|left"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_Reward"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Regular.14.Black87"/>
+    </LinearLayout>
+
+</LinearLayout>

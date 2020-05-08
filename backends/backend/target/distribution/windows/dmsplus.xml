@@ -1,0 +1,41 @@
+<service>
+	<id>dmsplus</id>
+    <name>DMSPlus</name>
+    <description>This service runs DMSPlus system.</description>
+    
+	<workingdirectory>%BASE%\</workingdirectory>
+	
+	<logmode>rotate</logmode>
+    <log mode="roll-by-time">
+        <pattern>yyyyMMdd</pattern>
+    </log>
+    <logpath>%BASE%\logs</logpath>
+    
+	<env name="DMSPLUS_HOME" value="%BASE%" />
+	
+	<interactive />
+	<stopparentprocessfirst>true</stopparentprocessfirst>
+	
+	<executable>java</executable>
+	
+    <argument>-server</argument>
+    <argument>-Xms256m</argument>
+    <argument>-Xmx1024m</argument>
+    <argument>-XX:MaxPermSize=256m</argument>
+    <argument>-Xss1024k</argument>
+    <argument>-XX:+UseParallelGC</argument>
+    <argument>-XX:MaxGCPauseMillis=1500</argument>
+    <argument>-XX:GCTimeRatio=9</argument>
+    <argument>-XX:+DisableExplicitGC</argument>
+    <argument>-Djava.io.tmpdir=%BASE%\temp</argument>
+    <argument>-Dlogging.path=%BASE%\logs</argument>
+    <argument>-Dspring.config.location=%BASE%\conf\application.properties</argument>
+    
+	<argument>-Dspring.application.admin.enabled=true</argument>
+    <argument>-Dcom.sun.management.jmxremote.port=50201</argument>
+    <argument>-Dcom.sun.management.jmxremote.authenticate=false</argument>
+    <argument>-Dcom.sun.management.jmxremote.ssl=false</argument>
+    <argument>-jar</argument>
+    <argument>%BASE%\bin\backend.war</argument>
+	
+</service>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/list_tile_height_three_line"
+              android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/padding_standard">
+
+        <TextView
+            android:id="@+id/tv_Survey_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textAppearance="@style/TextAppearance.Regular.16.Black87"/>
+
+        <TextView
+            android:id="@+id/tv_Survey_Time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Regular.14.Black54"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="@dimen/list_tile_height_avatar_text_icon_single_line"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical">
+
+        <com.joanzapata.iconify.widget.IconTextView
+            android:id="@+id/itv_Survey_Status"
+            android:layout_width="@dimen/list_avatar_circle_size"
+            android:layout_height="@dimen/list_avatar_circle_size"
+            android:layout_marginRight="@dimen/margin_standard"
+            android:gravity="center_vertical|right"
+            android:textColor="?colorSecondary"
+            android:text="{md-restore @dimen/list_icon_size}"/>
+    </RelativeLayout>
+
+</LinearLayout>

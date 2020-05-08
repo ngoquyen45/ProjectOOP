@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView
+    android:id="@+id/tv_Survey_Name"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_standard"
+    android:layout_marginTop="@dimen/margin_standard"
+    android:ellipsize="end"
+    android:maxLines="3"
+    android:paddingLeft="@dimen/padding_standard"
+    android:paddingRight="@dimen/padding_standard"
+    android:textAppearance="@style/TextAppearance.Medium.16.PrimaryColor"/>

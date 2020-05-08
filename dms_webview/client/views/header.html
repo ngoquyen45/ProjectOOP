@@ -1,0 +1,155 @@
+<header class="clearfix">
+
+    <!-- Logo -->
+    <div class="logo">
+        <a href="#/">
+            <!--<img src="images/salesquick.png" alt="" style="width: 156px; height: 40px;"/>-->
+            <img src="images/ktsoft logo horizon-269x100.png" alt="" style="height: 40px;"/>
+        </a>
+    </div>
+
+    <!-- needs to be put after logo to make it working-->
+    <div class="menu-button" toggle-off-canvas>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </div>
+
+    <div class="top-nav">
+        <ul class="nav-left list-unstyled">
+            <li>
+                <a href="#/" data-toggle-min-nav class="toggle-min"><i class="fa fa-bars"></i></a>
+            </li>
+            <li class="dropdown text-normal nav-profile" dropdown is-open="status.isopenProfile">
+                <a href="javascript:;" class="dropdown-toggle" dropdown-toggle ng-disabled="disabled">
+                    <img src="images/user.png" alt="" class="img-circle img30_30">
+                    <span class="hidden-xs">
+                        <span>{{ main.name() }}</span>
+                    </span>
+                </a>
+                <ul class="dropdown-menu dropdown-dark with-arrow">
+                    <li>
+                        <a ng-click="changePassword()">
+                            <i class="fa fa-lock"></i>
+                            <span>{{ 'header.user.change.password' | translate }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a ng-click="logout()">
+                            <i class="fa fa-sign-out"></i>
+                            <span>{{ 'header.user.logout' | translate }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li ng-controller="LangCtrl" class="dropdown langs text-normal" dropdown is-open="status.isopenLang" >
+                <a href="javascript:;" class="dropdown-toggle active-flag" dropdown-toggle ng-disabled="disabled">
+                    <div class="flag {{ getFlag() }}"></div>
+                </a>
+                <ul class="dropdown-menu dropdown-dark with-arrow list-langs" role="menu">
+                    <li ng-show="isShowLangInDropDown('vi')">
+                        <a href="javascript:;" data-ng-click="setLang('vi')"><div class="flag flags-vietnam"></div> Tiếng Việt</a></li>
+
+                    <li ng-show="isShowLangInDropDown('en')">
+                        <a href="javascript:;" data-ng-click="setLang('en')"><div class="flag flags-british"></div> English</a></li>
+
+                    <li ng-show="isShowLangInDropDown('zh')">
+                        <a href="javascript:;" data-ng-click="setLang('zh')"><div class="flag flags-china"></div> 中文</a></li>
+
+                    <li ng-show="isShowLangInDropDown('km')">
+                        <a href="javascript:;" data-ng-click="setLang('km')"><div class="flag flags-cambodia"></div>Cambodia</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul ng-controller="NotificationCtrl" class="nav-right pull-right list-unstyled">
+            <li class="dropdown" dropdown is-open="status.isOpenNeedApproveCustomer" ng-if="canApproveCustomer()">
+                <a href="javascript:;" class="dropdown-toggle bg-danger" dropdown-toggle ng-disabled="disabled">
+                    <i class="fa fa-user-plus"></i>
+                    <span class="badge badge-info">{{ data.customers.count }}</span>
+                </a>
+                <div class="dropdown-menu pull-right with-arrow panel panel-default">
+                    <div class="panel-heading">
+                        {{ 'header.notification.customer.count' | translate:{count: data.customers.count} }}
+                    </div>
+                    <ul class="list-group" ng-show="data.customers.count > 0">
+                        <li ng-repeat="customer in data.customers.display" class="list-group-item">
+                            <a href="javascript:;" class="media" ng-click="gotoCustomerPendingDetail(customer)">
+                                <span class="media-left media-icon">
+                                    <span class="square-icon sm bg-info"><i class="fa fa-user"></i></span>
+                                </span>
+                                <div class="media-body">
+                                    <span class="block">{{ customer.name }}</span>
+                                    <span class="text-muted">{{ customer.customerType.name }}</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="panel-footer" ng-show="data.customers.count > 0">
+                        <a href="javascript:;" ng-click="gotoCustomerPending()">{{ 'header.notification.customer.show.all' | translate }}</a>
+                    </div>
+                </div>
+            </li>
+            <li class="dropdown" dropdown is-open="status.isOpenUnreadFeedback" ng-if="canReadFeedback()">
+                <a href="javascript:;" class="dropdown-toggle bg-warning" dropdown-toggle ng-disabled="disabled">
+                    <i class="fa fa-comment-o"></i>
+                    <span class="badge badge-info">{{ data.feedbacks.count }}</span>
+                </a>
+                <div class="dropdown-menu pull-right with-arrow panel panel-default">
+                    <div class="panel-heading">
+                        {{ 'header.notification.feedback.count' | translate:{count: data.feedbacks.count} }}
+                    </div>
+                    <ul class="list-group" ng-show="data.feedbacks.count > 0">
+                        <li ng-repeat="feedback in data.feedbacks.display" class="list-group-item">
+                            <a href="javascript:;" class="media" ng-click="gotoFeedbackDetail(feedback)">
+                                <span class="media-left media-icon">
+                                    <span class="square-icon sm bg-warning"><i class="fa fa-envelope-o"></i></span>
+                                </span>
+                                <div class="media-body">
+                                    <span class="block">{{ feedback.feedbacks[0] }}</span>
+                                    <span class="text-muted block">{{ feedback.customer }}</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="panel-footer" ng-show="data.feedbacks.count > 0" ng-click="gotoFeedbackList()">
+                        <a href="javascript:;">{{ 'header.notification.feedback.show.all' | translate }}</a>
+                    </div>
+                </div>
+            </li>
+            <li class="dropdown" dropdown is-open="status.isOpenNeedApproveOrder" ng-if="canApproveOrder()">
+                <a href="javascript:;" class="dropdown-toggle bg-success" dropdown-toggle ng-disabled="disabled">
+                    <i class="fa fa-cart-plus nav-icon"></i>
+                    <span class="badge badge-info">{{ data.orders.count }}</span>
+                </a>
+                <div class="dropdown-menu pull-right with-arrow panel panel-default">
+                    <div class="panel-heading">
+                        {{ 'header.notification.order.count' | translate:{count: data.orders.count} }}
+                    </div>
+                    <ul class="list-group" ng-show="data.orders.count > 0">
+                        <li ng-repeat="order in data.orders.display" class="list-group-item">
+                            <a href="javascript:;" class="media" ng-click="gotoOrderApproveDetail(order)">
+                                <span class="media-left media-icon">
+                                    <span class="square-icon sm bg-success"><i class="fa fa-bell-o"></i></span>
+                                </span>
+                                <div class="media-body">
+                                    <span class="block">{{ order.customer.name }}</span>
+                                    <span class="text-muted block">{{ order.grandTotal | number }}</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="panel-footer" ng-show="data.orders.count > 0" ng-click="gotoApproveOrderList()">
+                        <a href="javascript:;">{{ 'header.notification.order.show.all' | translate }}</a>
+                    </div>
+                </div>
+            </li>
+            <li ng-hide="true">
+                <a href="#/tasks" class="bg-info">
+                    <i class="fa fa-tasks"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</header>

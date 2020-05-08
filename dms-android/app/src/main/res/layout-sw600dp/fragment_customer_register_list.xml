@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?activityBackground"
+    android:orientation="vertical"
+    tools:context="com.viettel.dms.ui.fragment.RegisterCustomerListFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/view_customer_register_list_header"></include>
+
+        <ListView
+            android:id="@+id/lst_customer_register"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:divider="@drawable/divider_list_104"
+            android:listSelector="@android:color/transparent"
+            android:scrollbars="vertical" />
+    </LinearLayout>
+
+    <com.viettel.dms.helper.layout.ViewEmptyStateLayout
+        android:id="@+id/view_State"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.viettel.dms.helper.layout.ViewEmptyStateLayout>
+
+    <com.melnykov.fab.FloatingActionButton
+        android:id="@+id/fab"
+        style="@style/LightFlatColorButtonRippleStyle"
+        android:layout_width="@dimen/list_avatar_circle_size"
+        android:layout_height="@dimen/list_avatar_circle_size"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="@dimen/margin_standard"
+        android:src="@drawable/ic_add_white_24dp"
+        fab:fab_colorNormal="?colorSecondary"
+        fab:fab_colorPressed="?colorSecondaryDark" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/drawer_shadow_top"></View>
+</RelativeLayout>

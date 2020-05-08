@@ -1,0 +1,57 @@
+<div class="modal-header">
+    <h3 class="modal-title">{{ title | translate }}</h3>
+</div>
+
+<div class="modal-body">
+    <form name="form">
+        <div class="form-group" ng-if="isUseDistributorFilter()">
+            <label> {{ 'distributor' | translate }} </label>
+            <name-category-combobox
+                ng-model="record.distributorId"
+                datas="distributors"
+                ng-change="changeStatus.markAsChanged()"
+                ng-readonly="!isDraft()"
+                readonly-name="record.distributor.name"
+                required>
+            </name-category-combobox>
+        </div>
+
+        <div class="form-group">
+            <label> {{ 'name' | translate }} </label>
+            <input type="text"
+                   class="form-control"
+                   ng-model="record.name"
+                   ng-change="changeStatus.markAsChanged()"
+                   ng-maxlength="30"
+                   required
+                   autofocus
+                   ng-readonly="!isDraft()">
+        </div>
+
+        <div class="form-group" ng-if="useCode">
+            <label> {{ 'code' | translate }} </label>
+            <input type="text"
+                   class="form-control"
+                   ng-model="record.code"
+                   ng-change="changeStatus.markAsChanged()"
+                   ng-maxlength="10"
+                   ng-pattern="/^\S+$/"
+                   required
+                   ng-readonly="!isDraft()">
+        </div>
+    </form>
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="enable()" ng-if="(isDraft() && isEdit()) || (isNew() && changeStatus.isChanged)">
+        <span class="fa fa-check"></span>
+    </button>
+
+    <button class="btn btn-success" ng-click="save()" ng-if="isDraft() && changeStatus.isChanged">
+        <span class="fa fa-save"></span>
+    </button>
+
+    <button class="btn btn-warning" ng-click="cancel()">
+        <span class="fa fa-close"></span>
+    </button>
+</div>

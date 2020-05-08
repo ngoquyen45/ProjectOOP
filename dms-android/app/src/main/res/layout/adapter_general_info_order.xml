@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/row_recent_order_table"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/list_tile_height_text_single_line"
+    android:layout_marginTop="-1dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_Date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.5"
+        android:ellipsize="end"
+        android:gravity="left"
+        android:paddingLeft="@dimen/first_keyline"
+        android:singleLine="true"
+        android:textAppearance="@style/TextAppearance.Regular.14.Black87"/>
+
+    <TextView
+        android:id="@+id/tv_Sku"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textAppearance="@style/TextAppearance.Regular.14.Black87"/>
+
+    <TextView
+        android:id="@+id/tv_Price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_weight="2"
+        android:ellipsize="end"
+        android:gravity="right"
+        android:singleLine="true"
+        android:textAppearance="@style/TextAppearance.Regular.14.Black87"/>
+</LinearLayout>

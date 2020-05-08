@@ -1,0 +1,133 @@
+<basic-view class="customer-schedule">
+
+    <div class="row title-bar">
+        <div class="col-xs-6">
+            <h3> {{ title | translate }} </h3>
+        </div>
+
+        <div class="col-xs-6 title-btn-bar">
+            <button class="btn btn-warning" ng-click="back()" ng-if="!changeStatus.isChanged">
+                <span class="fa fa-arrow-left"></span>
+            </button>
+
+            <button class="btn btn-info" ng-click="refresh()" ng-if="changeStatus.isChanged">
+                <span class="fa fa-refresh"></span>
+            </button>
+
+            <button class="btn btn-success" ng-click="save()" ng-if="changeStatus.isChanged">
+                <span class="fa fa-save"></span>
+            </button>
+        </div>
+    </div>
+
+    <section class="panel panel-default">
+        <table class="table table-middle">
+            <thead>
+            <tr>
+                <th class="customer">
+                    {{ 'customer' | translate }}
+                </th>
+                <th class="route">
+                    {{ 'route' | translate }}
+                </th>
+                <th class="schedule-item day monday">
+                    {{ 'monday.short' | translate }}
+                </th>
+                <th class="schedule-item day">
+                    {{ 'tuesday.short' | translate }}
+                </th>
+                <th class="schedule-item day">
+                    {{ 'wednesday.short' | translate }}
+                </th>
+                <th class="schedule-item day">
+                    {{ 'thursday.short' | translate }}
+                </th>
+                <th class="schedule-item day">
+                    {{ 'friday.short' | translate }}
+                </th>
+                <th class="schedule-item day">
+                    {{ 'saturday.short' | translate }}
+                </th>
+                <th class="schedule-item day">
+                    {{ 'sunday.short' | translate }}
+                </th>
+                <th class="schedule-item week" ng-class="{ 'first-week' : $first }" ng-repeat="week in weeks">
+                    {{ week.header }}
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-class="{ 'no-schedule' : record.schedule.routeId == null }">
+                <td class="customer">
+                    {{ record.name }}
+                </td>
+                <td class="route">
+                    <name-category-combobox
+                        ng-model="record.schedule.routeId"
+                        ng-change="editRoute(record)"
+                        datas="routes">
+                    </name-category-combobox>
+                </td>
+                <td class="schedule-item day monday">
+                    <div class="row" ng-repeat="item in record.schedule.items">
+                        <div class="col-xs-12 text-center">
+                            <i-check ng-model="item.monday" ng-change="changeStatus.markAsChanged()"></i-check>
+                        </div>
+                    </div>
+                </td>
+                <td class="schedule-item day">
+                    <div class="row" ng-repeat="item in record.schedule.items">
+                        <div class="col-xs-12 text-center">
+                            <i-check ng-model="item.tuesday" ng-change="changeStatus.markAsChanged()"></i-check>
+                        </div>
+                    </div>
+                </td>
+                <td class="schedule-item day">
+                    <div class="row" ng-repeat="item in record.schedule.items">
+                        <div class="col-xs-12 text-center">
+                            <i-check ng-model="item.wednesday" ng-change="changeStatus.markAsChanged()"></i-check>
+                        </div>
+                    </div>
+                </td>
+                <td class="schedule-item day">
+                    <div class="row" ng-repeat="item in record.schedule.items">
+                        <div class="col-xs-12 text-center">
+                            <i-check ng-model="item.thursday" ng-change="changeStatus.markAsChanged()"></i-check>
+                        </div>
+                    </div>
+                </td>
+                <td class="schedule-item day">
+                    <div class="row" ng-repeat="item in record.schedule.items">
+                        <div class="col-xs-12 text-center">
+                            <i-check ng-model="item.friday" ng-change="changeStatus.markAsChanged()"></i-check>
+                        </div>
+                    </div>
+                </td>
+                <td class="schedule-item day">
+                    <div class="row" ng-repeat="item in record.schedule.items">
+                        <div class="col-xs-12 text-center">
+                            <i-check ng-model="item.saturday" ng-change="changeStatus.markAsChanged()"></i-check>
+                        </div>
+                    </div>
+                </td>
+                <td class="schedule-item day">
+                    <div class="row" ng-repeat="item in record.schedule.items">
+                        <div class="col-xs-12 text-center">
+                            <i-check ng-model="item.sunday" ng-change="changeStatus.markAsChanged()"></i-check>
+                        </div>
+                    </div>
+                </td>
+                <td class="schedule-item week" ng-class="{ 'first-week' : $first }" ng-repeat="week in weeks">
+                    <div class="row" ng-repeat="item in record.schedule.items">
+                        <div class="col-xs-12 text-center">
+                            <i-check ng-model="item.weeksConverted[week.index - 1].selected" ng-change="changeStatus.markAsChanged()"></i-check>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </section>
+
+</basic-view>

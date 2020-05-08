@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.viettel.dms.ui.fragment.CustomerVisitFragment">
+
+    <include layout="@layout/view_customer_info"></include>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?activityBackground">
+
+        <include
+            android:id="@+id/layoutActions"
+            layout="@layout/view_customer_visit_actions"/>
+
+        <include
+            android:id="@+id/layoutStart"
+            layout="@layout/view_customer_visit_start"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawer_shadow_top"/>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,25 @@
+<div class="location-selector">
+    <div class="row m-b-xs">
+
+        <div class="col-sm-6 col-xs-12">
+            <div class="input-group w-full">
+                <span class="input-group-addon w-xs"> {{ 'latitude' | translate }} </span>
+                <div class="form-control"> {{ location.latitude }} </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-xs-12">
+            <div class="input-group w-full">
+                <span class="input-group-addon w-xs"> {{ 'longitude' | translate }} </span>
+                <div class="form-control"> {{ location.longitude }} </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div ng-include=" 'map.html' "></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="name-category-combobox">
+    <ui-select class="" ng-model="container.selectedId" on-select="onSelect($item, $model)">
+        <ui-select-match placeholder="{{ getPlaceholder() }}">{{ $select.selected.name }}</ui-select-match>
+        <ui-select-choices repeat="data.id as data in datas | propsFilter: { name: $select.search, code: $select.search }">
+            <div> {{ data.name }} </div>
+            <small> {{ data.code }} </small>
+        </ui-select-choices>
+    </ui-select>
+
+    <div class="form-control name-category-combobox-readonly" readonly="readonly"> {{ getReadonlyName() }} </div>
+</div>

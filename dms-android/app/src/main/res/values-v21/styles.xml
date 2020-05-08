@@ -1,0 +1,508 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="activityBackground">@color/white</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="colorPrimary">@color/colorPrimary1</item>
+        <item name="colorAccent">@color/colorPrimary1</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark1</item>
+        <item name="colorPrimaryLight">@color/colorPrimaryLight1</item>
+        <item name="colorSecondary">@color/colorSecondary1</item>
+        <item name="colorSecondaryDark">@color/colorSecondaryDark1</item>
+
+    </style>
+
+    <style name="AppTheme2" parent="AppBaseTheme">
+        <item name="colorPrimary">@color/colorPrimary2</item>
+        <item name="colorAccent">@color/colorPrimary2</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark2</item>
+        <item name="colorPrimaryLight">@color/colorPrimaryLight2</item>
+        <item name="colorSecondary">@color/colorSecondary2</item>
+        <item name="colorSecondaryDark">@color/colorSecondaryDark2</item>
+    </style>
+
+    <style name="AppTheme3" parent="AppBaseTheme">
+        <item name="colorPrimary">@color/colorPrimary3</item>
+        <item name="colorAccent">@color/colorPrimary3</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark3</item>
+        <item name="colorPrimaryLight">@color/colorPrimaryLight3</item>
+        <item name="colorSecondary">@color/colorSecondary3</item>
+        <item name="colorSecondaryDark">@color/colorSecondaryDark3</item>
+    </style>
+
+    <style name="AppTheme4" parent="AppBaseTheme">
+        <item name="colorPrimary">@color/colorPrimary4</item>
+        <item name="colorAccent">@color/colorPrimary4</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark4</item>
+        <item name="colorPrimaryLight">@color/colorPrimaryLight4</item>
+        <item name="colorSecondary">@color/colorSecondary4</item>
+        <item name="colorSecondaryDark">@color/colorSecondaryDark4</item>
+    </style>
+
+    <style name="AppTheme5" parent="AppBaseTheme">
+        <item name="colorPrimary">@color/colorPrimary5</item>
+        <item name="colorAccent">@color/colorPrimary5</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark5</item>
+        <item name="colorPrimaryLight">@color/colorPrimaryLight5</item>
+        <item name="colorSecondary">@color/colorSecondary5</item>
+        <item name="colorSecondaryDark">@color/colorSecondaryDark5</item>
+    </style>
+    <!-- Toolbar styles for mobile-->
+    <style name="MyThemeOverlay.ActionBar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="searchViewStyle">@style/SearchViewStyleMyApp</item>
+    </style>
+
+    <style name="SearchViewStyleMyApp" parent="Widget.AppCompat.Light.SearchView">
+
+        <item name="layout">@layout/search_view_material</item>
+        <item name="searchHintIcon">@null</item>
+        <item name="searchIcon">@null</item>
+        <item name="queryBackground">?colorPrimary</item>
+        <item name="queryHint">@string/action_search</item>
+
+    </style>
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+
+    <style name="AppTheme.AutoCompleteTextAppearence" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textColor">#8A000000</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- Import Fonts-->
+    <style name="TextAppearance.Roboto.Black" parent="android:TextAppearance">
+        <item name="fontPath">fonts/Roboto-Black.ttf</item>
+    </style>
+
+    <style name="TextAppearance.Roboto.Black.Italic" parent="android:TextAppearance">
+        <item name="fontPath">fonts/Roboto-BlackItalic.ttf</item>
+    </style>
+
+    <style name="TextAppearance.Roboto.Bold" parent="android:TextAppearance">
+        <item name="fontPath">fonts/Roboto-Bold.ttf</item>
+    </style>
+
+    <style name="TextAppearance.Roboto.Bold.Italic" parent="android:TextAppearance">
+        <item name="fontPath">fonts/Roboto-BoldItalic.ttf</item>
+    </style>
+
+    <style name="TextAppearance.Roboto.Italic" parent="android:TextAppearance">
+        <item name="fontPath">fonts/Roboto-Italic.ttf</item>
+    </style>
+
+    <style name="TextAppearance.Roboto.Light" parent="android:TextAppearance">
+        <item name="fontPath">fonts/Roboto-Light.ttf</item>
+    </style>
+
+    <style name="TextAppearance.Roboto.Light.Italic" parent="android:TextAppearance">
+        <item name="fontPath">fonts/Roboto-LightItalic.ttf</item>
+    </style>
+
+    <style name="TextAppearance.Roboto.Medium" parent="android:TextAppearance">
+        <item name="fontPath">fonts/Roboto-Medium.ttf</item>
+    </style>
+
+    <style name="TextAppearance.Roboto.Medium.Italic" parent="android:TextAppearance">
+        <item name="fontPath">fonts/Roboto-MediumItalic.ttf</item>
+    </style>
+
+    <style name="TextAppearance.Roboto.Regular" parent="android:TextAppearance">
+        <item name="fontPath">fonts/Roboto-Regular.ttf</item>
+    </style>
+
+    <style name="TextAppearance.Roboto.Thin" parent="android:TextAppearance">
+        <item name="fontPath">fonts/Roboto-Thin.ttf</item>
+    </style>
+
+    <style name="TextAppearance.Roboto.Thin.Italic" parent="android:TextAppearance">
+        <item name="fontPath">fonts/Roboto-ThinItalic.ttf</item>
+    </style>
+
+    <style name="TextAppearance.RobotoCondensed.Regular" parent="android:TextAppearance">
+        <item name="fontPath">fonts/RobotoCondensed-Regular.ttf</item>
+    </style>
+
+    <style name="TextAppearance.RobotoCondensed.Italic" parent="android:TextAppearance">
+        <item name="fontPath">fonts/RobotoCondensed-Italic.ttf</item>
+    </style>
+
+    <style name="TextAppearance.RobotoCondensed.Bold" parent="android:TextAppearance">
+        <item name="fontPath">fonts/RobotoCondensed-Bold.ttf</item>
+    </style>
+
+    <style name="TextAppearance.RobotoCondensed.Bold.Italic" parent="android:TextAppearance">
+        <item name="fontPath">fonts/RobotoCondensed-BoldItalic.ttf</item>
+    </style>
+
+    <style name="TextAppearance.RobotoCondensed.Light" parent="android:TextAppearance">
+        <item name="fontPath">fonts/RobotoCondensed-Light.ttf</item>
+    </style>
+
+    <style name="TextAppearance.RobotoCondensed.Light.Italic" parent="android:TextAppearance">
+        <item name="fontPath">fonts/RobotoCondensed-LightItalic.ttf</item>
+    </style>
+
+    <!-- Custom fonts-->
+
+    <style name="TextAppearance.Navigation.Drawer.Company.Name" parent="TextAppearance.Roboto.Medium">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="TextAppearance.Regular.12.Black54" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/Black54</item>
+    </style>
+
+    <style name="TextAppearance.Regular.12.Black26" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/Black26</item>
+    </style>
+
+    <style name="TextAppearance.Regular.12.Black12" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/Black12</item>
+    </style>
+
+    <style name="TextAppearance.Regular.14.White" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="TextAppearance.Regular.14.Black" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="TextAppearance.Medium.14" parent="TextAppearance.Roboto.Medium">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextAppearance.Medium.14.PrimaryColor" parent="TextAppearance.Roboto.Medium">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">?colorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Regular.14.PrimaryColor" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">?colorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Regular.14.SecondaryColor" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">?colorSecondary</item>
+    </style>
+
+    <style name="TextAppearance.Regular.14.Black87" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/Black87</item>
+    </style>
+
+    <style name="TextAppearance.Regular.14.White87" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/White87</item>
+    </style>
+
+    <style name="TextAppearance.CondensedRegular.14.Black87" parent="TextAppearance.RobotoCondensed.Regular">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/Black87</item>
+    </style>
+
+    <style name="TextAppearance.CondensedRegular.14.White" parent="TextAppearance.RobotoCondensed.Regular">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextAppearance.Regular.14.Black54" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/Black54</item>
+    </style>
+
+    <style name="TextAppearance.Condensed.Regular.14.PrimaryColor" parent="TextAppearance.RobotoCondensed.Regular">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">?colorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Condensed.Regular.14.SecondaryColor" parent="TextAppearance.RobotoCondensed.Regular">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">?colorSecondary</item>
+    </style>
+
+    <style name="TextAppearance.Medium.14.Black54" parent="TextAppearance.Roboto.Medium">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/Black54</item>
+    </style>
+
+    <style name="TextAppearance.Medium.14.Black87" parent="TextAppearance.Roboto.Medium">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/Black87</item>
+    </style>
+
+    <style name="TextAppearance.Medium.14.White87" parent="TextAppearance.Roboto.Medium">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/White87</item>
+    </style>
+
+    <style name="TextAppearance.Regular.16.White" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="TextAppearance.Regular.16.Black" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="TextAppearance.Regular.16.Black87" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/Black87</item>
+    </style>
+
+    <style name="TextAppearance.Regular.16.Black54" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/Black54</item>
+    </style>
+
+    <style name="TextAppearance.Regular.16.White54" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/White54</item>
+    </style>
+
+    <style name="TextAppearance.Regular.16.White87" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/White87</item>
+    </style>
+
+    <style name="TextAppearance.Medium.16.Black87" parent="TextAppearance.Roboto.Medium">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/Black87</item>
+    </style>
+
+    <style name="TextAppearance.Medium.16.White87" parent="TextAppearance.Roboto.Medium">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/White87</item>
+    </style>
+
+    <style name="TextAppearance.Medium.16.White" parent="TextAppearance.Roboto.Medium">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="TextAppearance.Medium.16.PrimaryColor" parent="TextAppearance.Roboto.Medium">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">?colorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Regular.16.PrimaryColor" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">?colorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Regular.16.SecondaryColor" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">?colorSecondary</item>
+    </style>
+
+    <style name="TextAppearance.CondensedRegular.18.PrimaryColor" parent="TextAppearance.RobotoCondensed.Regular">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">?colorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.CondensedRegular.18.SecondaryColor" parent="TextAppearance.RobotoCondensed.Regular">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">?colorSecondary</item>
+    </style>
+
+    <style name="TextAppearance.AppBar.PrimaryText" parent="TextAppearance.Roboto.Medium">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="TextAppearance.CondensedRegular.20.PrimaryColor" parent="TextAppearance.RobotoCondensed.Regular">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">?colorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.CondensedRegular.20.Black" parent="TextAppearance.RobotoCondensed.Regular">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="TextAppearance.CondensedRegular.20.White" parent="TextAppearance.RobotoCondensed.Regular">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="TextAppearance.CondensedRegular.20.Black87" parent="TextAppearance.RobotoCondensed.Regular">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/Black87</item>
+    </style>
+
+    <style name="TextAppearance.MediumRegular.20.White" parent="TextAppearance.Roboto.Medium">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="TextAppearance.Regular.20.White54" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/White54</item>
+    </style>
+
+    <style name="TextAppearance.Medium.20.White87" parent="TextAppearance.Roboto.Medium">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/White87</item>
+    </style>
+
+    <style name="TextAppearance.Regular.20.Black54" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/Black54</item>
+    </style>
+
+    <style name="TextAppearance.Regular.20.Black87" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/Black87</item>
+    </style>
+
+    <style name="TextAppearance.Light.20.White" parent="TextAppearance.Roboto.Light">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="TextAppearance.Regular.24.Black54" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/Black54</item>
+    </style>
+
+    <style name="TextAppearance.Regular.24.Black87" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/Black87</item>
+    </style>
+
+    <style name="TextAppearance.CondensedRegular.24.Black87" parent="TextAppearance.RobotoCondensed.Regular">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/Black87</item>
+    </style>
+
+    <style name="TextAppearance.Regular.24.Black" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="TextAppearance.Regular.24.PrimaryColor" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">?colorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Regular.24.White" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="TextAppearance.Light.24.White" parent="TextAppearance.Roboto.Light">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="TextAppearance.CondensedRegular.30.Black54" parent="TextAppearance.RobotoCondensed.Regular">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/Black54</item>
+    </style>
+
+    <style name="TextAppearance.Regular.34.White" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">34sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="TextAppearance.CondensedRegular.36.PrimaryColor" parent="TextAppearance.RobotoCondensed.Regular">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textColor">?colorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.CondensedRegular.36.Black54" parent="TextAppearance.RobotoCondensed.Regular">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textColor">@color/Black54</item>
+    </style>
+
+    <style name="TextAppearance.CondensedRegular.36.CustomState" parent="TextAppearance.RobotoCondensed.Regular">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textColor">@color/dialog_number_input_number_button_text_color</item>
+    </style>
+
+    <style name="TextAppearance.Regular.40.White" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="TextAppearance.Regular.40.Black" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="TextAppearance.Regular.40.Black87" parent="TextAppearance.Roboto.Regular">
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">@color/Black87</item>
+    </style>
+
+    <style name="TextAppearance.CondensedRegular.48.PrimaryColor" parent="TextAppearance.RobotoCondensed.Regular">
+        <item name="android:textSize">48sp</item>
+        <item name="android:textColor">?colorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Medium.48.White" parent="TextAppearance.Roboto.Medium">
+        <item name="android:textSize">48sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <!-- Rating Star Style -->
+    <style name="myRatingBar" parent="android:Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/custom_style_ratingbar</item>
+        <item name="android:minHeight">24dp</item>
+        <item name="android:minWidth">24dp</item>
+    </style>
+
+    <!-- Button Style -->
+    <style name="LightFlatColorButtonRippleStyle" parent="Material.Drawable.Ripple.Touch.Light">
+        <item name="android:background">@null</item>
+        <item name="rd_cornerRadius">4dp</item>
+        <item name="rd_delayClick">afterRelease</item>
+        <item name="android:textAppearance">@style/TextAppearance.Medium.14</item>
+        <item name="android:textColor">?colorPrimary</item>
+    </style>
+
+    <style name="ViewDetailFlatColorButtonRippleStyle" parent="Material.Drawable.Ripple.Touch.Light">
+        <item name="android:background">@null</item>
+        <item name="rd_cornerRadius">4dp</item>
+        <item name="rd_delayClick">afterRelease</item>
+        <item name="android:textAppearance">@style/TextAppearance.Medium.14</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <!-- Load More Circle progress -->
+    <style name="LoadMoreCircleProgressStyle" parent="Material.Drawable.CircularProgress">
+        <item name="cpd_inStepColors">@array/refresh_progress</item>
+    </style>
+
+    <style name="NormalProgressBar" parent="Material.Drawable.CircularProgress">
+        <item name="cpd_strokeColor">@color/white</item>
+    </style>
+    <!-- Spinner -->
+    <style name="MaterialSpinner" parent="Material.Widget.Spinner">
+        <item name="spn_dividerColor">@color/Black12</item>
+        <item name="spn_dividerHeight">1.5dp</item>
+        <item name="spn_dividerPadding">@dimen/padding_extra_short</item>
+        <item name="spn_labelEnable">false</item>
+        <item name="spn_arrowColor">?colorPrimary</item>
+        <item name="spn_arrowSize">5dp</item>
+        <item name="spn_arrowPadding">8dp</item>
+        <item name="spn_arrowSwitchMode">true</item>
+        <item name="spn_arrowAnimClockwise">true</item>
+        <item name="spn_arrowAnimDuration">100</item>
+    </style>
+
+</resources>

@@ -1,0 +1,139 @@
+<basic-view>
+    <div class="category-list">
+
+        <!--HEADER-->
+        <div class="row title-bar">
+            <div class="col-xs-6">
+                <h3> {{ title | translate }} </h3>
+            </div>
+
+            <div class="col-xs-6 title-btn-bar">
+                <button type="button" class="btn btn-info" ng-click="refresh()">
+                    <span class="fa fa-refresh"></span>
+                </button>
+
+                <button type="button" class="btn btn-success" ng-if="isDisplayImportBtn()" ng-click="goToImport()">
+                    <span class="fa fa-file-excel-o"></span>
+                </button>
+
+                <button type="button" class="btn btn-primary" ng-click="createRecord()">
+                    <span class="fa fa-plus"></span>
+                </button>
+            </div>
+        </div>
+
+        <section class="panel panel-default table-dynamic">
+
+            <!--FILTER-->
+            <div class="wrapper-sm no-padder-bottom">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12 m-b-sm" ng-show="isUseDistributorFilter()">
+                        <label> {{ 'distributor' | translate }} </label>
+                        <name-category-combobox
+                            ng-model="filter.distributorId"
+                            datas="distributors"
+                            ng-change="distributorFilterChange()">
+                        </name-category-combobox>
+                    </div>
+
+                    <div class="col-sm-6 col-xs-12 m-b-sm">
+                        <div class="w-full wrapper-xs m-t-xs hidden-xs" ng-show="isUseDistributorFilter()"></div>
+                        <search-box ng-class="{'m-t-sm' : isUseDistributorFilter()}"
+                                    ng-model="filter.searchText"
+                                    ng-change="searchFilterChange()"
+                                    placeholder="{{ 'search' | translate }}">
+                        </search-box>
+                    </div>
+                </div>
+            </div>
+
+            <!--TABLE-->
+            <table class="table table-middle table-border-top">
+                <thead class="hidden-xs">
+                <tr>
+                    <th ng-repeat="column in columns">
+                        {{ column.header | translate }}
+                    </th>
+                    <th class="col-action"></th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+                <!--HAS DATA-->
+                <tr ng-repeat="record in records">
+
+                    <!--XS SCREEN-->
+                    <td class="col-data visible-xs" ng-class="{'strike': !record.active}">
+                        <div><strong> {{ getPropertyValue(columns[0], record) }} </strong></div>
+                        <div ng-repeat="column in columns" ng-if="$index > 0"> {{ getPropertyValue(column, record) }} </div>
+                    </td>
+
+                    <!--SM MD LG SCREEN-->
+                    <td ng-repeat="column in columns" class="col-data hidden-xs" ng-class="{'strike': !record.active}">
+                        <div class="text-ellipsis"> {{ getPropertyValue(column, record) }} </div>
+                    </td>
+
+                    <!--ACTION ON GRID-->
+                    <td class="text-right no-padder col-action">
+                        <button class="btn" ng-click="deleteRecord(record)" ng-disabled="!record.draft" ng-if="useDeleteButton"
+                                confirm="{{ 'confirm.dialog.are.you.sure.delete' | translate }}"
+                                confirm-title="{{ 'confirm.dialog.title' | translate }}"
+                                confirm-ok="{{ 'confirm.dialog.ok' | translate }}"
+                                confirm-cancel="{{ 'confirm.dialog.cancel' | translate }}"
+                                confirm-settings="{ size: 'sm' }">
+                            <span class="fa fa-lg fa-remove text-danger"></span>
+                        </button>
+
+                        <button class="btn" ng-click="enableRecord(record)" ng-disabled="!record.draft" ng-if="useEnableButton"
+                                confirm="{{ 'confirm.dialog.are.you.sure.enable' | translate }}"
+                                confirm-title="{{ 'confirm.dialog.title' | translate }}"
+                                confirm-ok="{{ 'confirm.dialog.ok' | translate }}"
+                                confirm-cancel="{{ 'confirm.dialog.cancel' | translate }}"
+                                confirm-settings="{ size: 'sm' }">
+                            <span class="fa fa-lg fa-check text-primary"></span>
+                        </button>
+
+                        <button class="btn" ng-click="changeActiveState(record)" ng-disabled="record.draft" ng-if="useActivateButton">
+                            <span class="fa fa-lg text-warning" ng-class="record.active ? 'fa-check-square-o' : 'fa-square-o'"></span>
+                        </button>
+
+                        <button class="btn" ng-click="editRecord(record)" ng-disabled="!record.active">
+                            <span class="fa fa-lg fa-pencil text-info"></span>
+                        </button>
+                    </td>
+                </tr>
+
+                <!--NO DATA-->
+                <tr ng-if="isEmpty()">
+                    <td colspan=" {{ 2 + columns.length }} ">
+                        {{ 'no.data' | translate }}
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+
+            <!--PAGING-->
+            <div class="wrapper-sm pagination-container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <hr class="m-b-sm m-t-none m-l-n-sm m-r-n-sm">
+                    </div>
+
+                    <div class="col-xs-12 text-right">
+                        <pagination class="pagination pagination-sm pagination-right m-n"
+                                    boundary-links="true"
+                                    total-items="pagingData.count"
+                                    max-size="pagingData.pagingMaxSize"
+                                    items-per-page="pagingData.itemsPerPage"
+                                    ng-model="pagingData.currentPage"
+                                    previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"
+                                    ng-change="pageChange()">
+                        </pagination>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</basic-view>

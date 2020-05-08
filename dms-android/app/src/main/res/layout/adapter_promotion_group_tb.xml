@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="72dp">
+
+    <View
+        android:id="@+id/border"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="80dp"
+        android:background="#e0e0e0" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/rl_Icon"
+            android:layout_width="80dp"
+            android:layout_height="72dp"
+            android:layout_gravity="center">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_Circle"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:src="?colorPrimary" />
+
+            <com.joanzapata.iconify.widget.IconTextView
+                android:id="@+id/tv_First_Letter"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="{md-loyalty 24dp @color/white}" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_Promotion_Name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:gravity="center_vertical|left"
+            android:maxLines="2"
+            android:textAppearance="@style/TextAppearance.Regular.16.PrimaryColor" />
+
+        <TextView
+            android:id="@+id/tv_Promotion_Start"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_horizontal|center"
+            android:maxLines="2"
+            android:textAppearance="@style/TextAppearance.Regular.14.Black54" />
+
+        <TextView
+            android:id="@+id/tv_Promotion_End"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_horizontal|center"
+            android:maxLines="2"
+            android:textAppearance="@style/TextAppearance.Regular.14.Black54" />
+
+        <LinearLayout
+            android:layout_width="72dp"
+            android:layout_height="match_parent">
+
+            <com.joanzapata.iconify.widget.IconTextView
+                android:id="@+id/itv_Indicator"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="{md-keyboard-arrow-down 24dp @color/Black26}" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,167 @@
+<basic-view class="visit-detail use-map">
+
+    <div class="row title-bar">
+        <div class="col-xs-9">
+            <h3> {{ title | translate }} </h3>
+        </div>
+
+        <div class="col-xs-3 title-btn-bar">
+            <button class="btn btn-warning" ng-click="back()">
+                <span class="fa fa-arrow-left"></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="row">
+        <!--LEFT-->
+        <div class="col-lg-6">
+            <div class="row">
+
+                <!--CUSTOMER INFO-->
+                <div class="col-xs-12 customer-info">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-profile">
+                                <div class="panel-heading bg-primary clearfix">
+                                    <h3>{{ record.customer.name }}</h3>
+                                    <p>{{ record.customer.code }}</p>
+                                </div>
+                                <div class="panel-body">
+                                    <ul class="list-unstyled list-info">
+                                        <li>
+                                            <span class="icon glyphicon glyphicon-tag"></span>
+                                            <label>{{ 'customer.type' | translate }}</label>
+                                            {{ record.customer.customerType.name }}
+                                        </li>
+                                        <li>
+                                            <span class="icon glyphicon glyphicon-inbox"></span>
+                                            <label>{{ 'area' | translate }}</label>
+                                            {{ record.customer.area.name }}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--MAP-->
+                <div class="col-xs-12">
+                    <section class="panel panel-default">
+                        <div class="panel-heading">
+                            <strong><span class="glyphicon glyphicon-map-marker"></span> {{ 'map' | translate }}</strong>
+                        </div>
+                        <div class="panel-body">
+                            <div ng-include=" 'map.html' "></div>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+
+        <!--RIGHT-->
+        <div class="col-lg-6">
+            <div class="row">
+
+                <!--VISIT INFO-->
+                <div class="col-xs-12">
+                    <div class="panel panel-default visit-info">
+                        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> {{ 'visit.detail.visit.info' | translate }} </strong></div>
+                        <ul class="list-group">
+                            <li class="list-group-item" ng-if="isClosed()">
+                                <span class="badge badge-danger" ng-if="isClosed()"> {{ 'visit.status.closed' | translate }} </span>
+                                <i class="fa fa-info"></i>
+                                {{ 'visit.status' | translate }}
+                            </li>
+
+                            <li class="list-group-item">
+                                <span class="badge"> {{ record.salesman.fullname }} </span>
+                                <i class="fa fa-user"></i>
+                                {{ 'salesman' | translate }}
+                            </li>
+
+                            <!--TIME-->
+                            <li class="list-group-item">
+                                <span class="badge"
+                                      ng-class="{'badge-warning': record.errorDuration, 'badge-success': !record.errorDuration }">
+                                    {{ getTimeDisplay() }}
+                                </span>
+                                <i class="fa fa-clock-o"></i>
+                                {{ 'visit.time' | translate }}
+                            </li>
+
+                            <!--distance-->
+                            <li class="list-group-item">
+                                <span class="badge"
+                                      ng-class="{ 'badge-danger': isErrorDistance(record), 'badge-success': !isErrorDistance(record) }">
+                                    {{ getDistanceDisplay() }}
+                                </span>
+                                <i class="fa fa-location-arrow"></i>
+                                {{ 'visit.distance' | translate }}
+                            </li>
+
+                            <!--order-->
+                            <li class="list-group-item">
+                                <span class="badge" ng-class="{ 'badge-warning': !record.hasOrder, 'badge-info': record.hasOrder }">
+                                    {{ getOrderDisplay() }}
+                                </span>
+                                <i class="fa fa-shopping-cart"></i>
+                                {{ 'order' | translate }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xs-12" ng-if="hasFeedback()">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><strong><span class="glyphicon glyphicon-comment"></span> {{ 'feedback' | translate }} </strong></div>
+                        <div class="panel-body">
+                            <div class="media" ng-repeat="feddback in record.feedbacks">
+                                <div class="media-body">
+                                    <h4 class="media-heading"> {{ '#' + ($index + 1) }} </h4>
+                                    <p>{{ feddback }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12" ng-if="hasPhoto()">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><strong><span class="glyphicon glyphicon-camera"></span> {{ 'visit.photo' | translate }} </strong></div>
+                        <div class="panel-body">
+                            <div class="thumbnail">
+                                <img alt ng-src="{{ getPhoto() }}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row" ng-if="hasOrder()">
+        <div class="col-lg-12">
+            <div class="panel panel-default order-info">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-9 title">
+                            <strong><span class="glyphicon glyphicon-shopping-cart"></span> {{ 'order' | translate }}</strong>
+                        </div>
+                        <div class="col-xs-3 text-right">
+                            <button class="btn btn-dark" ng-click="printOrder()">
+                                <span class="fa fa-print"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <order id="order" data="record"></order>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</basic-view>

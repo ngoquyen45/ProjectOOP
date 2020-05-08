@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="sdk_primary_text">#de000000</color>
+    <color name="sdk_hint_foreground">#80000000</color>
+    <color name="sdk_accent">#ff009688</color>
+    <color name="sdk_link_text">@color/sdk_accent</color>
+    <color name="sdk_background">#ffeeeeee</color>
+
+    <!-- Custom colors -->
+    <color name="sdk_logo_background">#195eae</color>
+    <color name="sdk_logo_description">#80afd2</color>
+
+</resources>

@@ -1,0 +1,77 @@
+<category-detail class="sales-report-detail">
+
+    <section class="panel panel-default" ng-if="isDisplayChart()">
+        <div class="panel-body">
+            <div class="chart-container chart-long-label">
+                <div data-flot-chart
+                     data-data="chart.data"
+                     data-options="chart.options"
+                     class="chart-default"
+                     ng-if="isDisplayChart()"
+                    ></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel panel-default">
+        <div class="panel-body">
+            <table class="table table-middle table-striped">
+                <thead>
+                <tr>
+                    <th>
+                        {{ 'distributor' | translate }}
+                    </th>
+                    <th class="text-right">
+                        {{ 'revenue' | translate }}
+                    </th>
+                    <th class="text-right">
+                        {{ 'order' | translate }}
+                    </th>
+                    <th class="text-right">
+                        {{ 'customer' | translate }}
+                    </th>
+                    <th class="text-right">
+                        {{ 'salesman' | translate }}
+                    </th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr ng-repeat="record in records">
+                    <td>
+                        {{ record.name }}
+                    </td>
+                    <td class="text-right">
+                        {{ record.salesResult.revenue | number : 0  }}
+                    </td>
+                    <td class="text-right">
+                        {{ record.salesResult.nbOrder | number : 0 }}
+                    </td>
+                    <td class="text-right">
+                        {{ record.salesResult.nbCustomer | number : 0 }}
+                    </td>
+                    <td class="text-right">
+                        {{ record.salesResult.nbSalesman | number : 0 }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>{{ 'total' | translate }}</strong>
+                    </td>
+                    <td class="text-right">
+                        <strong>{{ total.revenue | number : 0  }}</strong>
+                    </td>
+                    <td class="text-right">
+                        <strong>{{ total.nbOrder | number : 0 }}</strong>
+                    </td>
+                    <td class="text-right">
+                    </td>
+                    <td class="text-right">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</category-detail>

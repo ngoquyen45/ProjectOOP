@@ -1,0 +1,411 @@
+<resources>
+    <string name="app_name">DMS Plus</string>
+    <string name="app_company_name">Viettel ICT</string>
+    <!-- LOGIN ACTIVITY-->
+    <string name="login_activity_edt_user">Tài khoản</string>
+    <string name="login_activity_edt_pass">Mật khẩu</string>
+    <string name="login_activity_btn_login">ĐĂNG NHẬP</string>
+    <!-- Navigation Drawer -->
+    <string name="navigation_drawer_open">Mở menu</string>
+    <string name="navigation_drawer_close">Đóng menu</string>
+    <string name="navigation_drawer_dashboard">Thống kê chung</string>
+    <string name="navigation_drawer_item_customer_register">Đăng ký khách hàng</string>
+    <string name="navigation_drawer_item_promotion">Chương trình khuyến mại</string>
+    <string name="navigation_drawer_item_product">Danh sách sản phẩm</string>
+    <string name="navigation_drawer_item_result_sale">Kết quả bán hàng</string>
+    <string name="navigation_drawer_item_criteria_sale">Chỉ tiêu bán hàng</string>
+    <string name="navigation_drawer_item_my_customer">Khách hàng của tôi</string>
+    <string name="navigation_drawer_header_support_sale">Hỗ trợ bán hàng</string>
+    <string name="navigation_drawer_item_promotion_program">Chương trình khuyến mại</string>
+    <string name="navigation_drawer_item_list_product">Danh sách sản phẩm</string>
+    <string name="navigation_drawer_item_list_order">Danh sách đơn hàng</string>
+    <string name="navigation_drawer_item_new_customer">Khách hàng đăng ký mới</string>
+    <string name="navigation_drawer_header_system">Hệ thống</string>
+    <string name="navigation_drawer_item_change_pass">Đổi mật khẩu</string>
+    <string name="navigation_drawer_item_settings">Cài đặt</string>
+    <string name="navigation_drawer_item_exit">Thoát</string>
+    <string name="navigation_drawer_item_visit">Ghé thăm</string>
+    <string name="navigation_drawer_item_take_order">Đặt hàng</string>
+    <string name="navigation_drawer_item_return">Trả hàng</string>
+    <string name="navigation_drawer_item_exchange">Đổi hàng</string>
+    <string name="coming_soon_feature">Chức năng đang trong quá trình hoàn thiện</string>
+
+    <!-- Error -->
+    <string name="error">Lỗi</string>
+    <string name="error_connect">Lỗi kết nối. Xin vui lòng thử lại!</string>
+    <string name="error_connect_server">Có lỗi xảy ra khi kết nối với server</string>
+    <string name="error_no_network">Lỗi kết nối, xin vui lòng kiểm tra lại đường truyền!</string>
+    <string name="error_network_turned_off">Kết nối Internet của bạn hiện đang không được bật. Bạn có muốn bật nó lên không?</string>
+    <string name="error_location_service_turn_off">Dịch vụ Vị trí của bạn hiện đang không được bật. Bạn có muốn bật nó lên không?</string>
+    <string name="error_unknown">Lỗi không xác định. Xin vui lòng thử lại.</string>
+    <string name="error_not_have_cammera_app">Thiết bị của bạn chưa cài đặt phần mềm chụp ảnh</string>
+    <string name="error_internal_server">Lỗi đã xảy ra ở phía máy chủ</string>
+    <string name="error_bad_request">Yêu cầu gửi lên không hợp lệ.\nLoại lỗi: {0}\nThông báo: {1}</string>
+    <string name="warning">Cảnh báo</string>
+    <string name="notify">Thông báo</string>
+    <string name="error_saving_photo">Không lưu được ảnh</string>
+
+    <string name="message_please_wait">Vui lòng chờ</string>
+    <string name="message_loading_data">Đang tải dữ liệu</string>
+    <string name="message_new_data">Đang tạo mới dữ liệu</string>
+    <string name="message_update_data">Đang cập nhật dữ liệu</string>
+
+    <string name="error_invalid_param">Yêu cầu không thể thực hiện. Vui lòng kiểm tra kỹ thông tin và thử lại!</string>
+    <string name="error_user_not_found">Không tìm thấy người dùng được yêu cầu. Vui lòng kiểm tra kỹ dữ liệu của bạn và thử lại!</string>
+    <string name="error_product_not_found">Không tìm thấy sản phẩm được yêu cầu. Vui lòng kiểm tra kỹ dữ liệu của bạn và thử lại!</string>
+    <string name="error_area_not_found">Không tìm thấy khu vực được yêu cầu. Vui lòng kiểm tra kỹ dữ liệu của bạn và thử lại!</string>
+    <string name="error_customer_type_not_found">Không tìm thấy loại khách hàng được yêu cầu. Vui lòng kiểm tra kỹ dữ liệu của bạn và thử lại!</string>
+    <string name="error_customer_not_found">Không tìm thấy khách hàng được yêu cầu. Vui lòng kiểm tra kỹ dữ liệu của bạn và thử lại!</string>
+    <string name="unknow">Không xác định</string>
+
+
+    <!-- Login -->
+    <string name="login_btn">ĐĂNG NHẬP</string>
+    <string name="login_hint_user">Tài khoản</string>
+    <string name="login_hint_email">Email</string>
+    <string name="login_hint_pass">Mật khẩu</string>
+    <string name="login_retry_login">Thử lại</string>
+    <string name="login_setting_server">Cấu hình</string>
+    <string name="login_error_email">Tài khoản không hợp lệ!</string>
+    <string name="login_error_pass">Mật khẩu không hợp lệ</string>
+    <string name="login_error_invalid_credential">Thông tin đăng nhập không đúng. Vui lòng thử lại!</string>
+    <string name="login_error_expired">Phiên đăng nhập đã hết hạn</string>
+    <string name="login_error_will_be_logout">Bạn sẽ bị đăng xuất ra khỏi hệ thống!</string>
+    <!-- Confirm -->
+    <string name="confirm_yes">Đồng ý</string>
+    <string name="confirm_no">Không</string>
+    <string name="confirm_ok">Đồng ý</string>
+    <string name="confirm_close">Đóng</string>
+    <string name="confirm_cancel">Hủy bỏ</string>
+    <string name="confirm_continue">Tiếp tục</string>
+    <string name="confirm_retry">Thử lại</string>
+    <string name="confirm_confirm">Xác nhận</string>
+    <string name="confirm_set_time">Đặt</string>
+    <string name="confirm_cancel_time">Hủy</string>
+    <!-- Server switch -->
+    <string name="setting_server_title">Lựa chọn máy chủ</string>
+    <string name="setting_server_save">Lưu</string>
+    <string name="setting_server_cancel">Hủy</string>
+    <!-- Symbols -->
+    <string name="symbol_percentage">%</string>
+    <string name="symbol_slash">/</string>
+    <string name="symbol_parentheses_left">(</string>
+    <string name="symbol_parentheses_right">)</string>
+    <string name="symbol_dashes">-</string>
+
+    <!-- Customer visit status -->
+    <string name="status_visit_visiting">Đang ghé thăm</string>
+    <string name="status_visit_visited">Đã ghé thăm</string>
+    <string name="status_visit_not_visited">Chưa ghé thăm</string>
+
+    <!-- Order status -->
+    <string name="status_order_waiting">Chờ duyệt</string>
+    <string name="status_order_accepted">Đã duyệt</string>
+    <string name="status_order_rejected">Từ chối</string>
+
+    <!-- Home Page -->
+    <string name="home_page_title">Thống kê chung</string>
+    <string name="home_page_revenue">DOANH SỐ</string>
+    <string name="home_page_productivity">SẢN LƯỢNG</string>
+    <string name="home_page_sales_days">NGÀY BÁN HÀNG</string>
+    <string name="home_page_visit">LƯỢT GHÉ THĂM</string>
+    <string name="home_page_target">Chỉ tiêu được giao</string>
+    <string name="home_page_view_detail">XEM CHI TIẾT</string>
+
+    <!-- Sales detail -->
+    <string name="sales_detail_revenue_title">Doanh số chi tiết</string>
+    <string name="sales_detail_productivity_title">Sản lượng chi tiết</string>
+    <string name="sales_detail_no_result">Không có đơn hàng phát sinh trong tháng</string>
+    <string name="sales_detail_loading">Đang tải…</string>
+
+    <!-- Monthly summary -->
+    <string name="sales_daily_summary_title">Kết quả theo ngày</string>
+    <string name="sales_daily_revenue">Doanh số</string>
+    <string name="sales_daily_productivity">Sản lượng</string>
+    <string name="sales_daily_order">Đơn hàng</string>
+    <!-- Search View -->
+    <string name="action_search">Tìm kiếm</string>
+
+    <!-- Customer list -->
+    <string name="customer_list_no_planned_customer">Hiện tại không có khách hàng nội tuyến nào.</string>
+    <!-- Customer Info -->
+    <string name="customer_info_title">Thông tin khách hàng</string>
+    <string-array name="general_info_tabs_title">
+        <item>TỔNG HỢP</item>
+        <item>THỐNG KÊ</item>
+        <item>VỊ TRÍ</item>
+    </string-array>
+    <string-array name="general_info_tabs_title_tb">
+        <item>TỔNG HỢP</item>
+        <item>VỊ TRÍ</item>
+    </string-array>
+    <string-array name="sale_type">
+        <item>Pre-Sale</item>
+        <item>Van-Sale</item>
+    </string-array>
+    <string name="customer_info_perform_call_message">Gọi tới số </string>
+    <string name="customer_info_perform_call_tittle">Thực hiện cuộc gọi</string>
+    <string name="customer_info_update_mobile_successful">Cập nhật số di động thành công</string>
+    <string name="customer_info_update_mobile_unsuccessful">Gặp lỗi khi cập nhật số di động</string>
+    <string name="customer_info_update_home_successful">Cập nhật số cố định thành công</string>
+    <string name="customer_info_update_home_unsuccessful">Gặp lỗi khi cập nhật số cố định</string>
+    <string name="customer_info_update_location_successful">Cập nhật Vị Trí thành công</string>
+    <string name="customer_info_update_location_unsuccessful">Cập nhật Vị Trí không thành công</string>
+    <string name="customer_info_update_location_unchange">Vị trí không có thay đổi</string>
+
+    <string name="customer_info_cardview_outstanding_1">Sản lượng tháng trước</string>
+    <string name="customer_info_cardview_outstanding_2">Sản lượng tháng hiện tại</string>
+    <string name="customer_info_cardview_outstanding_3">Đơn đặt hàng trong tháng</string>
+
+    <string name="customer_info_recent_revenue_subtitle">Doanh thu %1$d tháng gần đây</string>
+    <string name="customer_info_recent_order_subtitle">Danh sách %1$d đơn hàng gần nhất</string>
+    <string name="customer_info_recent_order_table_1">Ngày</string>
+    <string name="customer_info_recent_order_table_2">SKU</string>
+    <string name="customer_info_recent_order_table_3">Giá trị</string>
+
+    <!-- Customer Visit-->
+    <string name="customer_visit_view_detail">XEM CHI TIẾT</string>
+    <string name="customer_visit_view_close">KHÁCH HÀNG ĐÓNG CỬA</string>
+
+    <string name="customer_visit_menu_finish_visit">Kết thúc ghé thăm</string>
+    <string name="customer_visit_content_start_begin_visit">BẮT ĐẦU GHÉ THĂM</string>
+
+    <string name="customer_visit_actions_take_photo">Chụp ảnh</string>
+    <string name="customer_visit_actions_view_photo">Xem ảnh</string>
+    <string name="customer_visit_actions_no_photo">Không có ảnh</string>
+    <string name="customer_visit_actions_view_close_visit_photo">Xem ảnh đóng cửa</string>
+    <string name="customer_visit_actions_send_customer_feedback">Ý kiến</string>
+    <string name="customer_visit_actions_take_order">Đơn hàng</string>
+    <string name="customer_visit_actions_no_order">Không có</string>
+    <string name="customer_visit_actions_send_opponent_info">Khảo sát</string>
+    <string name="customer_visit_actions_rate_exhibit">Chương trình trưng bày</string>
+    <string name="customer_visit_actions_take_order_already_visited">CHI TIẾT</string>
+    <string name="customer_visit_actions_take_order_not_visited">ĐẶT HÀNG</string>
+    <string name="customer_visit_actions_order_value">GIÁ TRỊ ĐƠN HÀNG</string>
+    <string name="customer_visit_actions_exhibit_point">ĐIỂM TRƯNG BÀY</string>
+
+    <string name="customer_visit_message_end_visit_title">Kết thúc ghé thăm</string>
+    <string name="customer_visit_message_end_visit_message_sending">Đang gửi dữ liệu</string>
+    <string name="customer_visit_message_end_visit_message_success">Ghé thăm thành công</string>
+    <string name="customer_visit_message_locating">Đang xác định vị trí</string>
+    <string name="customer_visit_message_cannot_locate">Không thể xác định vị trí hiện tại của bạn. Bạn vẫn muốn tiếp tục thao tác?</string>
+    <string name="customer_visit_message_location_not_accuracy">Khoảng cách giữa bạn và cửa hàng lớn hơn mức cho phép. Bạn vẫn muốn tiếp tục thao tác?</string>
+    <string name="customer_visit_message_visit_closed">Bạn đã đánh dấu cửa hàng là đóng cửa</string>
+    <string name="customer_visit_message_cannot_close_when_visiting">Không thể đóng màn hình này khi vẫn đang ghé thăm khách hàng</string>
+    <string name="customer_visit_message_visit_have_no_order">Không có đơn hàng nào trong lần ghé thăm này!</string>
+    <string name="customer_visit_message_visit_have_no_photo">Không có ảnh trong lần ghé thăm này!</string>
+    <string name="customer_visit_message_visit_already_ended">Chuyến ghé thăm này đã được kết thúc trước đó!</string>
+    <string name="customer_visit_message_visit_have_no_feedback">Không có thông tin phản hồi nào trong lần ghé thăm này. Tiếp tục xem các phản hồi trước đó?</string>
+    <string name="customer_visit_message_end_visit_confirm">Bạn có muốn kết thúc ghé thăm</string>
+    <string name="customer_visit_message_send_visit_photo_fail">Gửi ảnh ghé thăm không thành công. Bạn vẫn muốn kết thúc ghé thăm?</string>
+    <string name="customer_visit_message_visit_no_input_opponent_info">Không có thông tin đánh giá đối thủ trong ghé thăm hôm nay</string>
+    <string name="customer_visit_message_visit_no_rate_exhibition">Không có thông tin chấm điểm trưng bày trong ghé thăm hôm nay</string>
+    <string name="customer_visit_location_turn_off_manually">Dữ liệu định vị gián đoạn. Vui lòng thử lại</string>
+
+    <string name="customer_visit_number_of_feedback">Có %1$d ý kiến</string>
+    <string name="customer_visit_number_of_exhibition_rated">Có %1$d trưng bày đã chấm </string>
+    <string name="customer_visit_number_of_survey_done">Có %1$d khảo sát đã thực hiện</string>
+    <!-- Place order -->
+    <string name="place_order_orders_title">Chọn hàng</string>
+    <string name="place_order_orders_choose_sale_type">Chọn hình thức bán hàng</string>
+    <string name="place_order_orders_detail">Chi tiết đơn hàng</string>
+    <string name="place_order_orders_cost_total">TỔNG TIỀN</string>
+    <string name="place_order_product_message_empty_cart">Bạn chưa chọn sản phẩm vào đơn hàng</string>
+    <string name="place_order_product_message_positive_quantity">Số lượng đặt hàng phải lớn hơn 0</string>
+    <!-- Place order promotion -->
+    <string name="place_order_promotion_title">Khuyến mại</string>
+    <string name="place_order_promotion_no_promotion">Hiện tại không có khuyến mại cho đơn hàng này</string>
+    <!-- Route -->
+    <string name="customer_route_menu">Bản đồ tuyến</string>
+    <string name="customer_route_title">Bản đồ nội tuyến</string>
+    <string name="google_play_service_not_support_title">Lỗi Google Play Service</string>
+    <string name="google_play_service_not_support_message">Thiết bị không hỗ trợ Google Play Service</string>
+    <string name="customer_route_view_more">XEM THÔNG TIN</string>
+    <string name="customer_route_visit_now">GHÉ THĂM</string>
+    <!--Location -->
+    <string name="customer_register_confirm_turn_on_location">DMS cần quyền truy cập vào vị trí của bạn. Vui lòng bật truy cập vị trí.</string>
+    <string name="title_activity_place_order">PlaceOrderActivity</string>
+    <!-- Number Dialog -->
+    <string name="number_input_dialog_title">Nhập số lượng</string>
+    <string name="number_input_dialog_title_money">Nhập số tiền</string>
+    <!-- Promotion Dialog -->
+    <string name="detail_information">Thông tin chi tiết</string>
+    <string name="promotion_available_list_header_1">Thông tin chương trình</string>
+    <string name="promotion_available_list_header_2">Bắt đầu</string>
+    <string name="promotion_available_list_header_3">Kết thúc</string>
+    <string name="promotion_available_title">Chương trình khuyến mại</string>
+    <string name="promotion_available_dialog_time">Thời gian:</string>
+    <string name="promotion_available_dialog_time_content">Từ ngày {0} đến ngày {1}</string>
+    <string name="promotion_available_dialog_focus_to">Đối tượng:</string>
+    <string name="promotion_available_dialog_content">Cơ cấu:</string>
+    <!-- Place order delivery -->
+    <string name="place_order_delivery_title">Giao hàng</string>
+    <string name="place_order_delivery_type">Hình thức giao hàng</string>
+    <string name="place_order_delivery_time">Thời gian giao hàng</string>
+    <string name="place_order_delivery_note">Ghi chú</string>
+    <string-array name="place_order_promotion_delivery_method">
+        <item>Giao hàng ngay</item>
+        <item>Giao hàng trong ngày</item>
+        <item>Giao hàng vào ngày khác</item>
+    </string-array>
+    <string name="place_order_delivery_pick_date_holder">dd/MM/yyyy</string>
+    <string name="place_order_delivery_pick_time_holder">hh:mm</string>
+    <string name="place_order_promotion_delivery_day">Chọn ngày giao hàng</string>
+    <string name="place_order_promotion_delivery_time">Giờ</string>
+    <string name="place_order_promotion_message_require_delivery_date">Vui lòng nhập thời điểm giao hàng</string>
+    <string name="place_order_promotion_message_delivery_date_must_after_today">Thời điểm giao hàng phải sau ngày hiện tại</string>
+    <string name="place_order_promotion_message_need_calculate_promotion">Khuyến mại chưa được tính. Hãy kéo nội dung từ trên xuống dưới để tính khuyến mại!</string>
+    <string name="place_order_finish_product_header_product">HÀNG BÁN</string>
+    <string name="place_order_finish_product_header_promotion">HÀNG KHUYẾN MẠI</string>
+    <string name="place_order_detail_total_table_1">Tổng tiền</string>
+    <string name="place_order_detail_total_table_2">Khuyến mại</string>
+    <string name="place_order_detail_total_table_3">Chiết khấu</string>
+    <string name="place_order_detail_total_table_4">Thanh toán</string>
+    <!-- Place order Finish-->
+    <string name="place_order_finish_title">Thông tin đơn hàng</string>
+    <string name="place_order_finish_message_confirm_title">Xác nhận đặt hàng</string>
+    <string name="place_order_finish_message_confirm_message">Bạn có chắc chắn muốn đặt hàng theo thông tin đơn hàng đã chọn?</string>
+    <string name="place_order_finish_message_success_title">Đặt hàng thành công</string>
+    <string name="place_order_finish_message_success_message">Thông tin đơn hàng đã được hệ thống tiếp nhận!</string>
+    <!-- Take Picture -->
+    <string name="visit_take_photo_title">Chụp ảnh</string>
+    <string name="visit_view_photo_title">Xem ảnh ghé thăm</string>
+    <!-- Feedback-->
+    <string name="visit_feedback_edittext_hint">Nhập ý kiến</string>
+    <string name="visit_feedback_title">Ý kiến khách hàng</string>
+    <string name="visit_feedback_message_visit_have_no_feedback">Không có thông tin phản hồi nào trong lần ghé thăm này. Tiếp tục xem các phản hồi trước đó?</string>
+    <string name="visit_feedback_confirm_message">Lưu lại thông tin ý kiến</string>
+    <string name="visit_feedback_confirm_ok">Lưu lại</string>
+    <string name="visit_feedback_confirm_cancel">Hủy bỏ</string>
+    <!--Survey -->
+    <string name="visit_survey_list_title">Chương trình khảo sát</string>\
+    <string name="visit_survey_list_item_pending">{md-restore @dimen/list_icon_size }</string>
+    <string name="visit_survey_list_item_complete">{md-done @dimen/list_icon_size }</string>
+    <string name="visit_survey_edit_title">Nội dung khảo sát</string>
+    <!-- Exhibtion -->
+    <string name="visit_exhibition_rating_list_title">Chương trình trưng bày</string>
+    <string name="visit_exhibition_rating_list_item_pending">{md-restore @dimen/list_icon_size }</string>
+    <string name="visit_exhibition_rating_list_item_complete">{md-done @dimen/list_icon_size }</string>
+    <string name="visit_exhibition_rating_edit_title">Chấm điểm trưng bày</string>
+    <!-- Close visit -->
+    <string name="close_visit_title">Chụp ảnh đóng cửa</string>
+    <string name="close_visit_uploading_image">Đang tải ảnh lên</string>
+    <!-- Empty -->
+    <string name="empty_promotion">Không có chương trình khuyến mại</string>
+    <string name="empty_order">Chưa có đơn hàng trong hôm nay</string>
+    <string name="empty_network_error">Kết nối bị gián đoạn</string>
+    <string name="empty_feedback">Không có ý kiến phản hồi nào</string>
+    <string name="empty_selected_product_list">Bạn chưa chọn sản phẩm nào</string>
+    <string name="empty_survey">Không có khảo sát nào đang được thực hiện</string>
+    <string name="empty_search_result">Không tìm thấy kết quả</string>
+    <string name="empty_product">Danh sách sản phẩm trống</string>
+    <string name="empty_exchange_product">Chưa có sản phẩm cần đổi trong hôm nay</string>
+    <string name="empty_return_product">Chưa có sản phẩm cần trả trong hôm nay</string>
+    <string name="empty_customer">Danh sách khách hàng trống</string>
+    <!-- Promotion List -->
+    <string name="promotion_list_title">Chương trình khuyến mại</string>
+    <string name="promotion_detail_time">Thời gian</string>
+    <string name="promotion_detail_focus_to">Đối tượng</string>
+    <string name="promotion_detail_content">Cơ cấu</string>
+    <!-- Product List -->
+    <string name="click_to_retry">Thử lại</string>
+    <string name="product_list_title">Danh sách sản phẩm</string>
+    <string name="product_list_detail_code">Mã sản phẩm</string>
+    <string name="product_list_detail_price">Đơn giá</string>
+    <string name="product_list_detail_description">Mô tả</string>
+    <!-- Order List -->
+    <string name="order_list_title">Danh sách đơn hàng</string>
+    <string name="order_customer_list_title">Chọn khách hàng</string>
+    <!-- New Customer -->
+    <string name="register_customer_list_title">Khách hàng đăng ký mới</string>
+    <string name="register_customer_title">Đăng ký khách hàng</string>
+    <string name="register_customer_confirm_text">Bạn có chắc chắn thêm mới?</string>
+    <string name="register_customer_unsuccessful">Gặp lỗi khi đăng ký</string>
+    <string name="register_customer_successful">Đăng ký thành công</string>
+    <string name="register_customer_error_customer_name">Chưa nhập tên</string>
+    <string name="register_customer_error_address">Chưa nhập địa chỉ</string>
+    <string name="register_customer_error_representative">Chưa nhập người liên hệ</string>
+    <string name="register_customer_error_mobile_phone">Chưa nhập số điện thoại di động</string>
+    <string name="register_customer_error_home_phone">Chưa nhập số điện thoại cố định</string>
+    <string name="register_customer_error_email">Chưa nhập email</string>
+    <string name="register_customer_error_location">Chưa nhập thông tin vị trí</string>
+    <string name="register_customer_customer_location">Vị trí khách hàng</string>
+    <string name="register_customer_customer_type">Loại khách hàng</string>
+    <string name="register_customer_customer_area">Quận/huyện</string>
+    <string name="register_customer_customer_name">Tên khách hàng</string>
+    <string name="register_customer_address">Địa chỉ</string>
+    <string name="register_customer_mobile_phone">Di động</string>
+    <string name="register_customer_home_phone">Cố định</string>
+    <string name="register_customer_email">Email</string>
+    <string name="register_customer_representative">Người liên hệ</string>
+    <string name="register_customer_note">Ghi chú</string>
+    <string name="register_customer_imgs">Ảnh cửa hàng</string>
+    <string name="register_customer_wrong_location">Chưa xác định được vị trí khách hàng</string>
+    <string name="register_customer_wrong_customer_type">Chưa xác định được loại khách hàng. Vui lòng tải lại</string>
+    <string name="register_customer_wrong_customer_district">Chưa xác định được loại khách hàng. Vui lòng tải lại</string>
+    <!-- Change Password -->
+    <string name="change_password_title">Đổi mật khẩu</string>
+    <string name="change_password_name">Họ tên</string>
+    <string name="change_password_login_name">Tài khoản</string>
+    <string name="change_password_current_password">Mật khẩu hiện tại</string>
+    <string name="change_password_new_password">Mật khẩu mới</string>
+    <string name="change_password_retype_password">Nhập lại mật khẩu mới</string>
+    <string name="change_password_wrong_password">Mật khẩu không chính xác</string>
+    <string name="change_password_successful">Thay đổi mật khẩu thành công</string>
+    <string name="change_password_number_characters">Mật khẩu dưới %1$d kí tự</string>
+    <string name="change_password_not_match">Mật khẩu nhập lại không khớp</string>
+    <string name="change_password_null_oldpassword">Chưa nhập mật khẩu hiện tại</string>
+    <string name="action_settings">Tùy chọn</string>
+    <string name="customer_visit_customer_info">Thông tin khách hàng</string>
+    <string name="customer_visit_customer_phone">Điện thoại</string>
+    <string name="customer_visit_customer_visit_status">Trạng thái ghé thăm</string>
+    <string name="order_customer_header_time">Thời gian</string>
+    <string name="order_customer_header_customer">Khách hàng</string>
+    <string name="order_customer_header_status">Trạng thái đơn hàng</string>
+    <string name="order_customer_header_total">Giá trị đơn hàng</string>
+    <string name="place_order_detail_total_table_1_tb">TỔNG TIỀN</string>
+    <string name="place_order_detail_total_table_2_tb">KHUYẾN MẠI</string>
+    <string name="place_order_detail_total_table_3_tb">CHIẾT KHẤU</string>
+    <string name="place_order_detail_total_table_4_tb">THANH TOÁN</string>
+    <string name="place_order_product_order_detail">HÓA ĐƠN CHI TIẾT</string>
+    <string name="place_order_product_quantity">Số lượng</string>
+    <string name="place_order_product_total">Thành tiền</string>
+    <string name="product_list_info">Thông tin</string>
+    <string name="product_list_items">Thông tin</string>
+    <string name="product_list_uom">ĐVT</string>
+    <string name="register_customer_list_header_0">Thông tin khách hàng</string>
+    <string name="register_customer_list_header_1">Số điện thoại</string>
+    <string name="register_customer_list_header_2">Ngày đăng ký</string>
+    <string name="register_customer_list_header_3">Trạng thái đăng ký</string>
+    <string name="register_customer_list_status_0">Chưa duyệt</string>
+    <string name="register_customer_list_status_1">Đã duyệt</string>
+    <string name="register_customer_list_status_2">Từ chối</string>
+    <string name="sales_daily_days">Ngày</string>
+    <string name="sales_detail_customer_info">Thông tin khách hàng</string>
+    <string name="sales_detail_sale_result">Doanh số</string>
+    <string name="status_survey_completed">Đã khảo sát</string>
+    <string name="status_survey_completing">Đang khảo sát</string>
+    <string name="status_survey_not_completed">Chưa khảo sát</string>
+    <string name="visit_survey_list_header_1">Chương trình </string>
+    <string name="visit_survey_list_header_2">Thời gian</string>
+    <string name="visit_survey_list_header_3">Số câu hỏi</string>
+    <string name="visit_survey_list_header_4">Trạng thái</string>
+    <!-- Settings -->
+    <string name="settings_change_themes">Chọn chủ đề</string>
+    <string name="settings_change_language">Ngôn ngữ</string>
+    <string name="settings_change_map">Bản đồ</string>
+    <string name="settings_info">Thông tin</string>
+    <!-- Exchange - return -->
+    <string name="exchange_return_confirm_title">Xác nhận đổi trả</string>
+    <string name="exchange_return_confirm_message_exchange">Bạn có chắc chắn muốn đổi hàng theo thông tin đã chọn?</string>
+    <string name="exchange_return_confirm_message_return">Bạn có chắc chắn muốn trả hàng theo thông tin đã chọn?</string>
+    <string name="exchange_return_message_exchange_empty_cart">Bạn chưa chọn hàng đổi</string>
+    <string name="exchange_return_message_return_empty_cart">Bạn chưa chọn hàng trả</string>
+    <string name="exchange_return_message_positive_quantity">Số lượng nhập đổi trả phải lớn hơn 0</string>
+    <string name="exchange_return_title_exchange">Chi tiết hàng đổi</string>
+    <string name="exchange_return_title_return">Chi tiết hàng trả</string>
+    <string name="exchange_return_total">TỔNG SỐ</string>
+    <string name="exchange_return_product_information">Thông tin sản phẩm</string>
+    <string name="exchange_return_product_exchange_list">DANH SÁCH HÀNG ĐỔI</string>
+    <string name="exchange_return_product_return_list">DANH SÁCH HÀNG TRẢ</string>
+</resources>

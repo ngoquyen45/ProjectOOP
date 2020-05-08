@@ -1,0 +1,175 @@
+<category-detail class="survey" ng-class="{ 'detail-mode': isDetailMode() }">
+
+    <section id="survey-header" class="panel panel-default wrapper">
+        <form name="form">
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label> {{ 'name' | translate }} * </label>
+                        <input type="text" class="form-control" ng-model="record.name"
+                               ng-change="changeStatus.markAsChanged()"
+                               ng-readonly="!isDraft()"
+                               ng-maxlength="100"
+                               required autofocus/>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label> {{ 'start.date' | translate }} * </label>
+                        <div class="input-group ui-datepicker w-full">
+                            <input type="text"
+                                   class="form-control"
+                                   datepicker-popup="{{ dateFormat }}"
+                                   ng-model="startDate.date"
+                                   ng-change="changeStatus.markAsChanged()"
+                                   is-open="startDate.opened"
+                                   datepicker-options="dateOptions"
+                                   close-text="{{ 'close' | translate }}"
+                                   ng-readonly="!isDraft()"
+                                   required>
+                            <span class="input-group-addon" ng-click="open($event, startDate)" ng-if="isDraft()">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label> {{ 'end.date' | translate }} * </label>
+                        <div class="input-group ui-datepicker w-full">
+                            <input type="text"
+                                   class="form-control"
+                                   datepicker-popup="{{ dateFormat }}"
+                                   ng-model="endDate.date"
+                                   ng-change="changeStatus.markAsChanged()"
+                                   is-open="endDate.opened"
+                                   datepicker-options="dateOptions"
+                                   close-text="{{ 'close' | translate }}"
+                                   ng-readonly="!isDraft()"
+                                   required>
+                            <span class="input-group-addon" ng-click="open($event, endDate)" ng-if="isDraft()">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12">
+                    <button class="btn btn-primary btn-sm" ng-click="addNewQuestion()" ng-if="isDraft()">
+                        <span class="fa fa-plus"></span>
+                        <strong> {{ 'survey.add.question' | translate }} </strong>
+                    </button>
+                    <label ng-if="!isDraft()"> {{ 'survey.question' | translate }} </label>
+                    <table class="table questions" ng-class="{ 'ng-invalid': !hasQuestion() }">
+                        <tbody>
+                        <tr ng-if="!hasQuestion()">
+                            <td class="text-danger">
+                                <strong> {{ 'survey.no.question' | translate }} </strong>
+                            </td>
+                        </tr>
+                        <tr ng-repeat="question in record.questions">
+                            <td>
+                                <strong> {{ question.name }} </strong>
+                                <ol>
+                                    <li ng-repeat="option in question.options">
+                                        {{ option.name }}
+                                    </li>
+                                </ol>
+                            </td>
+                            <td class="text-right no-padder col-action" ng-if="isDraft()">
+                                <button class="btn" ng-click="removeQuestion($index)">
+                                    <span class="fa fa-lg fa-remove text-danger"></span>
+                                </button>
+
+                                <button class="btn" ng-click="editQuestion($index)">
+                                    <span class="fa fa-lg fa-pencil text-info"></span>
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </form>
+    </section>
+
+    <!--EDITING PANEL-->
+    <div id="survey-detail">
+        <div class="row title-bar">
+            <div class="col-xs-7">
+                <h3> {{ 'survey.question' | translate }} </h3>
+            </div>
+
+            <div class="col-xs-5 title-btn-bar">
+                <button class="btn btn-warning" ng-click="exitDetailMode()">
+                    <span class="fa fa-arrow-left"></span>
+                </button>
+
+                <button class="btn btn-primary" ng-click="applyEdit()">
+                    <span class="fa fa-check"></span>
+                </button>
+            </div>
+        </div>
+
+        <section class="panel panel-default wrapper">
+            <form name="form2">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label> {{ 'name' | translate }} * </label>
+                            <input type="text" class="form-control"
+                                   ng-model="currentEdit.question.name"
+                                   ng-maxlength="100"
+                                   required/>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 m-b">
+                        <label> {{ 'survey.multiple.choice' | translate }}:&nbsp </label>
+                        <i-check ng-model="currentEdit.question.multipleChoice"></i-check>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <button class="btn btn-primary btn-sm" ng-click="addNewOption()">
+                            <span class="fa fa-plus"></span>
+                            <strong> {{ 'survey.add.option' | translate }} </strong>
+                        </button>
+
+                        <table class="table options" ng-class="{ 'ng-invalid': !hasOption() }">
+                            <tbody>
+                            <tr ng-if="!hasOption()">
+                                <td class="text-danger">
+                                    <strong> {{ 'survey.no.option' | translate }} </strong>
+                                </td>
+                            </tr>
+                            <tr ng-repeat="option in currentEdit.question.options">
+                                <td>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control"
+                                               ng-model="option.name"
+                                               ng-maxlength="100"
+                                               required/>
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-danger" type="button">
+                                                <i class="fa fa-remove"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </form>
+        </section>
+    </div>
+
+</category-detail>

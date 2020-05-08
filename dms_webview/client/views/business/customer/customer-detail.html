@@ -1,0 +1,132 @@
+<category-detail class="use-map">
+    <section class="panel panel-default wrapper">
+        <form name="form">
+
+            <div class="row">
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label> {{ 'distributor' | translate }} * </label>
+                        <name-category-combobox
+                            ng-model="record.distributorId"
+                            datas="distributors"
+                            ng-change="changeDistributor()"
+                            ng-readonly="!isDraft()"
+                            readonly-name="record.distributor.name"
+                            required>
+                        </name-category-combobox>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xs-12" ng-show="record.distributorId != null">
+                    <div class="form-group">
+                        <label> {{ 'area' | translate }} * </label>
+                        <name-category-combobox
+                            ng-model="record.areaId"
+                            datas="areas"
+                            ng-change="changeStatus.markAsChanged()"
+                            ng-readonly="!isDraft()"
+                            readonly-name="record.area.name"
+                            required>
+                        </name-category-combobox>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <label> {{ 'name' | translate }} * </label>
+                        <input type="text"
+                               class="form-control"
+                               ng-model="record.name"
+                               ng-change="changeStatus.markAsChanged()"
+                               ng-readonly="!isDraft()"
+                               ng-maxlength="100"
+                               required>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label> {{ 'code' | translate }} </label>
+                        <input type="text"
+                               class="form-control"
+                               ng-model="record.code"
+                               readonly="readonly">
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label> {{ 'customer.type' | translate }} * </label>
+                        <name-category-combobox
+                            ng-model="record.customerTypeId"
+                            datas="customerTypes"
+                            ng-change="changeStatus.markAsChanged()"
+                            ng-readonly="!isDraft()"
+                            readonly-name="record.customerType.name"
+                            required>
+                        </name-category-combobox>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label> {{ 'customer.mobile' | translate }} * </label>
+                        <input type="text"
+                               class="form-control"
+                               ng-model="record.mobile"
+                               ng-change="changeStatus.markAsChanged()"
+                               ng-maxlength="15"
+                               required>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label> {{ 'customer.phone' | translate }} </label>
+                        <input type="text"
+                               class="form-control"
+                               ng-model="record.phone"
+                               ng-change="changeStatus.markAsChanged()"
+                               ng-maxlength="15">
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label> {{ 'customer.contact' | translate }} </label>
+                        <input type="text"
+                               class="form-control"
+                               ng-model="record.contact"
+                               ng-change="changeStatus.markAsChanged()"
+                               ng-maxlength="30">
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label> {{ 'customer.email' | translate }} </label>
+                        <input type="text"
+                               class="form-control"
+                               ng-model="record.email"
+                               ng-change="changeStatus.markAsChanged()"
+                               ng-maxlength="30">
+                    </div>
+                </div>
+
+                <div class="col-xs-12">
+                    <label> {{ 'customer.location' | translate }} * </label>
+                    <location-selector ng-model="record.location"
+                                       ng-change="changeStatus.markAsChanged()"
+                                       marker-title="'customer.location'"
+                                       required></location-selector>
+                </div>
+
+            </div>
+
+        </form>
+    </section>
+</category-detail>

@@ -1,0 +1,8 @@
+<div class="modal-header">
+    <h3>{{ 'ng-idle.do-something' | translate }}</h3>
+</div>
+<div class="modal-body">
+    <progressbar max="max" value="countdown" animate="true" class="progress-striped active">
+        {{ 'ng-idle.countdown' | translate:{'countdown': countdown} }}
+    </progressbar>
+</div>

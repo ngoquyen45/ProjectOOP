@@ -1,0 +1,13 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/layoutLeft"
+        layout="@layout/view_place_order_product_list_left" />
+
+    <include
+        android:id="@+id/layoutRight"
+        layout="@layout/view_place_order_product_list_right" />
+
+</FrameLayout>

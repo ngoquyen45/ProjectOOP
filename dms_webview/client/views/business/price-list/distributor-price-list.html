@@ -1,0 +1,69 @@
+<basic-view>
+
+    <div class="row title-bar">
+        <div class="col-xs-6">
+            <h3> {{ title | translate }} </h3>
+        </div>
+
+        <div class="col-xs-6 title-btn-bar">
+            <button type="button" class="btn btn-success" ng-click="goToImport()">
+                <span class="fa fa-file-excel-o"></span>
+            </button>
+
+            <button class="btn btn-warning" ng-click="refresh()" ng-if="changeStatus.isChanged">
+                <span class="fa fa-remove"></span>
+            </button>
+
+            <button class="btn btn-success" ng-click="save()" ng-if="changeStatus.isChanged">
+                <span class="fa fa-save"></span>
+            </button>
+        </div>
+    </div>
+
+    <section class="panel panel-default">
+        <form name="form">
+            <div class="virtual-table">
+                <div class="row virtual-table-header">
+                    <div class="col-xs-4 virtual-table-col">
+                        {{ 'name' | translate }}
+                    </div>
+                    <div class="col-xs-4 virtual-table-col">
+                        {{ 'price.list.company.price' | translate }}
+                    </div>
+                    <div class="col-xs-4 virtual-table-col">
+                        {{ 'price.list.distributor.price' | translate }}
+                    </div>
+                </div>
+                <div class="virtual-table-body">
+                    <div ng-repeat="data in datas">
+                        <div class="row virtual-table-row">
+                            <div class="col-xs-4 virtual-table-col">
+                                <strong>{{ data.name }}</strong>
+                            </div>
+                        </div>
+                        <div class="row virtual-table-row has-form-control" ng-repeat="product in data.products">
+                            <div class="col-xs-4 virtual-table-col child-1">
+                                <span>{{ product.name }}</span>
+                            </div>
+                            <div class="col-xs-4 virtual-table-col">
+                                {{ product.price | number:0 }}
+                            </div>
+                            <div class="col-xs-4 virtual-table-col">
+                                <input class="form-control" ng-model="product.distributorPrice"
+                                       ng-change="changeStatus.markAsChanged()"
+                                       fcsa-number="{ min: 1, max: 1000000000, maxDecimals: 0}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row virtual-table-row" ng-if="isEmpty()">
+                        <div class="col-xs-4 virtual-table-col">
+                            {{ 'no.data' | translate }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+
+</basic-view>

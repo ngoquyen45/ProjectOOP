@@ -1,0 +1,12 @@
+[Unit]
+Description=DMSPlus backend service
+After=syslog.target
+
+[Service]
+User=dmsplus
+Environment="JAVA_OPTS=-server -Xrs -Xms256m -Xmx1024m -XX:MaxPermSize=256m -Xss1024k -XX:+UseParallelGC -XX:MaxGCPauseMillis=1500 -XX:GCTimeRatio=9 -XX:+DisableExplicitGC -Djava.io.tmpdir=/var/dmsplus/temp --logging.path=/var/dmsplus/logs --spring.config.location=/var/dmsplus/conf/application.properties"
+ExecStart=/var/dmsplus/bin/backend.war
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target

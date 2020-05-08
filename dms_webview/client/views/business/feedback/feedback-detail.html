@@ -1,0 +1,50 @@
+<basic-view>
+
+    <div>
+        <div class="row title-bar">
+            <div class="col-xs-9">
+                <h3> {{ title | translate }} </h3>
+            </div>
+
+            <div class="col-xs-3 title-btn-bar">
+                <button class="btn btn-warning" ng-click="back()">
+                    <span class="fa fa-arrow-left"></span>
+                </button>
+            </div>
+        </div>
+
+        <section class="panel panel-default mail-container">
+            <div class="panel-body">
+                <div class="mail-header row">
+                    <div class="col-md-8">
+                        <h3> {{ record.customer }} </h3>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="pull-right">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="mail-info">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <strong> {{ record.salesman }} </strong>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="pull-right">
+                                {{ record.createdTime | isoDateTime }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mail-content">
+                    <div ng-repeat="message in record.feedbacks track by $index">
+                        <h4> #{{ $index + 1 }} </h4>
+                        <p> {{ message }} </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</basic-view>

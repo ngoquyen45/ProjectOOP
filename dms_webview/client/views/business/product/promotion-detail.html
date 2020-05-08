@@ -1,0 +1,232 @@
+<category-detail class="promotion" ng-class="{ 'detail-mode': isEditPromotionTypeMode() }">
+
+    <!--HEADER-->
+    <section id="promotion-header" class="panel panel-default wrapper">
+        <form name="form">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label> {{ 'name' | translate }} * </label>
+                        <input type="text" class="form-control" ng-model="record.name"
+                               ng-change="changeStatus.markAsChanged()"
+                               ng-readonly="!isDraft()"
+                               ng-maxlength="100"
+                               required autofocus/>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label> {{ 'start.date' | translate }} * </label>
+                        <div class="input-group ui-datepicker w-full">
+                            <input type="text"
+                                   class="form-control"
+                                   datepicker-popup="{{ dateFormat }}"
+                                   ng-model="startDate.date"
+                                   ng-change="changeStatus.markAsChanged()"
+                                   is-open="startDate.opened"
+                                   datepicker-options="dateOptions"
+                                   close-text="{{ 'close' | translate }}"
+                                   ng-readonly="!isDraft()"
+                                   required>
+                    <span class="input-group-addon" ng-click="open($event, startDate)" ng-if="isDraft()">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label> {{ 'end.date' | translate }} * </label>
+                        <div class="input-group ui-datepicker w-full">
+                            <input type="text"
+                                   class="form-control"
+                                   datepicker-popup="{{ dateFormat }}"
+                                   ng-model="endDate.date"
+                                   ng-change="changeStatus.markAsChanged()"
+                                   is-open="endDate.opened"
+                                   datepicker-options="dateOptions"
+                                   close-text="{{ 'close' | translate }}"
+                                   ng-readonly="!isDraft()"
+                                   required>
+                            <span class="input-group-addon" ng-click="open($event, endDate)" ng-if="isDraft()">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label> {{ 'promotion.apply.for' | translate }} * </label>
+                        <input type="text" class="form-control" ng-model="record.applyFor"
+                               ng-change="changeStatus.markAsChanged()"
+                               ng-readonly="!isDraft()"
+                               ng-maxlength="100"
+                               required/>
+                    </div>
+                </div>
+
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label> {{ 'promotion.description' | translate }} * </label>
+                        <textarea name="" id="" class="form-control" rows="4"
+                                  ng-model="record.description"
+                                  ng-change="changeStatus.markAsChanged()"
+                                  ng-readonly="!isDraft()"
+                                  ng-maxlength="1000"
+                                  required></textarea>
+                    </div>
+                </div>
+
+                <div class="col-xs-12">
+                    <label> {{ 'promotion.detail' | translate }} * </label>
+                    <table class="table table-responsive promotion-detail" ng-class="{ 'ng-invalid': !hasPromotionTypeApplied() }">
+                        <tbody>
+                        <tr ng-repeat="promotionType in promotionTypes | orderBy:sortPromotionType" ng-if="isDraft() || isPromotionTypeApplied(promotionType)">
+                            <td>
+                                <div ng-class="{ 'font-bold text-primary' : isPromotionTypeApplied(promotionType)}">
+                                    {{ promotionType.name }}
+                                </div>
+
+                                <ul class="no-margin visible-xs">
+                                    <li ng-repeat="detail in promotionType.details"
+                                        ng-bind-html="getPromotionDetailDisplay(promotionType.type, detail)">
+                                    </li>
+                                </ul>
+                            </td>
+
+                            <td class="hidden-xs">
+                                <ul class="no-margin">
+                                    <li ng-repeat="detail in promotionType.details"
+                                        ng-bind-html="getPromotionDetailDisplay(promotionType.type, detail)">
+                                    </li>
+                                </ul>
+                            </td>
+
+                            <td class="text-right no-padder col-action" ng-if="isDraft()">
+                                <button class="btn" ng-click="clearPromotionType(promotionType)">
+                                    <span class="fa fa-lg fa-remove text-danger"></span>
+                                </button>
+
+                                <button class="btn" ng-click="editPromotionType(promotionType)">
+                                    <span class="fa fa-lg fa-pencil text-info"></span>
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </form>
+    </section>
+
+    <!--DETAIL-->
+    <div id="promotion-detail">
+        <div class="row title-bar">
+            <div class="col-xs-12 col-sm-9">
+                <h3> {{ currentPromotionType.name | translate }} </h3>
+            </div>
+
+            <div class="col-xs-12 col-sm-3 title-btn-bar">
+                <button class="btn btn-warning" ng-click="cancelPromotionTypeEdit()">
+                    <span class="fa fa-arrow-left"></span>
+                </button>
+
+                <button class="btn btn-primary" ng-click="applyPromotionTypeEdit()">
+                    <span class="fa fa-check"></span>
+                </button>
+            </div>
+        </div>
+
+        <section class="panel panel-default">
+            <form name="form2">
+                <table class="table table-middle no-margin">
+                    <thead>
+                    <tr>
+                        <th colspan="3" class="text-center">
+                            {{ 'promotion.type.condition' | translate }}
+                        </th>
+                        <th colspan="{{getNumberRewardColumn()}}" class="text-center col-reward">
+                            {{ 'promotion.type.reward' | translate }}
+                        </th>
+                    </tr>
+                    <tr class="hidden-xs">
+                        <td colspan="2">
+                            {{ 'promotion.type.condition.product' | translate }}
+                        </td>
+                        <td class="text-center">
+                            {{ 'promotion.type.condition.quantity' | translate }}
+                        </td>
+                        <td class="text-center col-reward" ng-if="isDisplayRewardProduct()">
+                            {{ 'promotion.type.reward.product' | translate }}
+                        </td>
+                        <td class="text-center col-reward" ng-if="isDisplayRewardQuantity()">
+                            {{ 'promotion.type.reward.quantity' | translate }}
+                        </td>
+                        <td class="text-center col-reward" ng-if="isDisplayRewardPercentage()">
+                            %
+                        </td>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr ng-repeat="detail in currentPromtionTypeDetails">
+
+                        <td class="product-photo">
+                            <img ng-src="{{getPhotoLink(detail.condition.product.photo)}}" alt class="img-circle img64_64"/>
+                        </td>
+                        <td>
+                            <strong>{{ detail.condition.product.name }}</strong>
+                            <div>{{ detail.condition.product.code }}</div>
+                        </td>
+                        <td class="w-sm">
+                            <input class="form-control" ng-model="detail.condition.quantity"
+                                   fcsa-number="{ min: 1, max: 1000000, maxDecimals: 0}"
+                                   ng-change="markAsChanged()"/>
+                        </td>
+
+                        <td ng-if="isDisplayRewardProduct()" class="col-reward w-md">
+                            <div class="row padder" ng-if="isDetailUsed(detail)">
+                                <div class="col-sm-10 no-padder" ng-if="!detail.textMode">
+                                    <name-code-category-combobox
+                                        ng-model="detail.reward.productId"
+                                        datas="products"
+                                        required>
+                                    </name-code-category-combobox>
+                                </div>
+                                <div class="col-sm-10 no-padder" ng-if="detail.textMode">
+                                    <input class="form-control" ng-model="detail.reward.productText" ng-if="detail.textMode" required>
+                                </div>
+                                <div class="col-sm-2 no-padder">
+                                    <button class="btn btn-success" ng-click="changeProductMode(detail)">
+                                        <span class="glyphicon glyphicon-barcode" ng-if="!detail.textMode"></span>
+                                        <span class="glyphicon glyphicon-font" ng-if="detail.textMode"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td ng-if="isDisplayRewardQuantity()" class="col-reward w-sm">
+                            <input class="form-control" ng-model="detail.reward.quantity"
+                                   ng-change="markAsChanged()" ng-if="isDetailUsed(detail)"
+                                   fcsa-number="{ min: 1, maxDecimals: 0}"
+                                   required/>
+                        </td>
+
+                        <td ng-if="isDisplayRewardPercentage()" class="col-reward w-sm">
+                            <input class="form-control" ng-model="detail.reward.percentage"
+                                   ng-change="markAsChanged()" ng-if="isDetailUsed(detail)"
+                                   fcsa-number="{ min: 1, max: 100, maxDecimals: 2}"
+                                   required/>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+        </section>
+    </div>
+
+</category-detail>

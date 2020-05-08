@@ -1,0 +1,129 @@
+<category-detail class="no-back no-enable">
+
+    <section class="panel panel-default wrapper">
+        <form name="form">
+
+            <div class="row">
+        <div class="col-md-3 col-sm-12">
+            <div class="form-group">
+                <label> {{ 'system.config.default.product.photo' | translate }} * </label>
+                <single-image ng-model="record.productPhoto"
+                              size-type="standard"
+                              ng-change="changeStatus.markAsChanged()"
+                              required>
+                </single-image>
+            </div>
+        </div>
+
+        <div class="col-md-9 col-sm-12">
+            <div class="row">
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label> {{ 'system.config.default.date.format' | translate }} * </label>
+                        <input type="text" class="form-control" ng-model="record.dateFormat"
+                               ng-change="changeStatus.markAsChanged()" required autofocus/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label> {{ 'system.config.first.date.week' | translate }} * </label>
+                        <input class="form-control" ng-model="record.firstDayOfWeek"
+                               ng-change="changeStatus.markAsChanged()"
+                               fcsa-number="{ min: 0, max: 6, maxDecimals: 0}" required/>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label> {{ 'system.config.minimal.days.in.first.week' | translate }} * </label>
+                        <input class="form-control" ng-model="record.minimalDaysInFirstWeek"
+                               ng-change="changeStatus.markAsChanged()"
+                               fcsa-number="{ min: 1, max: 7, maxDecimals: 0}" required/>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label> {{ 'system.config.complex.schedule' | translate }} * </label>
+                        <div class="switch-form-control no-select">
+                            <label class="switch">
+                                <input type="checkbox" checked ng-model="record.complexSchedule"
+                                       ng-change="changeStatus.markAsChanged()">
+                                <i></i>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label> {{ 'system.config.number.week.of.frequency' | translate }} * </label>
+                        <input class="form-control" ng-model="record.numberWeekOfFrequency"
+                               ng-change="changeStatus.markAsChanged()"
+                               fcsa-number="{ min: 1, max: 4, maxDecimals: 0}" required/>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label> {{ 'system.config.order.date.type' | translate }} * </label>
+                        <name-category-combobox
+                            ng-model="record.orderDateType"
+                            datas="orderDateTypes"
+                            ng-change="changeStatus.markAsChanged()()"
+                            required>
+                        </name-category-combobox>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <label> {{ 'system.config.number.day.order.pending.expire' | translate }} * </label>
+                        <input class="form-control" ng-model="record.numberDayOrderPendingExpire"
+                               ng-change="changeStatus.markAsChanged()"
+                               fcsa-number="{ min: 0, maxDecimals: 0}" required/>
+                    </div>
+                </div>
+
+                <!--<div class="col-xs-12">-->
+                    <!--<div class="form-group">-->
+                        <!--<label> {{ 'system.config.import.customer.template' | translate }} * </label>-->
+                        <!--<single-file-->
+                            <!--ng-model="record.importCustomerTemplate"-->
+                            <!--ng-change="changeStatus.markAsChanged()"-->
+                            <!--accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"-->
+                            <!--required>-->
+                        <!--</single-file>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<div class="col-xs-12">-->
+                    <!--<div class="form-group">-->
+                        <!--<label> {{ 'system.config.import.product.template' | translate }} * </label>-->
+                        <!--<single-file-->
+                            <!--ng-model="record.importProductTemplate"-->
+                            <!--ng-change="changeStatus.markAsChanged()"-->
+                            <!--accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"-->
+                            <!--required>-->
+                        <!--</single-file>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <div class="col-xs-12">
+                    <label> {{ 'system.config.default.location' | translate }} * </label>
+                    <location-selector ng-model="record.location"
+                                       ng-change="changeStatus.markAsChanged()"
+                                       required></location-selector>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+        </form>
+    </section>
+
+</category-detail>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="194dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="104dp"
+    android:paddingRight="24dp">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.44" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.56"
+        android:orientation="vertical">
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/Black12" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.28"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical|right"
+                    android:text="@string/place_order_detail_total_table_1_tb"
+                    android:textAppearance="@style/TextAppearance.Medium.14.PrimaryColor" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical|right"
+                    android:text="@string/place_order_detail_total_table_2_tb"
+                    android:textAppearance="@style/TextAppearance.Medium.14.PrimaryColor" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical|right"
+                    android:text="@string/place_order_detail_total_table_3_tb"
+                    android:textAppearance="@style/TextAppearance.Medium.14.PrimaryColor" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical|right"
+                    android:text="@string/place_order_detail_total_table_4_tb"
+                    android:textAppearance="@style/TextAppearance.Medium.14.PrimaryColor" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.14"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_Total_Quantity"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical|right"
+                    android:textAppearance="@style/TextAppearance.Medium.14.Black54" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.14"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_Total_Amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical|right"
+                    android:textAppearance="@style/TextAppearance.Medium.14.Black54" />
+
+                <TextView
+                    android:id="@+id/tv_Promotion_Amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical|right"
+                    android:textAppearance="@style/TextAppearance.Medium.14.Black54" />
+
+                <TextView
+                    android:id="@+id/tv_Discount_Amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_place_order_product_list_edit_quantity"
+                    android:gravity="center_vertical|right"
+                    android:textAppearance="@style/TextAppearance.Medium.14.Black54" />
+
+                <TextView
+                    android:id="@+id/tv_Total_Payment"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical|right"
+                    android:textAppearance="@style/TextAppearance.Medium.14.Black54" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

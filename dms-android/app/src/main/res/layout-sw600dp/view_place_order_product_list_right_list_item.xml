@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="72dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
+    >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="0.6"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/tvProductName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Regular.14.PrimaryColor"
+            />
+        <TextView
+            android:id="@+id/tvProductCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Regular.14.Black87"
+            />
+
+        <TextView
+            android:id="@+id/tvUOM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Regular.14.Black54"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvQuantity"
+        android:layout_width="0dp"
+        android:layout_weight="0.2"
+        android:layout_height="34dp"
+        android:maxLines="1"
+        android:gravity="right|center_vertical"
+        android:textAppearance="@style/TextAppearance.Regular.20.Black87"
+        android:background="@drawable/bg_place_order_product_list_edit_quantity"
+        />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="0.2"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        >
+        <com.joanzapata.iconify.widget.IconButton
+            android:id="@+id/ib_Remove"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:focusable="false"
+            android:gravity="center_vertical|right"
+            android:text="{md-delete 24dp @color/Black54}"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

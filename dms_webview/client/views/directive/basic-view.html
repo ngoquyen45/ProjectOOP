@@ -1,0 +1,14 @@
+<div class="page basic-view"
+     ng-class="{ 'empty': isEmpty(), 'one-page': isOnePage() }">
+
+    <div id="basic-view-error" ng-if="isError()" ng-include="'views/common/bad-request.html'"></div>
+
+    <div id="basic-view-loading" ng-if="isLoading()">
+        <div class="loader"></div>
+    </div>
+
+    <div id="basic-view-content">
+        <ng-transclude></ng-transclude>
+    </div>
+
+</div>

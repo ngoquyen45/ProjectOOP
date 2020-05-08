@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="104dp"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_Circle"
+            android:layout_width="@dimen/list_avatar_circle_size"
+            android:layout_height="@dimen/list_avatar_circle_size"
+            android:layout_marginLeft="@dimen/list_avatar_circle_padding"
+            android:layout_marginRight="@dimen/list_avatar_circle_padding"
+            android:src="@color/Black38" />
+
+        <com.joanzapata.iconify.widget.IconTextView
+            android:id="@+id/itv_Visit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/list_avatar_circle_size"
+            android:layout_marginLeft="@dimen/list_avatar_circle_padding"
+            android:layout_marginRight="@dimen/list_avatar_circle_padding"
+            android:gravity="center"
+            android:text="{md-call @dimen/list_icon_size @color/white}" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_Time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingRight="24dp"
+        android:singleLine="true"
+        android:textAppearance="@style/TextAppearance.Regular.14.Black87" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_Customer_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.Regular.16.PrimaryColor" />
+
+        <TextView
+            android:id="@+id/tv_Address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.Regular.14.Black54"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_Total"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.5"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:paddingRight="24dp"
+        android:singleLine="true"
+        android:textAppearance="@style/TextAppearance.Regular.14.Black54" />
+
+    <TextView
+        android:id="@+id/tv_Status"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:gravity="center_vertical|center_horizontal"
+        android:textAppearance="@style/TextAppearance.Regular.14.PrimaryColor" />
+
+    <com.joanzapata.iconify.widget.IconTextView
+        android:layout_width="72dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="{md-keyboard-arrow-right 24dp}" />
+
+
+</LinearLayout>
+

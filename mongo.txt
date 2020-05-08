@@ -1,0 +1,11 @@
+Tiêu chuẩn về người xuất sắc vô cùng rõ ràng vì nó đã được biểu hiện bằng con số Iteawon Tập 3 32:42
+
+Có người nỗ lực nhưng ko đạt được nhưng tôi nỗ lực thì sẽ đạt được
+Cuộc sống làng nhàng
+
+CentOS 6.10
+
+
+https://www.hugeserver.com/kb/install-mongodb-centos-6-7/
+Error starting mongod. /var/run/mongodb/mongod.pid exists.
+	https://stackoverflow.com/questions/41678609/mongo-restart-error-var-run-mongodb-mongod-pid-exists

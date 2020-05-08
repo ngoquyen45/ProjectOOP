@@ -1,0 +1,69 @@
+<basic-view>
+
+    <div class="row title-bar">
+        <div class="col-xs-12">
+            <h3> {{ title | translate }} </h3>
+        </div>
+    </div>
+
+    <section class="panel panel-default wrapper">
+        <form name="form">
+            <div class="max-w-md margin-auto">
+                <div class="row">
+
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label> {{ 'month' | translate }} </label>
+                            <div class="input-group ui-datepicker">
+                                <input type="text"
+                                       class="form-control"
+                                       datepicker-mode="'month'"
+                                       datepicker-popup="MM-yyyy"
+                                       ng-model="date.date"
+                                       is-open="date.opened"
+                                       datepicker-options="{startingDay: 1 , minMode:'month'}"
+                                       close-text="{{ 'close' | translate }}"
+                                       required>
+                                <span class="input-group-addon" ng-click="open($event, date)">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label> {{ 'visit.report.type' | translate }} </label>
+                            <div class="row m-n">
+                                <div class="col-sm-4 col-xs-6 no-padder">
+                                    <label class="ui-radio">
+                                        <input name="radio1" type="radio" ng-model="filter.reportType" value="daily">
+                                        <span> {{ 'visit.report.daily' | translate }} </span>
+                                    </label>
+                                </div>
+                                <div class="col-sm-4 col-xs-6 no-padder" ng-if="isUseDistributorFilter()">
+                                    <label class="ui-radio">
+                                        <input name="radio1" type="radio" ng-model="filter.reportType" value="distributor">
+                                        <span> {{ 'visit.report.by.distributor' | translate }} </span>
+                                    </label>
+                                </div>
+                                <div class="col-sm-4 col-xs-6 no-padder">
+                                    <label class="ui-radio">
+                                        <input name="radio1" type="radio" ng-model="filter.reportType" value="salesman">
+                                        <span> {{ 'visit.report.by.salesman' | translate }} </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 text-right">
+                        <button class="btn btn-primary" ng-click="goToReport()"> {{ 'report' | translate }} </button>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </section>
+
+</basic-view>

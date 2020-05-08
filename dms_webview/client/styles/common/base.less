@@ -1,0 +1,171 @@
+// NO SCROLL HORIZONTAL
+#content {
+    overflow-x: hidden;
+}
+
+// TABLE
+.table {
+
+    > thead > tr {
+        > td, > th {
+            font-weight: bold;
+        }
+    }
+
+    &.table-middle {
+        td, th {
+            vertical-align: middle;
+        }
+    }
+
+    td.strike {
+        text-decoration: line-through;
+    }
+
+    td.col-action .btn {
+        background-color: transparent;
+        padding: 12px;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:active {
+            outline: none;
+            .box-shadow(none)
+        }
+
+        &[disabled] span {
+            color: @gray-light !important;
+        }
+    }
+
+    &.table-border-top {
+        thead {
+            border-top: 1px solid @table-border-color;
+        }
+    }
+
+}
+
+// INVALID FIELD
+.ng-invalid {
+    input&, textarea& {
+        border-color: @btn-danger-border !important;
+    }
+
+    > .ui-select-container .ui-select-match .ui-select-toggle {
+        border-color: @btn-danger-border !important;
+    }
+
+    &.single-image {
+        border-color: @btn-danger-border !important;
+    }
+
+    &.location-selector {
+        .input-group {
+            .form-control {
+                border-color: @btn-danger-border !important;
+            }
+        }
+    }
+}
+
+// DATE PICKER
+.ui-datepicker {
+    .dropdown-menu {
+        &:focus {
+            outline: none;
+        }
+        > li {
+            &:focus {
+                outline: none;
+            }
+            > div {
+                &:focus {
+                    outline: none;
+                }
+                > table {
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// CHART CONTAINER
+.chart-container {
+    padding-right: 15px;
+
+    .chart-default {
+        width: 100%;
+        height: 300px;
+    }
+
+    &.chart-long-label {
+        padding-bottom: 100px;
+
+        .flot-text > .flot-x-axis > .flot-tick-label {
+            -ms-transform: rotate(45deg); /* IE 9 */
+            -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+            transform: rotate(45deg);
+            white-space: nowrap !important;
+        }
+    }
+
+}
+
+.must-select-distributor {
+
+    .hide-when-must-select-distributor {
+        display: none;
+    }
+
+}
+
+.virtual-table {
+    .row {
+        margin: 0;
+        > div {
+            padding: 0;
+        }
+    }
+
+    .virtual-table-header {
+        .virtual-table-col {
+            padding: 10px 10px;
+            border-bottom: 2px solid @border-color;
+            font-weight: bold;
+        }
+    }
+
+    .virtual-table-body {
+        .virtual-table-row {
+            border-bottom: 1px solid @border-color;
+            .virtual-table-col {
+                padding: 10px 10px;
+                &.child-1 {
+                    padding-left: 25px;
+                }
+            }
+
+            &.has-form-control {
+                .virtual-table-col {
+                    line-height: 34px;
+                }
+            }
+        }
+    }
+
+    a.underline-link {
+        color: @brand-success;
+        text-decoration: none;
+
+        &:hover {
+            color: darken(@brand-success, 20%);
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,50 @@
+<category-detail>
+
+    <section class="panel panel-default wrapper">
+        <form name="form">
+            <div class="max-w-md margin-auto">
+                <div class="row">
+                    <div class="col-xs-12" ng-if="isUseDistributorFilter()">
+                        <div class="form-group">
+                            <label> {{ 'distributor' | translate }} * </label>
+                            <name-category-combobox
+                                ng-model="record.distributorId"
+                                datas="distributors"
+                                ng-change="changeDistributor()"
+                                ng-readonly="!isDraft()"
+                                readonly-name="record.distributor.name"
+                                required>
+                            </name-category-combobox>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label> {{ 'name' | translate }} * </label>
+                            <input type="text"
+                                   class="form-control"
+                                   ng-model="record.name"
+                                   ng-change="changeStatus.markAsChanged()"
+                                   ng-maxlength="50"
+                                   required
+                                   autofocus
+                                   ng-readonly="!isDraft()">
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12" ng-hide="isDraft()">
+                        <div class="form-group">
+                            <label> {{ 'salesman' | translate }} </label>
+                            <user-combobox
+                                ng-model="record.salesmanId"
+                                datas="salesmen"
+                                ng-change="changeStatus.markAsChanged()">
+                            </user-combobox>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+</category-detail>

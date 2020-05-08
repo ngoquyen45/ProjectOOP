@@ -1,0 +1,46 @@
+<category-detail class="no-back no-enable">
+
+    <section class="panel panel-default wrapper">
+        <form name="form">
+            <div class="max-w-md margin-auto">
+                <div class="row">
+
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label> {{ 'client.config.visit.duration.kpi.minute' | translate }} * </label>
+                            <input class="form-control" ng-model="record.visitDurationKPIinMinute"
+                                   ng-change="changeStatus.markAsChanged()"
+                                   fcsa-number="{ min: 1, maxDecimals: 0}"
+                                   required autofocus/>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label> {{ 'client.config.visit.distance.kpi.km' | translate }} * </label>
+                            <input class="form-control" ng-model="record.visitDistanceKPI"
+                                   ng-change="changeStatus.markAsChanged()"
+                                   fcsa-number="{ min: 0.01, maxDecimals: 2}"
+                                   required />
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label> {{ 'client.config.can.edit.customer.location' | translate }} * </label>
+                            <div class="switch-form-control no-select">
+                                <label class="switch">
+                                    <input type="checkbox" checked ng-model="record.canEditCustomerLocation"
+                                           ng-change="changeStatus.markAsChanged()">
+                                    <i></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </section>
+
+</category-detail>

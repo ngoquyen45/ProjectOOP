@@ -1,0 +1,413 @@
+<resources>
+    <string name="app_name">DMS Plus</string>
+    <string name="app_company_name">Viettel ICT</string>
+    <!-- LOGIN ACTIVITY-->
+    <string name="login_activity_edt_user">Account</string>
+    <string name="login_activity_edt_pass">Password</string>
+    <string name="login_activity_btn_login">LOGIN</string>
+    <!-- Navigation Drawer -->
+    <string name="navigation_drawer_open">Open menu</string>
+    <string name="navigation_drawer_close">Close menu</string>
+    <string name="navigation_drawer_dashboard">Homepage</string>
+    <string name="navigation_drawer_item_customer_register">Customer Registration</string>
+    <string name="navigation_drawer_item_promotion">Promotions</string>
+    <string name="navigation_drawer_item_product">List of Products</string>
+    <string name="navigation_drawer_item_result_sale">Sales Results</string>
+    <string name="navigation_drawer_item_criteria_sale">Sales target</string>
+    <string name="navigation_drawer_item_my_customer">My Customers</string>
+    <string name="navigation_drawer_header_support_sale">Supporting Information</string>
+    <string name="navigation_drawer_item_promotion_program">Promotions</string>
+    <string name="navigation_drawer_item_list_product">Products</string>
+    <string name="navigation_drawer_item_list_order">List of Purchase Orders</string>
+    <string name="navigation_drawer_item_new_customer">New Customer</string>
+    <string name="navigation_drawer_header_system">System</string>
+    <string name="navigation_drawer_item_change_pass">Change Password</string>
+    <string name="navigation_drawer_item_settings">Settings</string>
+    <string name="navigation_drawer_item_exit">Log Off</string>
+    <string name="navigation_drawer_item_visit">Visit Customer</string>
+    <string name="navigation_drawer_item_take_order">Make new order</string>
+    <string name="navigation_drawer_item_exchange">Exchange product</string>
+    <string name="navigation_drawer_item_return">Return product</string>
+    <string name="coming_soon_feature">The function has been under construction, we will update to you later</string>
+
+    <!-- Error -->
+    <string name="error">Error</string>
+    <string name="error_connect">Connection error. Please, try again!</string>
+    <string name="error_connect_server">An error just occurred while connecting to server.</string>
+    <string name="error_no_network">An error just happened in connecting to Internet. Please check network connection and try it again!</string>
+    <string name="error_network_turned_off">Your Internet connection is not enabled. Do you want to turn it on?</string>
+    <string name="error_location_service_turn_off">Your location services is not enabled. Do you want to turn it on?</string>
+    <string name="error_unknown">Unknown error. Please try again later.</string>
+    <string name="error_not_have_cammera_app">Camera software is not available.</string>
+    <string name="error_internal_server">Error occurred on the server.</string>
+    <string name="error_bad_request">Request submitted invalid. \ nError Type: {0} \ n Notification: {1}</string>
+    <string name="warning">Warning</string>
+    <string name="notify">Notification</string>
+    <string name="error_saving_photo">Can not save this photo.</string>
+
+    <string name="message_please_wait">Please wait</string>
+    <string name="message_loading_data">Loading data</string>
+    <string name="message_new_data">Please wait</string>
+    <string name="message_update_data">Updating data</string>
+
+    <string name="error_invalid_param">Request was failed to perform. Please double check your data and try again!</string>
+    <string name="error_user_not_found">User was not found. Please double check your data and try again!</string>
+    <string name="error_product_not_found">Product was not found. Please double check your data and try again!</string>
+    <string name="error_area_not_found">The requested area was not found. Please double check your data and try again!</string>
+    <string name="error_customer_type_not_found">The requested type of customer was not found. Please double check your data and try again!</string>
+    <string name="error_customer_not_found">The requested customer was not found. Please double check your data and try again!</string>
+    <string name="unknow">Unknow</string>
+
+    <!-- Login -->
+    <string name="login_btn">LOGIN</string>
+    <string name="login_hint_user">Account</string>
+    <string name="login_hint_email">Email</string>
+    <string name="login_hint_pass">Password</string>
+    <string name="login_retry_login">Retry</string>
+    <string name="login_setting_server">Configuration</string>
+    <string name="login_error_email">Invalid Account</string>
+    <string name="login_error_pass">Invalid Password</string>
+    <string name="login_error_invalid_credential">Login information is incorrect. Please try again.</string>
+    <string name="login_error_expired">Login session has been expired.</string>
+    <string name="login_error_will_be_logout">You are about to be logged off.</string>
+    <!-- Confirm -->
+    <string name="confirm_yes">Agree</string>
+    <string name="confirm_no">No</string>
+    <string name="confirm_ok">Agree</string>
+    <string name="confirm_close">Close</string>
+    <string name="confirm_cancel">Cancel</string>
+    <string name="confirm_continue">Continue</string>
+    <string name="confirm_retry">Retry</string>
+    <string name="confirm_confirm">Confirm</string>
+    <string name="confirm_set_time">Set</string>
+    <string name="confirm_cancel_time">Cancel</string>
+    <!-- Server switch -->
+    <string name="setting_server_title">Select a server</string>
+    <string name="setting_server_save">Save</string>
+    <string name="setting_server_cancel">Cancel</string>
+    <!-- Symbols -->
+    <string name="symbol_percentage">%</string>
+    <string name="symbol_slash">/</string>
+    <string name="symbol_parentheses_left">(</string>
+    <string name="symbol_parentheses_right">)</string>
+    <string name="symbol_dashes">-</string>
+
+    <!-- Customer visit status -->
+    <string name="status_visit_visiting">Visiting</string>
+    <string name="status_visit_visited">Visited</string>
+    <string name="status_visit_not_visited">Ready</string>
+
+    <!-- Order status -->
+    <string name="status_order_waiting">Pending</string>
+    <string name="status_order_accepted">Approved</string>
+    <string name="status_order_rejected">Refused</string>
+
+    <!-- Home Page -->
+    <string name="home_page_title">Homepage</string>
+    <string name="home_page_revenue">SALES</string>
+    <string name="home_page_productivity">PRODUCTIVITY</string>
+    <string name="home_page_sales_days">SALES DAY</string>
+    <string name="home_page_visit">VISITS</string>
+    <string name="home_page_target">Sales target</string>
+    <string name="home_page_view_detail">DETAILS</string>
+
+    <!-- Sales detail -->
+    <string name="sales_detail_revenue_title">Sales Detail</string>
+    <string name="sales_detail_productivity_title">Productivity Details</string>
+    <string name="sales_detail_no_result">No any order created in this month</string>
+    <string name="sales_detail_loading">Loading…</string>
+
+    <!-- Monthly summary -->
+    <string name="sales_daily_summary_title">Sales result by day</string>
+    <string name="sales_daily_revenue">Sales</string>
+    <string name="sales_daily_productivity">Productivity</string>
+    <string name="sales_daily_order">Purchase order</string>
+
+    <!-- Search View -->
+    <string name="action_search">Search</string>
+
+    <!-- Customer list -->
+    <string name="customer_list_no_planned_customer">There is not any customer planned to visit today.</string>
+    <!-- Customer Info -->
+    <string name="customer_info_title">Customer Information</string>
+    <string-array name="general_info_tabs_title">
+        <item>GENERAL</item>
+        <item>STATISTIC</item>
+        <item>LOCATION</item>
+    </string-array>
+    <string-array name="general_info_tabs_title_tb">
+        <item>GENERAL</item>
+        <item>LOCATION</item>
+    </string-array>
+    <string-array name="sale_type">
+        <item>Pre-Sale</item>
+        <item>Van-Sale</item>
+    </string-array>
+    <string name="customer_info_perform_call_message">Call phone</string>
+    <string name="customer_info_perform_call_tittle">Make a call</string>
+    <string name="customer_info_update_mobile_successful">Update successful mobile number</string>
+    <string name="customer_info_update_mobile_unsuccessful">There is an error happened while updating customer\'s mobile number.</string>
+    <string name="customer_info_update_home_successful">Update successful phone number</string>
+    <string name="customer_info_update_home_unsuccessful">There is an error happened while updating customer\'s phone number.</string>
+    <string name="customer_info_update_location_successful">Update successful location</string>
+    <string name="customer_info_update_location_unsuccessful">There is an error happened while updating customer\'s location.</string>
+    <string name="customer_info_update_location_unchange">There is no any change in the customer\'s  location.</string>
+
+    <string name="customer_info_cardview_outstanding_1">Productivity in last month</string>
+    <string name="customer_info_cardview_outstanding_2">Productivity in current month</string>
+    <string name="customer_info_cardview_outstanding_3">Purchase order in current month</string>
+
+    <string name="customer_info_recent_revenue_subtitle">Sales in %1$d most recent month(s)</string>
+    <string name="customer_info_recent_order_subtitle">List of %1$d most recent purchase order(s)</string>
+    <string name="customer_info_recent_order_table_1">Date</string>
+    <string name="customer_info_recent_order_table_2">SKU</string>
+    <string name="customer_info_recent_order_table_3">Value</string>
+
+    <!-- Customer Visit-->
+    <string name="customer_visit_view_detail">DETAILS</string>
+    <string name="customer_visit_view_close">CLOSE</string>
+
+    <string name="customer_visit_menu_finish_visit">End of visit</string>
+    <string name="customer_visit_content_start_begin_visit">START VISIT</string>
+
+    <string name="customer_visit_actions_take_photo">Take photo</string>
+    <string name="customer_visit_actions_view_photo">View photo</string>
+    <string name="customer_visit_actions_no_photo">No photo</string>
+    <string name="customer_visit_actions_view_close_visit_photo">View closed store photo</string>
+    <string name="customer_visit_actions_send_customer_feedback">Feedback</string>
+    <string name="customer_visit_actions_take_order">Purchase</string>
+    <string name="customer_visit_actions_no_order">No Order</string>
+    <string name="customer_visit_actions_send_opponent_info">Survey</string>
+    <string name="customer_visit_actions_rate_exhibit">Exhibition</string>
+    <string name="customer_visit_actions_take_order_already_visited">DETAIL</string>
+    <string name="customer_visit_actions_take_order_not_visited">ORDER</string>
+    <string name="customer_visit_actions_order_value">TOTAL</string>
+    <string name="customer_visit_actions_exhibit_point">EXHIBITION RATING</string>
+
+    <string name="customer_visit_message_end_visit_title">End of visit</string>
+    <string name="customer_visit_message_end_visit_message_sending">Sending…</string>
+    <string name="customer_visit_message_end_visit_message_success">Your visit has completed successfully</string>
+    <string name="customer_visit_message_locating">Locating…</string>
+    <string name="customer_visit_message_cannot_locate">Can not determine your current location. Do you want to continue?</string>
+    <string name="customer_visit_message_location_not_accuracy">Distance between you and your customer has been determined is greater than allowed range. Do you want to continue?</string>
+    <string name="customer_visit_message_visit_closed">This customer had been noted to be closed this time</string>
+    <string name="customer_visit_message_cannot_close_when_visiting">Can not back to other pages while you are visiting a customer.</string>
+    <string name="customer_visit_message_visit_have_no_order">No order created in the visit!</string>
+    <string name="customer_visit_message_visit_have_no_photo">No photo taken in this visit!</string>
+    <string name="customer_visit_message_visit_already_ended">This visit had been finished!</string>
+    <string name="customer_visit_message_visit_have_no_feedback">No any feedback received from the visit. Do you see previous feedbacks?</string>
+    <string name="customer_visit_message_end_visit_confirm">Do you want to finish your visit?</string>
+    <string name="customer_visit_message_send_visit_photo_fail">Can not send visit image. Do you want to end visit anyway?</string>
+    <string name="customer_visit_message_visit_no_input_opponent_info">None of competition info is evaluated today</string>
+    <string name="customer_visit_message_visit_no_rate_exhibition">None of exhibition is evaluated today</string>
+    <string name="customer_visit_location_turn_off_manually">Positioning data interrupted. Please try again</string>
+	
+    <string name="customer_visit_number_of_feedback">Have %1$d feedback</string>
+    <string name="customer_visit_number_of_exhibition_rated">Have %1$d exhibition </string>
+    <string name="customer_visit_number_of_survey_done">Have %1$d survey was done</string>
+	
+    <!-- Place order -->
+    <string name="place_order_orders_title">Choose item</string>
+    <string name="place_order_orders_choose_sale_type">Choose sale type</string>
+    <string name="place_order_orders_detail">Order detail</string>
+    <string name="place_order_orders_cost_total">TOTAL</string>
+    <string name="place_order_product_message_empty_cart">Please select any product to purchase order?</string>
+    <string name="place_order_product_message_positive_quantity">Quantity must be greater than 0.</string>
+    <!-- Place order promotion -->
+    <string name="place_order_promotion_title">Promotion</string>
+    <string name="place_order_promotion_no_promotion">Have not promotion for this purchase order</string>
+    <!-- Route -->
+    <string name="customer_route_menu">Visiting Schedule Map</string>
+    <string name="customer_route_title">Visiting Schedule Map</string>
+    <string name="google_play_service_not_support_title">An error just happen in calling Google Play Service</string>
+    <string name="google_play_service_not_support_message">Your device does not support running Google Play Service</string>
+    <string name="customer_route_view_more">VIEW INFO</string>
+    <string name="customer_route_visit_now">START VISIT</string>
+    <!--Location -->
+    <string name="customer_register_confirm_turn_on_location">Can not locate your position. Please enable GPS function.</string>
+    <string name="title_activity_place_order">PlaceOrderActivity</string>
+    <!-- Number Dialog -->
+    <string name="number_input_dialog_title">Input number</string>
+    <string name="number_input_dialog_title_money">Input discount</string>
+    <!-- Promotion Dialog -->
+    <string name="detail_information">Detail of promotion programs</string>
+    <string name="promotion_available_list_header_1">Name</string>
+    <string name="promotion_available_list_header_2">Start</string>
+    <string name="promotion_available_list_header_3">End</string>
+    <string name="promotion_available_title">Promotion</string>
+    <string name="promotion_available_dialog_time">Time:</string>
+    <string name="promotion_available_dialog_time_content">From date {0} to date{1}</string>
+    <string name="promotion_available_dialog_focus_to">Applied area:</string>
+    <string name="promotion_available_dialog_content">Description:</string>
+    <!-- Place order delivery -->
+    <string name="place_order_delivery_title">Delivery</string>
+    <string name="place_order_delivery_type">Delivery type</string>
+    <string name="place_order_delivery_time">Delivery time</string>
+    <string name="place_order_delivery_note">Note</string>
+    <string-array name="place_order_promotion_delivery_method">
+        <item>Immediately</item>
+        <item>Today</item>
+        <item>On another day</item>
+    </string-array>
+    <string name="place_order_delivery_pick_date_holder">dd/MM/yyyy</string>
+    <string name="place_order_delivery_pick_time_holder">hh:mm</string>
+    <string name="place_order_promotion_delivery_day">Enter delivery date</string>
+    <string name="place_order_promotion_delivery_time">Hour</string>
+    <string name="place_order_promotion_message_require_delivery_date">Please enter delivery time.</string>
+    <string name="place_order_promotion_message_delivery_date_must_after_today">Delivery date must be after today.</string>
+    <string name="place_order_promotion_message_need_calculate_promotion">Promotions has been calculating automatically. Please wait a minute.</string>
+    <string name="place_order_finish_product_header_product">Purchase Order Information</string>
+    <string name="place_order_finish_product_header_promotion">ITEM</string>
+    <string name="place_order_detail_total_table_1">Subtotal</string>
+    <string name="place_order_detail_total_table_2">Promotion</string>
+    <string name="place_order_detail_total_table_3">Discount</string>
+    <string name="place_order_detail_total_table_4">Total</string>
+    <!-- Place order Finish-->
+    <string name="place_order_finish_title">Purchase Order Information</string>
+    <string name="place_order_finish_message_confirm_title">Confirm</string>
+    <string name="place_order_finish_message_confirm_message">Purchase order will be sent to the distributor, make sure that your entered information is correct.</string>
+    <string name="place_order_finish_message_success_title">A purchase order has been created.</string>
+    <string name="place_order_finish_message_success_message">Purchase order information has been saved!</string>
+    <!-- Take PHOTO -->
+    <string name="visit_take_photo_title">Take a photo</string>
+    <string name="visit_view_photo_title">View visit photo</string>
+    <!-- Feedback-->
+    <string name="visit_feedback_edittext_hint">Input text</string>
+    <string name="visit_feedback_title">Feedback</string>
+    <string name="visit_feedback_message_visit_have_no_feedback">No any feedback received from the visit. Do you see previous feedbacks?</string>
+    <string name="visit_feedback_confirm_message">Save feedback</string>
+    <string name="visit_feedback_confirm_ok">Save</string>
+    <string name="visit_feedback_confirm_cancel">Cancel</string>
+    <!--Survey -->
+    <string name="visit_survey_list_title">Survey</string>
+    <string name="visit_survey_list_item_pending">{md-restore @dimen/list_icon_size }</string>
+    <string name="visit_survey_list_item_complete">{md-done @dimen/list_icon_size}</string>
+    <string name="visit_survey_edit_title">Survey content</string>
+    <!-- Exhibtion -->
+    <string name="visit_exhibition_rating_list_title">Exhibition</string>
+    <string name="visit_exhibition_rating_list_item_pending">{md-restore @dimen/list_icon_size }</string>
+    <string name="visit_exhibition_rating_list_item_complete">{md-done @dimen/list_icon_size }</string>
+    <string name="visit_exhibition_rating_edit_title">Exhibition</string>
+    <!-- Close visit -->
+    <string name="close_visit_title">Capture customer off work</string>
+    <string name="close_visit_uploading_image">Sending…</string>
+    <!-- Empty -->
+    <string name="empty_promotion">No promotion program available</string>
+    <string name="empty_order">No order in today</string>
+    <string name="empty_network_error">Connection interrupted</string>
+    <string name="empty_feedback">Feedback is empty</string>
+    <string name="empty_selected_product_list">You did not choose any product</string>
+    <string name="empty_survey">No survey available</string>
+    <string name="empty_search_result">No results found</string>
+    <string name="empty_product">No products available</string>
+    <string name="empty_exchange_product">No exchange products today</string>
+    <string name="empty_return_product">No return products today</string>
+    <string name="empty_customer">Empty list</string>
+    <!-- Promotion List -->
+    <string name="promotion_list_title">Promotion</string>
+    <string name="promotion_detail_time">Date</string>
+    <string name="promotion_detail_focus_to">Area</string>
+    <string name="promotion_detail_content">Description</string>
+    <!-- Product List -->
+     <string name="click_to_retry">Try again</string>
+    <string name="product_list_title">Products</string>
+    <string name="product_list_detail_code">Code</string>
+    <string name="product_list_detail_price">Price</string>
+    <string name="product_list_detail_description">Description</string>
+    <!-- Order List -->
+    <string name="order_list_title">List of purchase orders</string>
+    <string name="order_customer_list_title">Choose customer</string>
+    <!-- New Customer -->
+    <string name="register_customer_list_title">New customer</string>
+    <string name="register_customer_title">Register customer</string>
+    <string name="register_customer_confirm_text"> Are you sure register this customer?</string>
+    <string name="register_customer_unsuccessful">Register error</string>
+    <string name="register_customer_successful">Register successfully</string>
+    <string name="register_customer_error_customer_name">No name</string>
+    <string name="register_customer_error_address">No address</string>
+    <string name="register_customer_error_representative">No representative</string>
+    <string name="register_customer_error_mobile_phone">No mobile number</string>
+    <string name="register_customer_error_home_phone">No phone number</string>
+    <string name="register_customer_error_email">No input email</string>
+    <string name="register_customer_error_location">No input location</string>
+    <string name="register_customer_customer_location">Customer location</string>
+    <string name="register_customer_customer_type">Customer type</string>
+    <string name="register_customer_customer_area">District</string>
+    <string name="register_customer_customer_name">Customer name</string>
+    <string name="register_customer_address">Address</string>
+    <string name="register_customer_mobile_phone">Mobile number</string>
+    <string name="register_customer_home_phone">Phone number</string>
+    <string name="register_customer_email">Email</string>
+    <string name="register_customer_representative">Representative</string>
+    <string name="register_customer_note">Note</string>
+    <string name="register_customer_imgs">Customer image</string>
+    <string name="register_customer_wrong_location">Unable to find customer location.</string>
+    <string name="register_customer_wrong_customer_type">Unable to define customer type. Please reload this form</string>
+    <string name="register_customer_wrong_customer_district">Unable to define customer district. Please reload this form</string>
+	
+    <!-- Change Password -->
+    <string name="change_password_title">Change password</string>
+    <string name="change_password_name">Name</string>
+    <string name="change_password_login_name">Account</string>
+    <string name="change_password_current_password">Current password</string>
+    <string name="change_password_new_password">New password</string>
+    <string name="change_password_retype_password">Confirm password</string>
+    <string name="change_password_wrong_password">Password incorrect</string>
+    <string name="change_password_successful">Change password successfully</string>
+    <string name="change_password_number_characters">Password must greater than %1$d character(s)</string>
+    <string name="change_password_not_match">Retype password does not mach</string>
+    <string name="change_password_null_oldpassword">Must input old password</string>
+    <string name="action_settings">Settings</string>
+    <string name="customer_visit_customer_info">Customer Information</string>
+    <string name="customer_visit_customer_phone">Phone</string>
+    <string name="customer_visit_customer_visit_status">Visit Status</string>
+    <string name="order_customer_header_time">Created Time</string>
+    <string name="order_customer_header_customer">Customer</string>
+    <string name="order_customer_header_status">Order Status</string>
+    <string name="order_customer_header_total">Total</string>
+    <string name="place_order_detail_total_table_1_tb">SUBTOTAL</string>
+    <string name="place_order_detail_total_table_2_tb">PROMOTION</string>
+    <string name="place_order_detail_total_table_3_tb">DISCOUNT</string>
+    <string name="place_order_detail_total_table_4_tb">TOTAL</string>
+    <string name="place_order_product_order_detail">ORDER DETAIL</string>
+    <string name="place_order_product_quantity">Quantity</string>
+    <string name="place_order_product_total">Total</string>
+    <string name="product_list_items">Items</string>
+    <string name="product_list_info">Product Information</string>
+    <string name="product_list_uom">UOM</string>
+    <string name="register_customer_list_header_0">Customer Information</string>
+    <string name="register_customer_list_header_1">Phone</string>
+    <string name="register_customer_list_header_2">Registration Date</string>
+    <string name="register_customer_list_header_3">Registion Status</string>
+    <string name="register_customer_list_status_0">Pending</string>
+    <string name="register_customer_list_status_1">Approved</string>
+    <string name="register_customer_list_status_2">Refused</string>
+    <string name="sales_daily_days">Date of business</string>
+    <string name="sales_detail_customer_info">Customer Information</string>
+    <string name="sales_detail_sale_result">Sales Result</string>
+    <string name="status_survey_completed">Done</string>
+    <string name="status_survey_completing">On progress</string>
+    <string name="status_survey_not_completed">Ready</string>
+    <string name="visit_survey_list_header_1">Survey Program</string>
+    <string name="visit_survey_list_header_2">Duration</string>
+    <string name="visit_survey_list_header_3">No. of Questions</string>
+    <string name="visit_survey_list_header_4">Status</string>
+    <!-- Settings -->
+    <string name="settings_change_themes">Appearance and themes</string>
+    <string name="settings_change_language">Language</string>
+    <string name="settings_change_map">Map</string>
+    <string name="settings_info">About us</string>
+        <!-- Exchange - return -->
+    <string name="exchange_return_confirm_title">Confirm</string>
+    <string name="exchange_return_confirm_message_exchange">Exchange product will be sent to the distributor, make sure that your entered information is correct</string>
+    <string name="exchange_return_confirm_message_return">Return product will be sent to the distributor, make sure that your entered information is correct</string>
+    <string name="exchange_return_message_exchange_empty_cart">Do not have any exchange product in list?</string>
+    <string name="exchange_return_message_return_empty_cart">Do not have any return product in list?</string>
+    <string name="exchange_return_message_positive_quantity">Quantity must be greater than 0</string>
+    <string name="exchange_return_title_exchange">Detail of exchange products</string>
+    <string name="exchange_return_title_return">Detail of return products</string>
+    <string name="exchange_return_total">TOTAL</string>
+    <string name="exchange_return_product_information">Product Information</string>
+    <string name="exchange_return_product_exchange_list">EXCHANGE LIST</string>
+    <string name="exchange_return_product_return_list">RETURN LIST</string>
+</resources>

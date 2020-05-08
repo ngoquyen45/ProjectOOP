@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/list_tile_height_three_line"
+    android:background="@color/white"
+    android:focusable="true"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    >
+
+    <com.joanzapata.iconify.widget.IconButton
+        android:id="@+id/rl_Remove"
+        android:layout_width="@dimen/second_keyline"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:focusable="false"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/padding_standard"
+        android:text="{md-delete 24dp @color/Black54}"
+        />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/tv_Product_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.Regular.16.PrimaryColor"/>
+
+        <TextView
+            android:id="@+id/tv_Product_Code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.Regular.14.Black87"/>
+
+        <TextView
+            android:id="@+id/tv_Product_Price_UOM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.Regular.14.Black54"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_Quantity"
+        android:layout_width="@dimen/second_keyline"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin_standard"
+        android:layout_marginRight="@dimen/margin_standard"
+        android:clickable="true"
+        android:focusable="false"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_Quantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_place_order_product_list_edit_quantity"
+            android:gravity="center_vertical|right"
+            android:maxLines="1"
+            android:paddingBottom="@dimen/padding_short"
+            android:textAppearance="@style/TextAppearance.Regular.20.Black87"
+            />
+    </LinearLayout>
+</LinearLayout>

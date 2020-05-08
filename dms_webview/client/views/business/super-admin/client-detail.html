@@ -1,0 +1,220 @@
+<category-detail class="no-enable use-map">
+
+    <form name="form">
+        <div class="row">
+            <div class="col-sm-6">
+                <section class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong>{{ 'client.info' | translate }}</strong>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label> {{ 'name' | translate }} * </label>
+                                    <input type="text" class="form-control" ng-model="record.name"
+                                           ng-change="changeStatus.markAsChanged()" required autofocus/>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label> {{ 'code' | translate }} * </label>
+                                    <input type="text" class="form-control" ng-model="record.code"
+                                           ng-change="changeStatus.markAsChanged()" required/>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 m-b" ng-if="isEdit()">
+                                <button class="btn btn-primary w-full" ng-click="createSampleMasterData()">
+                                    {{ 'Create Sample Master Data' |  translate }}
+                                </button>
+                            </div>
+
+                            <div class="col-lg-12 m-b" ng-if="isEdit()">
+                                <button class="btn btn-primary w-full" ng-click="goToImport()">
+                                    {{ 'Import Master Data' |  translate }}
+                                </button>
+                            </div>
+
+                            <div class="col-lg-12" ng-if="isEdit()">
+                                <button class="btn btn-primary w-full" ng-click="generateVisitAndOrder()">
+                                    {{ 'Generate Sample Visit And Order' |  translate }}
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-sm-6">
+                <section class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong>{{ 'client.config' | translate }}</strong>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label> {{ 'client.config.visit.duration.kpi.minute' | translate }} * </label>
+                                    <input class="form-control" ng-model="record.clientConfig.visitDurationKPIinMinute"
+                                           ng-change="changeStatus.markAsChanged()"
+                                           fcsa-number="{ min: 1, maxDecimals: 0}"
+                                           required/>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label> {{ 'client.config.visit.distance.kpi.km' | translate }} * </label>
+                                    <input class="form-control" ng-model="record.clientConfig.visitDistanceKPI"
+                                           ng-change="changeStatus.markAsChanged()"
+                                           fcsa-number="{ min: 0.1, maxDecimals: 2}"
+                                           required />
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label> {{ 'client.config.can.edit.customer.location' | translate }} * </label>
+                                    <div class="switch-form-control no-select">
+                                        <label class="switch">
+                                            <input type="checkbox" checked ng-model="record.clientConfig.canEditCustomerLocation"
+                                                   ng-change="changeStatus.markAsChanged()">
+                                            <i></i>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12">
+                                <label> {{ 'client.config.default.location' | translate }} * </label>
+                                <location-selector ng-model="record.clientConfig.location"
+                                                   ng-change="changeStatus.markAsChanged()"
+                                                   required></location-selector>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-sm-12 calendar-config">
+                <section class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong>{{ 'calendar.config' | translate }}</strong>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <table class="table table-bordered table-responsive table-middle">
+                                    <thead>
+                                    <tr>
+                                        <th colspan="2"> {{ 'calendar.config.working.days' | translate }} </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td> {{ 'monday' | translate }} </td>
+                                        <td class="col-checkbox">
+                                            <i-check ng-model="record.calendarConfig.monday" ng-change="changeStatus.markAsChanged()"></i-check>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> {{ 'tuesday' | translate }} </td>
+                                        <td class="col-checkbox">
+                                            <i-check ng-model="record.calendarConfig.tuesday" ng-change="changeStatus.markAsChanged()"></i-check>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> {{ 'wednesday' | translate }} </td>
+                                        <td class="col-checkbox">
+                                            <i-check ng-model="record.calendarConfig.wednesday" ng-change="changeStatus.markAsChanged()"></i-check>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> {{ 'thursday' | translate }} </td>
+                                        <td class="col-checkbox">
+                                            <i-check ng-model="record.calendarConfig.thursday" ng-change="changeStatus.markAsChanged()"></i-check>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> {{ 'friday' | translate }} </td>
+                                        <td class="col-checkbox">
+                                            <i-check ng-model="record.calendarConfig.friday" ng-change="changeStatus.markAsChanged()"></i-check>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> {{ 'saturday' | translate }} </td>
+                                        <td class="col-checkbox">
+                                            <i-check ng-model="record.calendarConfig.saturday" ng-change="changeStatus.markAsChanged()"></i-check>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> {{ 'sunday' | translate }} </td>
+                                        <td class="col-checkbox">
+                                            <i-check ng-model="record.calendarConfig.sunday" ng-change="changeStatus.markAsChanged()"></i-check>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <table class="table table-bordered table-responsive table-middle">
+                                    <thead>
+                                    <tr>
+                                        <th>
+                                            {{ 'calendar.config.holidays' | translate }}
+                                        </th>
+                                        <th class="col-checkbox">
+                                            <a href="javascript:void(0)" class="btn-icon btn-icon-xs btn-primary" ng-click="addHoliday()">
+                                                <i class="fa fa-plus"></i>
+                                            </a>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td colspan="2" ng-if="holidaysEmpty()">
+                                            {{ 'no.data' | translate }}
+                                        </td>
+                                    </tr>
+                                    <tr ng-repeat="holidayDate in record.calendarConfig.holidayDates">
+                                        <td>
+                                            <div class="input-group ui-datepicker">
+                                                <input type="text"
+                                                       class="form-control"
+                                                       datepicker-popup="{{ dateFormat }}"
+                                                       ng-model="holidayDate.date"
+                                                       ng-change="changeStatus.markAsChanged()"
+                                                       is-open="holidayDate.opened"
+                                                       datepicker-options="dateOptions"
+                                                       close-text="{{ 'close' | translate }}"
+                                                       required>
+                                        <span class="input-group-addon" ng-click="open($event, holidayDate)">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0)" class="btn-icon btn-icon-xs btn-danger" ng-click="removeHoliday(holidayDate)">
+                                                <i class="fa fa-remove"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+    </form>
+
+</category-detail>

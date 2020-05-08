@@ -1,0 +1,100 @@
+@unchecked-color: #D8DCDE;
+
+.icheckbox {
+    button:focus {
+        outline: none;
+    }
+}
+
+.icheckbox,
+.iradio {
+  display: inline-block;
+  *display: inline;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.icheckbox > button,
+.iradio > button {
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+}
+
+.icheckbox[disabled],
+.iradio[disabled] {
+  -webkit-opacity: 0.65;
+  -moz-opacity: 0.65;
+  opacity: 0.65;
+
+  button {
+    cursor: not-allowed;
+  }
+}
+
+.icheckbox {
+  border-radius: 2px;
+}
+
+.iradio {
+  border-radius: 50%;
+}
+
+.icheckbox {
+  background: @unchecked-color;
+}
+
+.icheckbox.checked {
+  background: @brand-primary url('directive/images/checked.png') no-repeat;
+}
+
+.icheckbox.indeterminate {
+  background: @brand-primary url('directive/images/indeterminate.png') no-repeat;
+}
+
+.iradio {
+  background: @brand-primary url('directive/images/radio-unchecked.png') no-repeat;
+}
+
+.iradio.checked {
+  background: @brand-primary url('directive/images/radio-checked.png') no-repeat;
+}
+
+/* Retina support */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-moz-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min-device-pixel-ratio: 1.5) {
+  .icheckbox.checked {
+    background: @brand-primary url('directive/images/checked@2x.png') no-repeat;
+    -webkit-background-size: 20px 20px;
+    background-size: 20px 20px;
+  }
+
+  .icheckbox.indeterminate {
+    background: @brand-primary url('directive/images/indeterminate@2x.png') no-repeat;
+    -webkit-background-size: 20px 20px;
+    background-size: 20px 20px;
+  }
+
+  .iradio {
+    background: @brand-primary url('directive/images/radio-unchecked@2x.png') no-repeat;
+    -webkit-background-size: 20px 20px;
+    background-size: 20px 20px;
+  }
+
+  .iradio.checked {
+    background: @brand-primary url('directive/images/radio-checked@2x.png') no-repeat;
+    -webkit-background-size: 20px 20px;
+    background-size: 20px 20px;
+  }
+
+}

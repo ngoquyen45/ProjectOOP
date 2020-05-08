@@ -1,0 +1,95 @@
+<basic-view>
+    <div>
+        <div class="row title-bar">
+            <div class="col-xs-9">
+                <h3> {{ title | translate }} </h3>
+            </div>
+            <div class="col-xs-3 title-btn-bar">
+                <button type="button" class="btn btn-info" ng-click="refresh()">
+                    <span class="fa fa-refresh"></span>
+                </button>
+            </div>
+        </div>
+
+        <section class="panel panel-default table-dynamic">
+            <table class="table table-middle table-border-top">
+                <thead class="hidden-xs">
+                <tr>
+                    <th>
+                        {{ 'created.time' | translate }}
+                    </th>
+                    <th>
+                        {{ 'order.no' | translate }}
+                    </th>
+                    <th>
+                        {{ 'distributor' | translate }}
+                    </th>
+                    <th>
+                        {{ 'customer' | translate }}
+                    </th>
+                    <th>
+                        {{ 'salesman' | translate }}
+                    </th>
+                    <th>
+                        {{ 'order.total' | translate }}
+                    </th>
+                    <th class="w-xxs"></th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr ng-repeat="record in records">
+                    <td>
+                        {{ record.createdTime | isoDateTime }}
+                    </td>
+                    <td>
+                        {{ record.code }}
+                    </td>
+                    <td>
+                        {{ record.distributor.name }}
+                    </td>
+                    <td>
+                        {{ record.customer.name }}
+                    </td>
+                    <td>
+                        {{ record.createdBy.fullname }}
+                    </td>
+                    <td>
+                        {{ record.grandTotal | number }}
+                    </td>
+                    <td class="text-right no-padder col-action">
+                        <button class="btn" ng-click="goToDetail(record)">
+                            <span class="fa fa-2x fa-angle-right"></span>
+                        </button>
+                    </td>
+                </tr>
+                <tr ng-if="isEmpty()">
+                    <td colspan=" {{ 2 + columns.length }} ">
+                        {{ 'no.data' | translate }}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="wrapper-sm pagination-container hide-when-must-select-distributor">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <hr class="m-b-sm m-t-none m-l-n-sm m-r-n-sm">
+                    </div>
+
+                    <div class="col-xs-12 text-right">
+                        <pagination class="pagination pagination-sm pagination-right m-n"
+                                    boundary-links="true"
+                                    total-items="pagingData.count"
+                                    max-size="pagingData.pagingMaxSize"
+                                    items-per-page="pagingData.itemsPerPage"
+                                    ng-model="pagingData.currentPage"
+                                    previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"
+                                    ng-change="pageChange()">
+                        </pagination>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</basic-view>

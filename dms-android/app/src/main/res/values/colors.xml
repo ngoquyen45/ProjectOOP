@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Theme Color 1 -->
+    <color name="colorPrimary1">#3f51b5</color>
+    <color name="colorPrimaryDark1">#303F9F</color>
+    <color name="colorPrimaryLight1">#5C6BC0</color>
+    <color name="colorSecondary1">#ff4081</color>
+    <color name="colorSecondaryDark1">#F50057</color>
+    <!-- Theme Color 2 -->
+    <color name="colorPrimary2">#673AB7</color>
+    <color name="colorPrimaryDark2">#512DA8</color>
+    <color name="colorPrimaryLight2">#7E57C2</color>
+    <color name="colorSecondary2">#00bcd4</color>
+    <color name="colorSecondaryDark2">#00838f</color>
+    <!-- Theme Color 3 -->
+    <color name="colorPrimary3">#8e24aa</color>
+    <color name="colorPrimaryDark3">#7B1FA2</color>
+    <color name="colorPrimaryLight3">#AB47BC</color>
+    <color name="colorSecondary3">#4caf50</color>
+    <color name="colorSecondaryDark3">#388E3C</color>
+    <!-- Theme Color 4 -->
+    <color name="colorPrimary4">#607d8b</color>
+    <color name="colorPrimaryDark4">#455A64</color>
+    <color name="colorPrimaryLight4">#78909C</color>
+    <color name="colorSecondary4">#e53935</color>
+    <color name="colorSecondaryDark4">#D32F2F</color>
+    <!-- Theme Color 4 -->
+    <color name="colorPrimary5">#D32F2F</color>
+    <color name="colorPrimaryDark5">#C62828</color>
+    <color name="colorPrimaryLight5">#F44336</color>
+    <color name="colorSecondary5">#0277bd</color>
+    <color name="colorSecondaryDark5">#01579B</color>
+
+    <!-- Color for first letter-->
+    <color name="first_letter_A">#00a86b</color>
+    <color name="first_letter_B">#0095b6</color>
+    <color name="first_letter_C">#ffbf00</color>
+    <color name="first_letter_D">#1560bd</color>
+    <color name="first_letter_E">#c2b280</color>
+    <color name="first_letter_F">#f64a8a</color>
+    <color name="first_letter_G">#2e7d32</color>
+    <color name="first_letter_H">#b7410e</color>
+    <color name="first_letter_I">#00416a</color>
+    <color name="first_letter_J">#592720</color>
+    <color name="first_letter_K">#c3b091</color>
+    <color name="first_letter_L">#c8a2c8</color>
+    <color name="first_letter_M">#ffdb58</color>
+    <color name="first_letter_N">#5db75d</color>
+    <color name="first_letter_O">#ff7f00</color>
+    <color name="first_letter_P">#800080</color>
+    <color name="first_letter_Q">#6c6961</color>
+    <color name="first_letter_R">#df73ff</color>
+    <color name="first_letter_S">#4692b4</color>
+    <color name="first_letter_T">#fc0fc0</color>
+    <color name="first_letter_U">#483c32</color>
+    <color name="first_letter_V">#40826d</color>
+    <color name="first_letter_W">#f5deb3</color>
+    <color name="first_letter_X">#eeed09</color>
+    <color name="first_letter_Y">#808080</color>
+    <color name="first_letter_Z">#506022</color>
+    <color name="first_letter_0">#dd2c00</color>
+    <color name="first_letter_1">#5d4037</color>
+    <color name="first_letter_2">#1b5e20</color>
+    <color name="first_letter_3">#827717</color>
+    <color name="first_letter_4">#01579b</color>
+    <color name="first_letter_5">#00695c</color>
+    <color name="first_letter_6">#4527a0</color>
+    <color name="first_letter_7">#880e4f</color>
+    <color name="first_letter_8">#ff1744</color>
+    <color name="first_letter_9">#616161</color>
+
+    <!-- Swipe Colors-->
+    <array name="refresh_progress">
+        <item>@color/refresh_progress_1</item>
+        <item>@color/refresh_progress_2</item>
+        <item>@color/refresh_progress_3</item>
+        <item>@color/refresh_progress_4</item>
+        <item>@color/refresh_progress_5</item>
+    </array>
+    <color name="refresh_progress_1">#ee2a7b</color>
+    <color name="refresh_progress_2">#00a65a</color>
+    <color name="refresh_progress_3">#f34016</color>
+    <color name="refresh_progress_4">#3F51B5</color>
+    <color name="refresh_progress_5">#f7941e</color>
+    <!-- Define color -->
+    <color name="cardview_background">#e8eaf6</color>
+    <color name="divider">@color/Black12</color>
+
+    <!-- Common Color -->
+    <color name="Grey98">#fafafa</color>
+    <color name="Grey89">#e3e3e3</color>
+    <color name="Black87">#DE000000</color>
+    <color name="Black54">#8A000000</color>
+    <color name="Black38">#61000000</color>
+    <color name="Black26">#42000000</color>
+    <color name="Black12">#1F000000</color>
+    <color name="Black5">#0D000000</color>
+    <color name="white">@android:color/white</color>
+    <color name="White87">#DEFFFFFF</color>
+    <color name="White54">#8AFFFFFF</color>
+    <color name="White30">#4DFFFFFF</color>
+    <color name="Gray600">#757575</color>
+    <color name="Primary54">#8A3F51B5</color>
+
+</resources>

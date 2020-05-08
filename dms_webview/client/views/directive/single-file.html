@@ -1,0 +1,12 @@
+<div class="single-file">
+    <div class="input-group">
+        <div class="form-control file-name-wrapper"> {{ getFileName() }} </div>
+		<span class="input-group-btn">
+		    <div class="btn btn-primary">
+                <span class="fa fa-paperclip"></span>
+            </div>
+		</span>
+    </div>
+
+    <input type="file" nv-file-select="" uploader="uploader" ng-attr-accept="{{ getAccepts() }}"/>
+</div>

@@ -1,0 +1,215 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        tools:context="com.viettel.dms.ui.fragment.RegisterCustomerFragment">
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/padding_standard"
+                android:paddingLeft="@dimen/padding_standard"
+                android:paddingRight="@dimen/padding_standard"
+                android:paddingTop="@dimen/padding_standard">
+
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edt_Name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.Regular.24.Black"
+                    android:textCursorDrawable="?colorPrimary"
+                    app:met_errorColor="?colorSecondary"
+                    app:met_primaryColor="?colorPrimary"
+                    app:met_floatingLabel="highlight"
+                    app:met_floatingLabelAlwaysShown="true"
+                    app:met_floatingLabelText="@string/register_customer_customer_name"
+                    app:met_singleLineEllipsis="true"
+
+                    ></com.rengwuxian.materialedittext.MaterialEditText>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/list_tile_height_avatar_text_icon"
+                    android:gravity="center_vertical|left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_hl_Customer_Type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/register_customer_customer_type"
+                        android:textAppearance="@style/TextAppearance.Regular.12.Black26" />
+
+                    <com.rey.material.widget.Spinner
+                        android:id="@+id/sp_Customer_Type"
+                        style="@style/MaterialSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_short"
+                        android:minWidth="60dp"
+                        app:rd_style="@style/Material.Drawable.Ripple.Wave" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/list_tile_height_avatar_text_icon"
+                    android:layout_marginTop="@dimen/margin_standard"
+                    android:gravity="center_vertical|left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_hl_Customer_Area"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/register_customer_customer_area"
+                        android:textAppearance="@style/TextAppearance.Regular.12.Black26" />
+
+                    <com.rey.material.widget.Spinner
+                        android:id="@+id/sp_Customer_Area"
+                        style="@style/MaterialSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_short"
+                        android:minWidth="60dp"
+                        app:rd_style="@style/Material.Drawable.Ripple.Wave" />
+                </LinearLayout>
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edt_Address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_standard"
+                    android:textAppearance="@style/TextAppearance.Regular.16.Black87"
+                    android:textCursorDrawable="?colorPrimary"
+                    app:met_errorColor="?colorSecondary"
+                    app:met_primaryColor="?colorPrimary"
+                    app:met_floatingLabel="highlight"
+                    app:met_floatingLabelAlwaysShown="true"
+                    app:met_floatingLabelText="@string/register_customer_address"
+                    app:met_singleLineEllipsis="true"
+
+                    />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edt_Mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.Regular.16.Black87"
+                    android:textCursorDrawable="?colorPrimary"
+                    app:met_errorColor="?colorSecondary"
+                    app:met_primaryColor="?colorPrimary"
+                    app:met_floatingLabel="highlight"
+                    app:met_floatingLabelAlwaysShown="true"
+                    app:met_floatingLabelText="@string/register_customer_mobile_phone"
+                    app:met_singleLineEllipsis="true"
+
+                    />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edt_Home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.Regular.16.Black87"
+                    android:textCursorDrawable="?colorPrimary"
+                    app:met_errorColor="?colorSecondary"
+                    app:met_primaryColor="?colorPrimary"
+                    app:met_floatingLabel="highlight"
+                    app:met_floatingLabelAlwaysShown="true"
+                    app:met_floatingLabelText="@string/register_customer_home_phone"
+                    app:met_singleLineEllipsis="true"
+
+                    />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edt_Email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.Regular.16.Black87"
+                    android:textCursorDrawable="?colorPrimary"
+                    app:met_errorColor="?colorSecondary"
+                    app:met_primaryColor="?colorPrimary"
+                    app:met_floatingLabel="highlight"
+                    app:met_floatingLabelAlwaysShown="true"
+                    app:met_floatingLabelText="@string/register_customer_email"
+                    app:met_singleLineEllipsis="true" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edt_Representative"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.Regular.16.Black87"
+                    android:textCursorDrawable="?colorPrimary"
+                    app:met_errorColor="?colorSecondary"
+                    app:met_primaryColor="?colorPrimary"
+                    app:met_floatingLabel="highlight"
+                    app:met_floatingLabelAlwaysShown="true"
+                    app:met_floatingLabelText="@string/register_customer_representative"
+                    app:met_singleLineEllipsis="true"
+
+                    />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edt_Note"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="3"
+                    android:textAppearance="@style/TextAppearance.Regular.16.Black87"
+                    android:textCursorDrawable="?colorPrimary"
+                    app:met_errorColor="?colorSecondary"
+                    app:met_primaryColor="?colorPrimary"
+                    app:met_floatingLabel="highlight"
+                    app:met_floatingLabelAlwaysShown="true"
+                    app:met_floatingLabelText="@string/register_customer_note"
+                    app:met_singleLineEllipsis="false"
+
+                    />
+            </LinearLayout>
+        </ScrollView>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/Black12" />
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/google_map"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10" />
+    </LinearLayout>
+
+    <com.melnykov.fab.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/margin_standard"
+        android:layout_marginRight="@dimen/margin_standard"
+        android:src="@drawable/ic_my_location_white_24dp"
+        app:fab_colorPressed="?colorSecondaryDark"
+        fab:fab_colorNormal="?colorSecondary"
+        fab:fab_colorRipple="@color/white" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/drawer_shadow_top" />
+</RelativeLayout>

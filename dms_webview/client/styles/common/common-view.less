@@ -1,0 +1,132 @@
+.category-list {
+    table {
+        thead {
+            tr {
+                th.col-action {
+                    width: 185px;
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                td.col-data.hidden-xs {
+                    max-width: 500px;
+                }
+            }
+        }
+    }
+}
+
+.basic-view {
+
+    > div {
+        display: none;
+    }
+
+    > div:first-child {
+        display: block;
+    }
+
+    //&.loading, &.error {
+    //    #basic-view-content {
+    //        display: none;
+    //    }
+    //}
+
+    .use-map &, &.use-map {
+        //&.loading, &.error {
+        //    #basic-view-content {
+        //        display: block;
+        //        visibility: hidden;
+        //    }
+        //}
+        > div {
+            display: block;
+            visibility: hidden;
+        }
+
+        > div:first-child {
+            display: block;
+            visibility: visible;
+        }
+    }
+
+    .title-bar {
+        h3 {
+            margin: 10px 0;
+        }
+
+        .title-btn-bar {
+            text-align: right;
+            font-size: 0;
+
+            button.btn {
+                margin: 6px 0;
+
+                &:not(:first-of-type){
+                    margin-left: 5px;
+                }
+            }
+
+            a.btn {
+                margin: 8px 0;
+
+                &:not(:first-of-type){
+                    margin-left: 5px;
+                }
+            }
+
+            > div {
+                display: inline-block;
+                //
+                //&:not(:first-of-type){
+                //    margin-left: 2px;
+                //}
+            }
+
+        }
+    }
+
+    &.empty, &.one-page {
+        .pagination-container {
+            display: none;
+        }
+    }
+
+    .category-detail {
+
+        .no-back & {
+            #back {
+                display: none !important;
+            }
+        }
+
+        .no-enable & {
+            #enable {
+                display: none !important;
+            }
+        }
+
+        #save {
+            display: none;
+        }
+
+        #enable {
+            display: none;
+        }
+
+        &.changed {
+            #save {
+                display: inline-block;
+            }
+        }
+
+        &.new.changed, &.edit.draft {
+            #enable {
+                display: inline-block;
+            }
+        }
+
+    }
+}

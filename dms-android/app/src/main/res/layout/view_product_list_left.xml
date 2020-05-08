@@ -1,0 +1,85 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="left"
+    android:orientation="vertical"
+    android:background="@color/Grey98"
+    tools:context="com.viettel.dmsplus.tablet.fragment.placeorder.PlaceOrderProductListFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="104dp"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:paddingBottom="10dp"
+                android:gravity="bottom">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.6"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.Medium.14.Black54"
+                    android:text="@string/product_list_items"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:maxLines="1"
+                    android:gravity="center_horizontal"
+                    android:textAppearance="@style/TextAppearance.Medium.14.Black54"
+                    android:text="@string/product_list_uom"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:layout_marginRight="24dp"
+                    android:maxLines="1"
+                    android:gravity="right"
+                    android:textAppearance="@style/TextAppearance.Medium.14.Black54"
+                    android:text="@string/product_list_detail_price"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/Black12"
+                />
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/id_list_product"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@drawable/divider_list_104"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:listSelector="@drawable/selector_product_list_item"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

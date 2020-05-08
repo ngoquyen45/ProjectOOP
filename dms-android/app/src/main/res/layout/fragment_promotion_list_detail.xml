@@ -1,0 +1,106 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.viettel.dms.ui.fragment.PromotionListDetailFragment">>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin_standard"
+            android:layout_marginRight="@dimen/margin_standard"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_Promotion_Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:textAppearance="@style/TextAppearance.Medium.16.PrimaryColor"/>
+
+            <LinearLayout
+                android:id="@+id/ll_Time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/promotion_detail_time"
+                    android:textAppearance="@style/TextAppearance.Regular.12.Black54"/>
+
+                <TextView
+                    android:id="@+id/tv_Time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textAppearance="@style/TextAppearance.Regular.14.Black87"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_Focus_To"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/promotion_detail_focus_to"
+                    android:textAppearance="@style/TextAppearance.Regular.12.Black54"/>
+
+                <TextView
+                    android:id="@+id/tv_Focus_To"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textAppearance="@style/TextAppearance.Regular.14.Black87"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_Content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/promotion_detail_content"
+                    android:textAppearance="@style/TextAppearance.Regular.12.Black54"/>
+
+                <TextView
+                    android:id="@+id/tv_Content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.15"
+                    android:textAppearance="@style/TextAppearance.Regular.14.Black87"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/drawer_shadow_top"></View>
+</RelativeLayout>
+
+
+

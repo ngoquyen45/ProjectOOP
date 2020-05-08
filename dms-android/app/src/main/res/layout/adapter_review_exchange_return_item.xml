@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/list_tile_height_three_line"
+              android:background="@android:color/white"
+              android:gravity="center_vertical"
+              android:orientation="horizontal"
+    >
+
+    <RelativeLayout
+        android:layout_width="@dimen/second_keyline"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_Product_Image"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="@dimen/list_avatar_circle_size"
+            android:layout_height="@dimen/list_avatar_circle_size"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            app:border_color="@color/Black12"
+            app:border_width="0.5dp"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|left"
+            android:orientation="horizontal"
+            android:paddingRight="@dimen/margin_standard"
+            >
+
+            <TextView
+                android:id="@+id/tv_Product_Name"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:singleLine="false"
+                android:textAppearance="@style/TextAppearance.Regular.14.Black87"/>
+
+            <TextView
+                android:id="@+id/tv_Quantity"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="right"
+                android:textAppearance="@style/TextAppearance.Regular.16.Black54"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

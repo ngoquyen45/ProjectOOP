@@ -1,0 +1,1 @@
+docker build -f Dockerfile -t front-end .; docker run -d -p 192.168.51.28:443:443 --name front-end front-end;

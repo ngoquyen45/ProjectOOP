@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/id_grandparent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_short"
+    android:divider="@android:color/transparent"
+    android:gravity="left"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/id_llparent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_visit_feedback_left"
+        android:gravity="left"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/id_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:ellipsize="end"
+            android:lineSpacingMultiplier="1.15"
+            android:maxWidth="@dimen/visit_feedback_item_max_width"
+            android:textAppearance="@style/TextAppearance.Regular.16.Black87"/>
+
+        <TextView
+            android:id="@+id/id_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:ellipsize="end"
+            android:gravity="right"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.Regular.12.Black54"/>
+    </LinearLayout>
+</LinearLayout>

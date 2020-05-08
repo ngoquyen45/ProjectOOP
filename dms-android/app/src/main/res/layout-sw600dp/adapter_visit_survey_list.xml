@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:layout_marginLeft="80dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_Survey_Name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="4.5"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingRight="24dp"
+        android:textAppearance="@style/TextAppearance.Regular.16.Black87" />
+
+    <TextView
+        android:id="@+id/tv_Survey_Time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.5"
+        android:gravity="center_vertical|center_horizontal"
+        android:maxLines="1"
+        android:textAppearance="@style/TextAppearance.Regular.14.Black54" />
+
+    <TextView
+        android:id="@+id/tv_Question_Count"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.25"
+        android:gravity="center_vertical|center_horizontal"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:textAppearance="@style/TextAppearance.Regular.14.Black54" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.75"
+        android:gravity="center_vertical|right"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:textAppearance="@style/TextAppearance.Regular.14.Black54" />
+
+    <com.joanzapata.iconify.widget.IconTextView
+        android:layout_width="72dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="{md-keyboard-arrow-right 24dp @color/Black12}" />
+
+</LinearLayout>
+

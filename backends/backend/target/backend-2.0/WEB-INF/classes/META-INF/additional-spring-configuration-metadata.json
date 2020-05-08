@@ -1,0 +1,160 @@
+{"properties": [
+  {
+    "name": "recaptcha.security.enable",
+    "type": "java.lang.Boolean",
+    "description": "Enable or disable CAPTCHA feature"
+  },
+  {
+    "name": "recaptcha.security.strict-mode",
+    "type": "java.lang.Boolean",
+    "description": "If set to 'true', every time user login, they have to resolve the CAPTCHA. Other wise, CAPTCHA only show when they login fail several time."
+  },
+  {
+    "name": "recaptcha.security.login-fail-count",
+    "type": "java.lang.Integer",
+    "description": "Max number of login fail, after that, user must have to resolve CAPTCHA. Only have effect if 'recaptcha.security.strictMode'='false'"
+  },
+  {
+    "name": "recaptcha.validation.secret-key",
+    "type": "java.lang.String",
+    "description": "reCAPTCHA secret key.",
+    "sourceType": "com.viettel.backend.config.security.captcha.RecaptchaProperties$Validation"
+  },
+  {
+    "name": "recaptcha.validation.site-key",
+    "type": "java.lang.String",
+    "description": "Site key for Google reCAPTCHA service"
+  },
+  {
+    "name": "oauth2.realm",
+    "type": "java.lang.String",
+    "description": "A description for 'oauth2.realm'"
+  },
+  {
+    "name": "oauth2.signed-request-verifier-key",
+    "type": "java.lang.String",
+    "description": "Verifier key used to sign all download request"
+  },
+  {
+    "name": "oauth2.client-id",
+    "type": "java.lang.String",
+    "description": "OAuth 2 client_id"
+  },
+  {
+    "name": "oauth2.client-secret",
+    "type": "java.lang.String",
+    "description": "OAuth 2 client_secret"
+  },
+  {
+    "name": "oauth2.grant-type",
+    "type": "java.util.List<java.lang.String>",
+    "description": "List of allowed grant type: implicit,refresh_token,password,authorization_code,client_credentials"
+  },
+  {
+    "name": "oauth2.scope",
+    "type": "java.util.List<java.lang.String>",
+    "description": "Declare any scope you want, you can restrict access base on scope"
+  },
+  {
+    "name": "oauth2.refresh-token-validity",
+    "type": "java.lang.Integer",
+    "description": "Refresh token life time in seconds"
+  },
+  {
+    "name": "oauth2.access-token-validity",
+    "type": "java.lang.Integer",
+    "description": "Access token life time in seconds"
+  },
+  {
+    "name": "oauth2.redirect-uri",
+    "type": "java.util.List<java.lang.String>",
+    "description": "Only allow following redirect urls"
+  },
+  {
+    "name": "mongodb.client.connection-per-host",
+    "type": "java.lang.Integer",
+    "description": "Maximum number of connections per host.",
+    "defaultValue": "100"
+  },
+  {
+    "name": "mongodb.client.threads-allowed-to-block-multiplier",
+    "type": "java.lang.Integer",
+    "description": "Multiplier for number of threads allowed to block waiting for a connection.",
+    "defaultValue": "5"
+  },
+  {
+    "name": "mongodb.client.connect-timeout",
+    "type": "java.lang.Integer",
+    "description": "The connection timeout.",
+    "defaultValue": "10000"
+  },
+  {
+    "name": "mongodb.client.socket-timeout",
+    "type": "java.lang.Integer",
+    "description": "The socket timeout.",
+    "defaultValue": "0"
+  },
+  {
+    "name": "mongodb.client.socket-keep-alive",
+    "type": "java.lang.Boolean",
+    "description": "Is socket keep alive enabled.",
+    "defaultValue": "false"
+  },
+  {
+    "name": "frontend.web-url",
+    "type": "java.lang.String",
+    "description": "Url of web-frontend. This will become default redirect URL"
+  },
+  {
+    "name": "frontend.allowed-origins",
+    "type": "java.util.List<java.lang.String>",
+    "description": "Only allowed cross-origin access from following Origins. Default is empty, mean only allow access from same domain. If domain of web app differ from domain of backend, set this value to url of web app"
+  },
+  {
+    "name": "stomp.embedded",
+    "type": "java.lang.String",
+    "description": "Is using embedded-inmemory STOMP broker. If false, an external broker with specified host and port will be used"
+  },
+  {
+    "name": "stomp.host",
+    "type": "java.lang.String",
+    "description": "STOMP broker host name or IP address"
+  },
+  {
+    "name": "stomp.port",
+    "type": "java.lang.Integer",
+    "description": "STOMP broker port to connect to"
+  },
+  {
+    "name": "spring.redis.embedded.enable",
+    "type": "java.lang.Boolean",
+    "description": "Start embedded Redis server or not",
+    "defaultValue": "false"
+  },
+  {
+    "name": "spring.redis.embedded.config-file",
+    "type": "java.lang.String",
+    "description": "Specify config file for embedded Redis, IF this value is SET, OTHER embedded OPTIONS WILL BE SKIP. Note: DO NOT configure 'logfile', other wise our application cannot start"
+  },
+  {
+    "name": "spring.redis.embedded.working-dir",
+    "type": "java.lang.String",
+    "description": "Location to store data file for embedded Redis. When using this option, make sure following directory already created and app have permission"
+  },
+  {
+    "name": "spring.redis.embedded.max-memory",
+    "type": "java.lang.String",
+    "description": "Max memory for embedded Redis",
+    "defaultValue": "1gb"
+  },
+  {
+    "name": "totp.secret",
+    "type": "java.lang.String",
+    "description": "A base32 value of secret using for generate TOTP token"
+  },
+  {
+    "name": "totp.enable",
+    "type": "java.lang.Boolean",
+    "description": "Value indicating that TOTP shoud be enable or not"
+  }
+]}

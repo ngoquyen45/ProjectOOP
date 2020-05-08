@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="104dp"
+        android:layout_height="match_parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_Circle"
+            android:layout_width="@dimen/list_avatar_circle_size"
+            android:layout_height="@dimen/list_avatar_circle_size"
+            android:layout_centerInParent="true"
+            android:src="?colorPrimary" />
+
+        <com.joanzapata.iconify.widget.IconTextView
+            android:id="@+id/tv_First_Letter"
+            android:layout_width="@dimen/list_avatar_circle_size"
+            android:layout_height="@dimen/list_avatar_circle_size"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="{md-loyalty 24dp @color/white}" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_Promotion_Name"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/margin_standard"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="2"
+        android:textAppearance="@style/TextAppearance.Medium.16.PrimaryColor" />
+
+</LinearLayout>

@@ -1,0 +1,64 @@
+<basic-view>
+
+    <div class="row title-bar">
+        <div class="col-xs-6">
+            <h3> {{ title | translate }} </h3>
+        </div>
+
+        <div class="col-xs-6 title-btn-bar">
+            <button class="btn btn-warning" ng-click="back()">
+                <span class="fa fa-arrow-left"></span>
+            </button>
+
+            <button class="btn btn-info" ng-click="refresh()" ng-if="changeStatus.isChanged">
+                <span class="fa fa-remove"></span>
+            </button>
+
+            <button class="btn btn-success" ng-click="save()" ng-if="changeStatus.isChanged">
+                <span class="fa fa-save"></span>
+            </button>
+        </div>
+    </div>
+
+    <!--<div class="row no-margin" style="border-left: 1px solid black; border-top: 1px solid black; background: #f3f3f3;">-->
+        <!--<div class="col-lg-3 no-padder" ng-repeat="record in records"-->
+                <!--style="border-right: 1px solid black; border-bottom: 1px solid black">-->
+            <!--<div class="wrapper-sm">-->
+                <!--{{ record.name }}-->
+                <!--<i-check class="pull-right" ng-model="record.selected" ng-change="changeStatus.markAsChanged()"></i-check>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <section class="panel panel-default table-dynamic">
+
+        <!--FILTER-->
+        <div class="wrapper-sm">
+            <div class="row">
+                <div class="col-xs-12">
+                    <search-box ng-model="searchText" placeholder="{{ 'search' | translate }}"></search-box>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <div>
+
+        <div class="row" style="margin-left: -5px; margin-right: -5px;" ng-if="!lessThan20()">
+            <div class="col-sm-6 col-xs-12" ng-class="{'col-lg-3 col-md-4': moreThan20()}"
+                 style="padding-left: 5px; padding-right: 5px;" ng-repeat="record in records | propsFilter: {name: searchText}">
+                <section class="panel panel-default" style="margin-bottom: 10px;">
+
+                    <div class="wrapper-sm">
+                        {{ record.name }}
+                        <i-check class="pull-right" ng-model="record.selected" ng-change="changeStatus.markAsChanged()"></i-check>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+
+    </div>
+
+</basic-view>

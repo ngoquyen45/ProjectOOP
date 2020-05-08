@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/list_tile_height_three_line"
+              android:gravity="center_vertical"
+              android:orientation="horizontal"
+    >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_vertical|left"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/padding_standard">
+
+        <TextView
+            android:id="@+id/tv_Promotion_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_standard"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textAppearance="@style/TextAppearance.Regular.16.Black87"/>
+
+        <TextView
+            android:id="@+id/tv_Promotion_Date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_standard"
+            android:ellipsize="end"
+            android:singleLine="true"
+
+            android:textAppearance="@style/TextAppearance.Regular.14.Black54"/>
+
+    </LinearLayout>
+
+    <com.joanzapata.iconify.widget.IconTextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin_short"
+        android:layout_marginRight="@dimen/margin_short"
+        android:gravity="center_vertical"
+        android:text="{md-navigate-next @color/Black26 @dimen/list_icon_decorator_single_line }"/>
+</LinearLayout>

@@ -1,0 +1,97 @@
+<div class="order">
+
+    <div class="row">
+        <div class="col-xs-6">
+            <p class="size-h2 m-n">DMS PLUS</p>
+            <p class="text-muted m-n">Viettel ICT</p>
+        </div>
+        <div class="col-xs-6 text-right">
+            <p class="size-h2 m-n"> {{ data.code }} </p>
+            <p class="text-muted m-n"> {{ data.createdTime | isoDateTime }} </p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-xs-6">
+
+            <div class="text-left inline">
+                <strong> {{ 'distributor' | translate }}: </strong> &nbsp; <br>
+                <strong> {{ 'customer' | translate }}: </strong> &nbsp; <br>
+            </div>
+            <div class="text-left inline">
+                {{ data.distributor.name }} <br>
+                {{ data.customer.name }} <br>
+            </div>
+        </div>
+
+        <div class="col-xs-6 text-right">
+            <div class="text-left inline">
+                <strong> {{ 'salesman' | translate }}: </strong> &nbsp; <br>
+                <strong> {{ 'order.delivery' | translate }}: </strong> &nbsp; <br>
+            </div>
+            <div class="text-left inline">
+                {{ data.createdBy.fullname }} <br>
+                {{ getDeliveryDisplay() }} <br>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider divider-md"></div>
+
+    <table class="table table-bordered table-striped order-detail">
+        <thead>
+        <tr class="bg-dark">
+            <th class="text-center index">#</th>
+            <th class="text-center product-code"> {{ 'code' | translate }} </th>
+            <th class="product-name"> {{ 'product' | translate }} </th>
+            <th class="text-center uom"> {{ 'uom.short' | translate }} </th>
+            <th class="text-center product-price"> {{ 'product.price' | translate }} </th>
+            <th class="text-center quantity"> {{ 'quantity' | translate }} </th>
+            <th class="text-center amount"> {{ 'order.amount' | translate }} </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="detail in data.details">
+            <td class="text-center"> {{ $index + 1 }} </td>
+            <td class="text-center"> {{ detail.product.code }} </td>
+            <td> {{ detail.product.name }} </td>
+            <td class="text-center"> {{ detail.product.uom.name }} </td>
+            <td class="text-center"> {{ detail.product.price | number }} </td>
+            <td class="text-center"> {{ detail.quantity | number }} </td>
+            <td class="text-right"> {{ detail.amount | number }} </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="row">
+        <div class="col-xs-6">
+            <div ng-if="hasPromotion()">
+                <p class="size-h3">{{ 'promotion' | translate }}</p>
+                <ul>
+                    <li ng-repeat="promotionProductReward in getPromotionProductRewards() track by $index">
+                        {{ promotionProductReward.product.name }} x {{ promotionProductReward.quantity }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-xs-4 order-sum text-right">
+            <ul class="list-unstyled">
+                <li>{{ 'order.subtotal' | translate }}:</li>
+                <li>{{ 'promotion' | translate }}:</li>
+                <li>{{ 'order.discount' | translate }}:</li>
+                <li><strong>{{ 'order.grand.total' | translate }}:</strong></li>
+            </ul>
+        </div>
+        <div class="col-xs-2 order-sum text-right">
+            <ul class="list-unstyled">
+                <li>{{ data.subTotal | number }}</li>
+                <li>{{ data.promotionAmt | number }}</li>
+                <li>{{ data.discountAmt | number }}</li>
+                <li><strong>{{ data.grandTotal | number }}</strong></li>
+            </ul>
+        </div>
+    </div>
+
+</div>

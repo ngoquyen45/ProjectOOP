@@ -1,0 +1,287 @@
+<basic-view class="dashboard">
+
+    <div class="row">
+
+        <!--TODAY-->
+        <div class="dashboard-right col-lg-4 col-lg-push-8">
+            <div class="panel panel-default today">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <p class="size-h4 m-n">{{ 'today' | translate }}</p>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <p class="size-h4 m-n">{{ record.today | isoDate }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-body no-padder">
+                    <div class="mini-box">
+                        <span class="box-icon bg-primary-light">
+                            <i class="fa fa-dollar"></i>
+                        </span>
+
+                        <div class="box-info">
+                            <p class="size-h2"> {{ record.todayResult.revenue.actual | number:0 }} </p>
+
+                            <p class="text-muted">{{ 'revenue' | translate }}</p>
+                        </div>
+                    </div>
+
+                    <div class="mini-box">
+                        <span class="box-icon bg-primary-light">
+                            <i class="fa fa-street-view"></i>
+                        </span>
+
+                        <div class="box-info">
+                            <p class="size-h2">{{ record.todayResult.visit.actual | number:0 }} &nbsp;/&nbsp; {{ record.todayResult.visit.plan | number:0 }}</p>
+
+                            <p class="text-muted"> {{ 'visit' | translate }} </p>
+                        </div>
+                    </div>
+
+                    <div class="padder-md">
+                        <hr/>
+                    </div>
+
+                    <div class="row wrapper-md detail-data">
+
+                        <div class="col-xs-12">
+                            <div class="row m-n">
+                                <div class="col-xs-3 no-padder">
+                                    <h1 class="m-n color-info">
+                                        <strong> {{ record.todayResult.orderNoVisit.actual | number:0 }} </strong>
+                                    </h1>
+                                </div>
+                                <div class="col-xs-7 no-padder">
+                                    <p class="data-label text-ellipsis">{{ 'dashboard.order.no.visit' | translate }}</p>
+                                </div>
+                                <div class="col-xs-2 no-padder text-right">
+                                    <i class="data-icon fa fa-2x fa-hand-o-right color-info"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 m-t-md">
+                            <div class="row m-n">
+                                <div class="col-xs-3 no-padder">
+                                    <h1 class="m-n color-success">
+                                        <strong>
+                                            {{ record.todayResult.visitHasOrder.actual | number:0 }}
+                                        </strong>
+                                    </h1>
+                                </div>
+                                <div class="col-xs-7 no-padder">
+                                    <p class="data-label text-ellipsis">{{ 'dashboard.visit.has.order' | translate }}</p>
+                                </div>
+                                <div class="col-xs-2 no-padder text-right">
+                                    <i class="data-icon fa fa-2x fa-truck color-success"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 m-t-md">
+                            <div class="row m-n">
+                                <div class="col-xs-3 no-padder">
+                                    <h1 class="m-n color-warning">
+                                        <strong>
+                                            {{ record.todayResult.visitErrorDuration.actual | number:0 }}
+                                        </strong>
+                                    </h1>
+                                </div>
+                                <div class="col-xs-7 no-padder">
+                                    <p class="data-label text-ellipsis">{{ 'dashboard.visit.error.duration' | translate }}</p>
+                                </div>
+                                <div class="col-xs-2 no-padder text-right">
+                                    <i class="data-icon fa fa-2x fa-clock-o color-warning"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 m-t-md">
+                            <div class="row m-n">
+                                <div class="col-xs-3 no-padder">
+                                    <h1 class="m-n color-danger">
+                                        <strong> {{ record.todayResult.visitErrorPosition.actual | number:0 }} </strong>
+                                    </h1>
+                                </div>
+                                <div class="col-xs-7 no-padder">
+                                    <p class="data-label text-ellipsis">{{ 'dashboard.visit.error.position' | translate }}</p>
+                                </div>
+                                <div class="col-xs-2 no-padder text-right">
+                                    <i class="data-icon fa fa-2x fa-map-marker color-danger"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-left col-lg-8 col-lg-pull-4">
+
+            <!--LAST MONTH COMPARISON-->
+            <div class="row">
+
+                <div class="col-sm-4">
+                    <div class="bg-warning">
+                        <div class="row">
+                            <div class="col-xs-12 text-center m-t-sm">
+                                <p class="size-h4"> {{ 'order' | translate }} &nbsp;/&nbsp; {{ 'day' | translate }} </p>
+                            </div>
+                            <div class="col-xs-12 text-center">
+                                <i class="fa size-h1"
+                                   ng-class="getComparisonIcon(record.lastMonthResult.orderByDay, record.thisMonthResult.orderByDay)">
+                                </i>
+                                &nbsp;
+                                <label class="size-h1"> {{ record.thisMonthResult.orderByDay | bigNumber }} </label>
+                            </div>
+                            <div class="col-xs-12 text-center">
+                                {{ 'dashboard.last.month' | translate }}
+                                &nbsp;
+                                <label class="size-h3"> {{ record.lastMonthResult.orderByDay | bigNumber }} </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="bg-success">
+                        <div class="row">
+                            <div class="col-xs-12 text-center m-t-sm">
+                                <p class="size-h4"> {{ 'revenue' | translate }} &nbsp;/&nbsp; {{ 'order' | translate }} </p>
+                            </div>
+                            <div class="col-xs-12 text-center">
+                                <i class="fa size-h1"
+                                   ng-class="getComparisonIcon(record.lastMonthResult.revenueByOrder, record.thisMonthResult.revenueByOrder)">
+                                </i>
+                                &nbsp;
+                                <label class="size-h1"> {{ record.thisMonthResult.revenueByOrder | bigNumber }} </label>
+                            </div>
+                            <div class="col-xs-12 text-center">
+                                {{ 'dashboard.last.month' | translate }}
+                                &nbsp;
+                                <label class="size-h3"> {{ record.lastMonthResult.revenueByOrder | bigNumber }} </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="bg-info">
+                        <div class="row">
+                            <div class="col-xs-12 text-center m-t-sm">
+                                <p class="size-h4"> {{ 'visit' | translate }} &nbsp;/&nbsp; {{ 'day' | translate }} </p>
+                            </div>
+                            <div class="col-xs-12 text-center">
+                                <i class="fa size-h1"
+                                   ng-class="getComparisonIcon(record.lastMonthResult.visitByDay, record.thisMonthResult.visitByDay)">
+                                </i>
+                                &nbsp;
+                                <label class="size-h1"> {{ record.thisMonthResult.visitByDay | bigNumber }} </label>
+                            </div>
+                            <div class="col-xs-12 text-center">
+                                {{ 'dashboard.last.month' | translate }}
+                                &nbsp;
+                                <label class="size-h3"> {{ record.lastMonthResult.visitByDay | bigNumber }} </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--REVENUE-->
+            <div class="row m-t">
+                <div class="col-md-12">
+                    <div class="panel mini-box">
+                        <span class="box-icon bg-success">
+                            <i class="fa fa-dollar"></i>
+                        </span>
+                        <div class="box-info">
+                            <p class="size-h2">{{ record.thisMonthResult.revenue.actual | number:0 }}</p>
+                            <p class="text-muted"> {{ 'revenue' | translate }} </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--FIVE BEST AND WORST-->
+            <div class="row">
+
+                <!--Progress Warning-->
+                <div class="col-sm-6 progress-warning" ng-if="isDisplayProgressWarning()">
+                    <section class="panel panel-box">
+                        <div class="panel-top bg-bright">
+                            <div class="size-h3 text-left">
+                                {{ 'dashboard.progress.warning' | translate }}
+                            </div>
+                        </div>
+                        <div class="panel-icon bg-danger">
+                            <i class="fa fa-exclamation"></i>
+                        </div>
+
+                        <div class="panel-bottom bg-reverse">
+                            <ul class="list-group text-left">
+                                <li class="list-group-item" ng-repeat="warning in record.progressWarnings">
+                                    <div class="row">
+                                        <div class="col-xs-9">
+                                            <p class="size-h4">{{ warning.name }}</p>
+                                            <progressbar max="warning.progress.plan" value="warning.progress.actual" type="danger">
+                                                <span>
+                                                    {{ warning.progress.actual | number:0 }}&nbsp;/&nbsp;{{ warning.progress.plan | number:0 }}
+                                                </span>
+                                            </progressbar>
+                                        </div>
+                                        <div class="col-xs-3 percentage">
+                                            <span class="badge bg-reverse size-h3 pull-right color-danger">
+                                                {{ warning.progress.percentage }}%
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+
+                <!--PRODUCT BEST SALES-->
+                <div class="col-sm-6 best-sellers" ng-if="isDisplayBestSellers()">
+                    <section class="panel panel-box">
+                        <div class="panel-top bg-bright">
+                            <div class="size-h3 text-left">
+                                {{ 'dashboard.best.sellers' | translate }}
+                            </div>
+                        </div>
+                        <div class="panel-icon bg-warning">
+                            <i class="fa fa-gift"></i>
+                        </div>
+
+                        <div class="panel-bottom bg-reverse">
+                            <ul class="list-group text-left">
+                                <li class="list-group-item" ng-repeat="item in record.bestSellers">
+                                    <div class="row item-row">
+                                        <div class="col-xs-8 item-name">
+                                            <p class="size-h4 text-ellipsis"> {{ item.name }} </p>
+                                        </div>
+
+                                        <div class="col-xs-4 item-quantity">
+                                            <span class="badge badge-warning size-h4 pull-right">
+                                                {{ item.result | bigNumber }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</basic-view>

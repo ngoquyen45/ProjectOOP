@@ -1,0 +1,192 @@
+@nav_bg:                    #ffffff;
+@link_color:                #ffffff;
+@link_bg:                   #546e7a;
+@link_hover_bg:             #78909C;
+@link_hover_color:          @nav_bg;
+
+@link_active_bg:            #28aae1;
+@link_active_color:         @nav_bg;
+
+@sub_nav_bg:                #ECEFF1;
+@sub_link_hover_bg:         @sub_nav_bg;
+@sub_link_hover_color:      #28aae1;
+@sub_link_active_bg:        @sub_nav_bg;
+@sub_link_active_color:     #28aae1;
+
+#nav-container {
+    z-index: 11; // should be highter than top header
+    position: absolute;
+    top: @header_height;
+    bottom: 0;
+    left: -220px;
+    width: 220px;
+    padding: 0;
+    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: -blackberry-touch;
+    // .transition(all .3s ease-in-out);
+    @media (min-width:@screen-sm) {
+        left: 0;
+    }
+
+    ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    background-color: @nav_bg;
+
+    #nav-wrapper {
+        -webkit-overflow-scrolling: touch;
+        -webkit-overflow-scrolling: -blackberry-touch;
+        width: 100%;
+        height: 100%;
+        .box-sizing(border-box);
+        .box-shadow(1px 2px 2px rgba(0,0,0,.15));
+        margin-left: -1px;
+
+        #nav {
+            margin: 0;
+            padding: 0;
+            -webkit-overflow-scrolling: touch;
+            -webkit-overflow-scrolling: -blackberry-touch;
+
+            > li {
+                color: @link_color;
+                background: @link_bg;
+                position: relative;
+                margin: 0;
+                text-align: left;
+                font-weight: bold;
+                .transition( all .2s ease-in-out);
+
+                &:first-child > a {
+                    border-top: 0;
+                }
+
+                a {
+                    font-size: 13px;
+                    .transition(all .2s ease-in-out);
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        text-decoration: none;
+                        outline: none;
+                    }
+                    color: @link_color;
+                }
+
+                > a {
+
+                    position: relative;
+                    display: block;
+                    padding: 15px 15px;
+
+                    > .badge {
+                        position: absolute;
+                        top: 16px;
+                        right: 5px;
+                    }
+
+                    > i {
+                        display: inline-block;
+                        margin-right: 10px;
+                        width: 20px;
+                        line-height: 1;
+                        text-align: center;
+                        font-size: 16px;
+                        .transition(all .2s ease-in-out);
+                    }
+
+                }
+
+                > .icon-has-ul {
+                    position: absolute;
+                    top: 18px;
+                    right: 15px;
+                }
+
+                > .fa-caret-down {
+                    display: none;
+                }
+
+                &.open,
+                &:hover {
+                    > a {
+                        background-color: @link_hover_bg;
+                        color: @link_hover_color;
+                    }
+                    > .fa { color: @link_hover_color; }
+                }
+                &.open {
+                    > .fa-caret-right {
+                        display: none;
+                    }
+
+                    > .fa-caret-down {
+                        display: block;
+                    }
+                }
+                &.active {
+                    > a {
+                        background-color: @link_active_bg;
+                        color: @link_active_color;
+                    }
+                    > .fa { color: @link_active_color; }
+                }
+
+                // sub menu
+                ul {
+                    background-color: @sub_nav_bg;
+                    display: none;
+
+                    > li {
+                        position: relative;
+                        padding: 0;
+                        &:hover {
+                            a {
+                                background-color: @sub_link_hover_bg;
+                                color: @sub_link_hover_color;
+                            }
+                        }
+                        &.active {
+                            a {
+                                background-color: @sub_link_active_bg;
+                                color: @sub_link_active_color;
+                            }
+                        }
+
+                        &:last-child > a {
+                            border-bottom: 0;
+                        }
+
+                        > a {
+                            color: @link_bg;
+                            position: relative;
+                            display: block;
+                            padding: 13px 0 13px 25px;
+                            .transition(all .3s ease-in-out);
+
+                            &:first-child {
+                                border-top: none;
+                            }
+
+                            i.fa {
+                                font-size: 8px;
+                                margin-right: 25px;
+                            }
+
+                            > .badge {
+                                position: absolute;
+                                right: 5px;
+                                top: 12px;
+                            }
+                        }
+
+                    }
+                }
+
+            }
+        }
+
+    }
+}

@@ -1,0 +1,15 @@
+.name-category-combobox{
+    .name-category-combobox-readonly {
+        display: none;
+    }
+
+    &[readonly='readonly'] {
+        .ui-select-container {
+            display: none;
+        }
+
+        .name-category-combobox-readonly {
+            display: block;
+        }
+    }
+}

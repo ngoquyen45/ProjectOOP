@@ -1,0 +1,62 @@
+.order {
+
+    hr {
+        margin: 10px 0;
+    }
+
+    table.order-detail {
+        thead tr th {
+            &.product-code {
+                width: 14%;
+            }
+            &.product-name {
+                width: 40%;
+            }
+            &.uom {
+                width: 12%;
+            }
+            &.product-price {
+                width: 12%;
+            }
+            &.quantity {
+                width: 8%;
+            }
+            &.amount {
+                width: 14%;
+            }
+        }
+    }
+
+    .order-sum {
+        li {
+            margin-bottom: 5px;
+            padding: 10px;
+            background-color: @table-bg-accent;
+        }
+    }
+
+    .print & {
+        background-color: white;
+        font-size: 9px;
+
+        table {
+            font-size: 10px;
+        }
+
+        .size-h2 {
+            font-size: 20px;
+        }
+
+        .size-h3 {
+            font-size: 16px;
+        }
+
+        .order-sum {
+            li {
+                margin-bottom: 0;
+                padding: 5px 10px;
+            }
+        }
+    }
+
+}

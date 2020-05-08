@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.viettel.dms.ui.fragment.VisitSurveyListFragment">
+
+    <com.viettel.dms.helper.layout.GeneralSwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_Survey_List"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/margin_short"
+            android:layout_marginTop="@dimen/margin_short"
+            android:scrollbars="vertical" />
+    </com.viettel.dms.helper.layout.GeneralSwipeRefreshLayout>
+
+ <com.viettel.dms.helper.layout.ViewEmptyStateLayout
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:id="@+id/view_State"></com.viettel.dms.helper.layout.ViewEmptyStateLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/drawer_shadow_top" />
+
+
+</RelativeLayout>

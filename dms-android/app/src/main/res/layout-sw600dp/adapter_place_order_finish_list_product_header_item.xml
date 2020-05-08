@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:orientation="vertical"
+    android:paddingLeft="104dp"
+    android:paddingRight="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.44"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:text="@string/place_order_finish_product_header_product"
+            android:textAppearance="@style/TextAppearance.Medium.14.PrimaryColor" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.14"
+            android:ellipsize="end"
+            android:gravity="left|center_vertical"
+            android:maxLines="1"
+            android:text="@string/product_list_uom"
+            android:textAppearance="@style/TextAppearance.Medium.14.Black54" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_weight="0.14"
+            android:ellipsize="end"
+            android:gravity="right|center_vertical"
+            android:maxLines="1"
+            android:text="@string/product_list_detail_price"
+            android:textAppearance="@style/TextAppearance.Medium.14.Black54" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_weight="0.14"
+            android:ellipsize="end"
+            android:gravity="right|center_vertical"
+            android:maxLines="1"
+            android:text="@string/place_order_product_quantity"
+            android:textAppearance="@style/TextAppearance.Medium.14.Black54" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_weight="0.14"
+            android:ellipsize="end"
+            android:gravity="right|center_vertical"
+            android:maxLines="1"
+            android:text="@string/place_order_product_total"
+            android:textAppearance="@style/TextAppearance.Medium.14.Black54" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/Black12" />
+
+</LinearLayout>

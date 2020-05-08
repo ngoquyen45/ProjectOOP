@@ -1,0 +1,111 @@
+<basic-view class="visit-photo" ng-class="{ 'must-select-distributor': mustSelectDistributor() }">
+
+    <div class="row title-bar">
+        <div class="col-xs-9">
+            <h3> {{ title | translate }} </h3>
+        </div>
+        <div class="col-xs-3 title-btn-bar">
+            <button type="button" class="btn btn-info" ng-click="refresh()">
+                <span class="fa fa-refresh"></span>
+            </button>
+        </div>
+    </div>
+
+    <section class="panel panel-default table-dynamic">
+        <div style="position: relative; padding: 10px 10px 0px 10px">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-xs-12 m-b-sm" ng-show="isUseDistributorFilter()">
+                    <label> {{ 'distributor' | translate }} </label>
+                    <name-category-combobox
+                        ng-model="filter.distributorId"
+                        datas="distributors"
+                        ng-change="changeDistributor()"
+                        placeholder="{{ 'please.select.distributor' | translate }}">
+                    </name-category-combobox>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12 m-b-sm">
+                    <label> {{ 'from.date' | translate }} </label>
+                    <div class="input-group ui-datepicker">
+                        <input type="text"
+                               class="form-control"
+                               datepicker-popup="{{ dateFormat }}"
+                               ng-model="fromDate.date"
+                               is-open="fromDate.opened"
+                               datepicker-options="dateOptions"
+                               close-text="{{ 'close' | translate }}"
+                               required>
+                            <span class="input-group-addon" ng-click="open($event, fromDate)">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12 m-b-sm">
+                    <label> {{ 'to.date' | translate }} </label>
+                    <div class="input-group ui-datepicker">
+                        <input type="text"
+                               class="form-control"
+                               datepicker-popup="{{ dateFormat }}"
+                               ng-model="toDate.date"
+                               is-open="toDate.opened"
+                               datepicker-options="dateOptions"
+                               close-text="{{ 'close' | translate }}"
+                               required>
+                            <span class="input-group-addon" ng-click="open($event, toDate)">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12 m-b-sm hide-when-must-select-distributor">
+                    <label> {{ 'salesman' | translate }} </label>
+                    <user-combobox
+                        ng-model="filter.salesmanId"
+                        datas="salesmen"
+                        placeholder="{{ 'please.select.salesman' | translate }}">
+                    </user-combobox>
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12 m-b-sm">
+                    <div style="width: 100%; height: 34px;"></div>
+                </div>
+            </div>
+
+
+            <button class="btn btn-primary" style="position: absolute; bottom: 10px; right: 10px;" ng-click="search()"> {{ 'search' | translate }} </button>
+        </div>
+    </section>
+
+    <section class="panel panel-default table-dynamic">
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="wrapper-sm">
+                    <h5 ng-if="isEmpty()"> {{'no.data' | translate }} </h5>
+
+                    <div ng-repeat="date in dates">
+                        <h4 class="m-l-sm m-r-sm"> {{ date }} </h4>
+                        <hr class="m-t-none m-b-none m-l-sm m-r-sm"/>
+                        <div class="visit-photo-thumbnail" ng-repeat="record in map[date]">
+                            <img alt ng-src="{{ getPhoto(record) }}"/>
+
+                            <button type="button" class="btn" ng-click="zoomPhoto(record)">
+                                <span class="fa fa-3x fa-search-plus"></span>
+                            </button>
+
+                            <p class="text-ellipsis no-margin"> {{ record.customer.name }} </p>
+                            <a ng-href="{{ getVisitLink(record) }}" class="color-success">{{ 'detail' | translate }}</a>
+                        </div>
+                    </div>
+
+                    <div class="thumbnail-container">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</basic-view>

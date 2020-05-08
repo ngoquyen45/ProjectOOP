@@ -1,0 +1,22 @@
+<div class="page-err">
+    <div class="err-container">
+        <div class="text-center">
+            <div class="err-status">
+                <h1>550</h1>
+            </div>
+            <div class="err-message">
+                <h2>{{ 'permission.denied' | translate }}</h2>
+            </div>
+            <div class="err-body">
+                <button class="btn btn-lg btn-goback" ng-click="logout()">
+                    <span class="glyphicon glyphicon-log-out"></span>
+                    <span class="space"></span>
+                    {{ 'logout' | translate }}
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="footer text-center">
+        Copyright 2014 {{main.brand}}
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.viettel.dmsplus.sdk">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <activity android:name="com.viettel.dmsplus.sdk.auth.OAuthActivity" />
+
+</manifest>

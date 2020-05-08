@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_Start_Visit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/padding_standard">
+
+        <com.joanzapata.iconify.widget.IconTextView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_centerInParent="true"
+            android:textColor="?colorPrimary"
+            android:text="{md-play-circle-outline 160dp}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/customer_visit_content_start_begin_visit"
+            android:textAppearance="@style/TextAppearance.CondensedRegular.36.PrimaryColor" />
+    </LinearLayout>
+
+    <com.rey.material.widget.LinearLayout
+        android:id="@+id/ll_Close_Visit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_height"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <com.joanzapata.iconify.widget.IconTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="{md-lock-outline 24sp @color/Black87}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/padding_short"
+            android:text="@string/customer_visit_view_close"
+            android:textAppearance="@style/TextAppearance.CondensedRegular.20.Black87" />
+    </com.rey.material.widget.LinearLayout>
+</RelativeLayout>

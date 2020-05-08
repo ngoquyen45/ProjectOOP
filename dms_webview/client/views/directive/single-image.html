@@ -1,0 +1,16 @@
+<div class="single-image">
+
+    <div ng-if="getFile() == null">
+        <span class="fa fa-camera"></span>
+    </div>
+
+    <div ng-if="getFile() != null">
+        <img ng-src="{{ getLink() }}">
+    </div>
+
+    <div class="hover-layer">
+        <span class="fa fa-paperclip"></span>
+        <input type="file" nv-file-select="" uploader="uploader"/>
+    </div>
+
+</div>

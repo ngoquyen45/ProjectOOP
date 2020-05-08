@@ -1,0 +1,105 @@
+<category-detail>
+    <section class="panel panel-default wrapper">
+        <form name="form">
+            <div class="row">
+                <div class="col-md-3 col-sm-12">
+                    <div class="form-group">
+                        <label> {{ 'product.photo' | translate }} * </label>
+                        <single-image ng-model="record.photo"
+                                      ng-change="changeStatus.markAsChanged()"
+                                      size-type="standard"
+                                      required>
+                        </single-image>
+                    </div>
+                </div>
+
+                <div class="col-md-9 col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label> {{ 'code' | translate }} * </label>
+                                <input type="text" class="form-control" ng-model="record.code"
+                                       ng-change="changeStatus.markAsChanged()"
+                                       ng-maxlength="30"
+                                       ng-pattern="/^\S+$/"
+                                       ng-readonly="!isDraft()"
+                                       required autofocus
+                                        />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label> {{ 'name' | translate }} * </label>
+                                <input type="text" class="form-control" ng-model="record.name"
+                                       ng-change="changeStatus.markAsChanged()"
+                                       ng-maxlength="50"
+                                       ng-readonly="!isDraft()"
+                                       required/>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label> {{ 'product.category' | translate }} * </label>
+                                <name-category-combobox
+                                    ng-model="record.productCategoryId"
+                                    ng-change="changeStatus.markAsChanged()"
+                                    datas="productCategories"
+                                    ng-readonly="!isDraft()"
+                                    readonly-name="record.productCategory.name"
+                                    required>
+                                </name-category-combobox>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label> {{ 'uom' | translate }} * </label>
+                                <name-category-combobox
+                                    ng-model="record.uomId"
+                                    ng-change="changeStatus.markAsChanged()"
+                                    datas="uoms"
+                                    ng-readonly="!isDraft()"
+                                    readonly-name="record.uom.name"
+                                    required>
+                                </name-category-combobox>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label> {{ 'product.price' | translate }} * </label>
+                                <input class="form-control" ng-model="record.price"
+                                       ng-change="changeStatus.markAsChanged()"
+                                       fcsa-number="{ min: 1, max: 1000000000, maxDecimals: 0}"
+                                       required/>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label> {{ 'product.productivity' | translate }} * </label>
+                                <input class="form-control" ng-model="record.productivity"
+                                       ng-change="changeStatus.markAsChanged()"
+                                       fcsa-number="{ min: 1, max: 1000000, maxDecimals: 2}"
+                                       required/>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label> {{ 'product.description' | translate }} </label>
+                                <textarea name="" id="" class="form-control" rows="4"
+                                          ng-model="record.description"
+                                          ng-change="changeStatus.markAsChanged()"
+                                          ng-maxlength="1000"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+</category-detail>

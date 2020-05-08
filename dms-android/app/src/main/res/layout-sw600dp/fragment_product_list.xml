@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.viettel.dms.ui.fragment.ProductListTBFragment">
+
+        <include
+            android:id="@+id/layoutLeft"
+            layout="@layout/view_product_list_left" />
+
+        <include
+            android:id="@+id/layoutRight"
+            layout="@layout/view_product_list_right" />
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/drawer_shadow_top"></View>
+</RelativeLayout>

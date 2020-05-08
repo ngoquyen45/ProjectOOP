@@ -1,0 +1,9 @@
+.gradle/
+.idea/
+build/
+*.properties
+*.iml
+.DS_Store
+app/app-debug.apk
+app/app-release.apk
+*.apk

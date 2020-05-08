@@ -1,0 +1,78 @@
+<category-detail>
+
+    <section class="panel panel-default wrapper">
+        <form name="form">
+            <div class="max-w-md margin-auto">
+                <div class="row">
+
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label> {{ 'role' | translate }} * </label>
+                            <name-category-combobox
+                                ng-model="record.role"
+                                datas="roles"
+                                ng-change="changeStatus.markAsChanged()"
+                                ng-readonly="!isDraft()"
+                                readonly-name="roleName"
+                                required>
+                            </name-category-combobox>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label> {{ 'fullname' | translate }} * </label>
+                            <input type="text" class="form-control" ng-model="record.fullname"
+                                   ng-change="changeStatus.markAsChanged()"
+                                   ng-readonly="!isDraft()"
+                                   ng-maxlength="50"
+                                   required/>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label> {{ 'username' | translate }} * </label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><strong> {{ clientCode }} </strong></span>
+                                <input type="text" class="form-control" ng-model="record.username"
+                                       ng-change="changeStatus.markAsChanged()"
+                                       ng-readonly="!isDraft()"
+                                       ng-maxlength="20"
+                                       required/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <div class="form-group" ng-if="useDistributor()">
+                            <label> {{ 'distributor' | translate }} * </label>
+                            <name-category-combobox
+                                ng-model="record.distributorId"
+                                datas="distributors"
+                                ng-change="changeStatus.markAsChanged()"
+                                ng-readonly="!isDraft()"
+                                readonly-name="record.distributor.name"
+                                required>
+                            </name-category-combobox>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12" ng-if="!isDraft()">
+                        <button class="btn btn-primary w-full" ng-click="resetPassword()">
+                            {{ 'reset.password' |  translate }}
+                        </button>
+                    </div>
+
+                    <div class="col-xs-12 m-t" ng-if="!isDraft() && record.role == 'OBS'">
+                        <button class="btn btn-success w-full" ng-click="goToObserverDistributors()">
+                            {{ 'user.observer.distributors' |  translate }}
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </section>
+
+</category-detail>

@@ -1,0 +1,69 @@
+<basic-view>
+
+    <div class="row title-bar">
+        <div class="col-xs-12">
+            <h3> {{ title | translate }} </h3>
+        </div>
+    </div>
+
+    <section class="panel panel-default wrapper">
+        <form name="form">
+            <div class="max-w-md margin-auto">
+                <div class="row">
+
+                    <div class="col-xs-12 form-group" ng-show="isUseDistributorFilter()">
+                        <label> {{ 'distributor' | translate }} * </label>
+                        <name-category-combobox
+                            ng-model="filter.distributorId"
+                            datas="distributors"
+                            placeholder="{{ 'please.select.distributor' | translate }}"
+                            required>
+                        </name-category-combobox>
+                    </div>
+
+                    <div class="col-sm-6 col-xs-12 form-group">
+                        <label> {{ 'from.date' | translate }} * </label>
+                        <div class="input-group ui-datepicker">
+                            <input type="text"
+                                   class="form-control"
+                                   datepicker-popup="{{ dateFormat }}"
+                                   ng-model="fromDate.date"
+                                   is-open="fromDate.opened"
+                                   datepicker-options="dateOptions"
+                                   close-text="{{ 'close' | translate }}"
+                                   required>
+                            <span class="input-group-addon" ng-click="open($event, fromDate)">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                        </div>
+
+                        <div class="w-full m-t-sm hidden-lg hidden-md"></div>
+                    </div>
+
+                    <div class="col-sm-6 col-xs-12 form-group">
+                        <label> {{ 'to.date' | translate }} * </label>
+                        <div class="input-group ui-datepicker">
+                            <input type="text"
+                                   class="form-control"
+                                   datepicker-popup="{{ dateFormat }}"
+                                   ng-model="toDate.date"
+                                   is-open="toDate.opened"
+                                   datepicker-options="dateOptions"
+                                   close-text="{{ 'close' | translate }}"
+                                   required>
+                            <span class="input-group-addon" ng-click="open($event, toDate)">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 text-right">
+                        <button class="btn btn-primary" ng-click="export()"> {{ 'export' | translate }} </button>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </section>
+
+</basic-view>

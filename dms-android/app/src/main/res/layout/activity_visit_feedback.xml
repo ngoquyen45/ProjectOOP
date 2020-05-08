@@ -1,0 +1,105 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.viettel.dms.ui.activity.VisitFeedbackActivity">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/cardview_background">
+
+            <com.viettel.dms.helper.layout.GeneralSwipeRefreshLayout
+                android:id="@+id/swipe_refresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_FeedBack"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_above="@+id/id_divider"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/cardview_background"
+                        android:scrollbars="vertical"></android.support.v7.widget.RecyclerView>
+                </LinearLayout>
+            </com.viettel.dms.helper.layout.GeneralSwipeRefreshLayout>
+
+            <com.viettel.dms.helper.layout.ViewEmptyStateLayout
+                android:id="@+id/view_State"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></com.viettel.dms.helper.layout.ViewEmptyStateLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/drawer_shadow_top"
+                android:visibility="gone"></View>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_Input_Form"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_tile_height_avatar_text_icon_single_line"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <View
+            android:id="@+id/id_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/ll_Input_Form"
+            android:background="@color/Black12"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/edt_Message"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:textCursorDrawable="?colorPrimary"
+                android:hint="@string/visit_feedback_edittext_hint"
+                android:lineSpacingMultiplier="1.15"
+                android:lines="3"
+                android:paddingLeft="@dimen/padding_standard">
+
+            </EditText>
+
+            <com.joanzapata.iconify.widget.IconTextView
+                android:id="@+id/itv_Send"
+                android:layout_width="@dimen/list_tile_height_avatar_text_icon_single_line"
+                android:layout_height="@dimen/list_tile_height_avatar_text_icon_single_line"
+                android:gravity="center"
+                android:textColor="?colorSecondary"
+                android:text="{md-send 36dp}" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

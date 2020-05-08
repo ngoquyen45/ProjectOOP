@@ -1,0 +1,39 @@
+<category-detail>
+
+    <section class="panel panel-default wrapper">
+        <form name="form">
+            <div class="max-w-md margin-auto">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label> {{ 'name' | translate }} * </label>
+                            <input type="text"
+                                   class="form-control"
+                                   ng-model="record.name"
+                                   ng-change="changeStatus.markAsChanged()"
+                                   ng-maxlength="30"
+                                   ng-readonly="!isDraft()"
+                                   required
+                                   autofocus>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label> {{ 'supervisor' | translate }} * </label>
+                            <user-combobox
+                                ng-model="record.supervisorId"
+                                datas="supervisors"
+                                ng-change="changeStatus.markAsChanged()"
+                                readonly-name="record.supervisor.fullname"
+                                required>
+                            </user-combobox>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </section>
+
+</category-detail>

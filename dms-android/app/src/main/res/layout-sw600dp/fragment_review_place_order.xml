@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?activityBackground"
+    android:orientation="vertical"
+    tools:context="com.viettel.dms.ui.fragment.ReviewPurchaseOrderFragment">
+
+    <include
+        android:id="@+id/sub_bar"
+        layout="@layout/view_sub_toolbar_review" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.viettel.dms.helper.layout.GeneralSwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:scrollbars="vertical" />
+        </com.viettel.dms.helper.layout.GeneralSwipeRefreshLayout>
+        <com.viettel.dms.helper.layout.ViewEmptyStateLayout
+            android:id="@+id/view_State"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </com.viettel.dms.helper.layout.ViewEmptyStateLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawer_shadow_top" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,142 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.viettel.dms.ui.fragment.PlaceOrderProductListMBFragment">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/view_sub_toolbar_place_order" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.sothree.slidinguppanel.SlidingUpPanelLayout
+            android:id="@+id/sliding_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            sothree:umanoDragView="@+id/dragView"
+            sothree:umanoOverlay="true"
+            sothree:umanoPanelHeight="@dimen/app_bar_height"
+            sothree:umanoParallaxOffset="100dp"
+            sothree:umanoScrollableView="@+id/rv_Selected_Product"
+            sothree:umanoShadowHeight="4dp">
+
+            <!-- MAIN CONTENT -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.viettel.dms.helper.layout.GeneralSwipeRefreshLayout
+                    android:id="@+id/swipe_refresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_Main_Content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="@dimen/app_bar_height"
+                        android:paddingTop="@dimen/padding_short" />
+                </com.viettel.dms.helper.layout.GeneralSwipeRefreshLayout>
+
+                <com.viettel.dms.helper.layout.ViewEmptyStateLayout
+                    android:id="@+id/view_State_List_Product"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></com.viettel.dms.helper.layout.ViewEmptyStateLayout>
+            </FrameLayout>
+
+            <!-- SLIDING LAYOUT -->
+            <LinearLayout
+                android:id="@+id/dragView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:clickable="true"
+                android:focusable="false"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/header_bar"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/app_bar_height"
+                        android:gravity="center_vertical|left"
+                        android:orientation="horizontal">
+
+                        <com.joanzapata.iconify.widget.IconTextView
+                            android:layout_width="@dimen/list_avatar_circle_size"
+                            android:layout_height="@dimen/list_avatar_circle_size"
+                            android:layout_marginLeft="@dimen/margin_standard"
+                            android:gravity="center_vertical"
+                            android:textColor="?colorSecondary"
+                            android:text="{md-shopping-basket 24dp}" />
+
+                        <TextView
+                            android:id="@+id/tv_Total"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical|left"
+                            android:maxLines="1"
+                            android:paddingLeft="@dimen/second_keyline"
+                            android:text="@string/place_order_orders_cost_total"
+                            android:textAppearance="@style/TextAppearance.Regular.14.Black54"
+                            android:textColor="?colorSecondary" />
+
+                        <TextView
+                            android:id="@+id/tv_Cost_Total"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical|right"
+                            android:maxLines="1"
+                            android:paddingRight="@dimen/padding_standard"
+                            android:textAppearance="@style/TextAppearance.Medium.16.Black87"
+                            android:textColor="?colorSecondary" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="@dimen/second_keyline"
+                        android:background="@color/Black12" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ListView
+                        android:id="@+id/rv_Selected_Product"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:divider="@drawable/divider_list_72"></ListView>
+
+                    <com.viettel.dms.helper.layout.ViewEmptyStateLayout
+                        android:id="@+id/view_State_Selected_Product"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"></com.viettel.dms.helper.layout.ViewEmptyStateLayout>
+
+                </RelativeLayout>
+            </LinearLayout>
+        </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawer_shadow_top" />
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:minWidth="250dp"
+    android:orientation="vertical"
+    android:paddingBottom="20dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="16dp">
+
+    <TextView
+        android:id="@+id/id_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Customer name..."
+        android:textAppearance="@style/TextAppearance.Regular.16.PrimaryColor" />
+
+    <TextView
+        android:id="@+id/id_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Customer phone..."
+        android:textAppearance="@style/TextAppearance.Regular.14.Black87" />
+
+    <TextView
+        android:id="@+id/id_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Customer address..."
+        android:textAppearance="@style/TextAppearance.Regular.14.Black87" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:id="@+id/id_view_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:text="@string/customer_route_view_more"
+            android:textAppearance="@style/TextAppearance.Condensed.Regular.14.PrimaryColor" />
+
+        <Button
+            android:id="@+id/id_visit_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:text="@string/customer_route_visit_now"
+            android:textAppearance="@style/TextAppearance.Condensed.Regular.14.PrimaryColor" />
+    </RelativeLayout>
+</LinearLayout>

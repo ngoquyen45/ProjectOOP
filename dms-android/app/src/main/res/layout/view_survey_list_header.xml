@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:layout_marginLeft="80dp"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginRight="72dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4.5"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:paddingRight="24dp"
+            android:text="@string/visit_survey_list_header_1"
+            android:textAppearance="@style/TextAppearance.Medium.14.Black54" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.5"
+            android:ellipsize="end"
+            android:gravity="center_vertical|center_horizontal"
+            android:maxLines="1"
+            android:paddingRight="24dp"
+            android:text="@string/visit_survey_list_header_2"
+            android:textAppearance="@style/TextAppearance.Medium.14.Black54" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.25"
+            android:ellipsize="end"
+            android:gravity="center_horizontal|center_vertical"
+            android:maxLines="1"
+            android:text="@string/visit_survey_list_header_3"
+            android:textAppearance="@style/TextAppearance.Medium.14.Black54" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.75"
+            android:ellipsize="end"
+            android:gravity="right|center_vertical"
+            android:maxLines="1"
+            android:text="@string/visit_survey_list_header_4"
+            android:textAppearance="@style/TextAppearance.Medium.14.Black54" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/Black12"></View>
+
+</LinearLayout>

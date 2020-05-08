@@ -1,0 +1,212 @@
+<basic-view class="visit-list">
+    <div>
+        <div class="row title-bar">
+            <div class="col-xs-9">
+                <h3> {{ title | translate }} </h3>
+            </div>
+            <div class="col-xs-3 title-btn-bar">
+                <button type="button" class="btn btn-info" ng-click="refresh()">
+                    <span class="fa fa-refresh"></span>
+                </button>
+            </div>
+        </div>
+
+        <section class="panel panel-default table-dynamic">
+            <div class="wrapper-sm">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 m-b-sm" ng-show="isUseDistributorFilter()">
+                        <label> {{ 'distributor' | translate }} </label>
+                        <name-category-combobox
+                            ng-model="filter.distributorId"
+                            ng-change="changeDistributor()"
+                            datas="distributors">
+                        </name-category-combobox>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-12 m-b-sm">
+                        <label> {{ 'from.date' | translate }} </label>
+                        <div class="input-group ui-datepicker">
+                            <input type="text"
+                                   class="form-control"
+                                   datepicker-popup="{{ dateFormat }}"
+                                   ng-model="fromDate.date"
+                                   is-open="fromDate.opened"
+                                   datepicker-options="dateOptions"
+                                   close-text="{{ 'close' | translate }}"
+                                   required>
+                            <span class="input-group-addon" ng-click="open($event, fromDate)">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-12 m-b-sm">
+                        <label> {{ 'to.date' | translate }} </label>
+                        <div class="input-group ui-datepicker">
+                            <input type="text"
+                                   class="form-control"
+                                   datepicker-popup="{{ dateFormat }}"
+                                   ng-model="toDate.date"
+                                   is-open="toDate.opened"
+                                   datepicker-options="dateOptions"
+                                   close-text="{{ 'close' | translate }}"
+                                   required>
+                            <span class="input-group-addon" ng-click="open($event, toDate)">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-xs-12 m-b-sm" ng-if="isDisplaySalesmanFilter()">
+                        <label> {{ 'salesman' | translate }} </label>
+                        <user-combobox
+                            ng-model="filter.salesmanId"
+                            datas="salesmen">
+                        </user-combobox>
+                    </div>
+
+                    <div class="col-xs-12 text-right">
+                        <button class="btn btn-primary" ng-click="search()"> {{ 'search' | translate }} </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel panel-default table-dynamic">
+            <table class="table table-middle visit-info">
+                <thead class="hidden-xs">
+                <tr>
+                    <th>
+                        {{ 'date' | translate }}
+                    </th>
+                    <th>
+                        {{ 'salesman' | translate }}
+                    </th>
+                    <th>
+                        {{ 'customer' | translate }}
+                    </th>
+                    <th class="w-sm text-center">
+                        {{ 'visit.time' | translate }}
+                    </th>
+                    <th class="w-sm text-center">
+                        {{ 'visit.distance' | translate }}
+                    </th>
+                    <th class="w-sm text-center">
+                        {{ 'order' | translate }}
+                    </th>
+                    <th class="w-sm text-center">
+                        {{ 'visit.status' | translate }}
+                    </th>
+                    <th class="w-xxs"></th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr ng-repeat="record in records">
+                    <td>
+                        {{ record.startTime | isoDate }}
+                    </td>
+                    <td>
+                        <div>
+                            <div>
+                                {{ record.salesman.fullname }}
+                            </div>
+                            <div>
+                                {{ record.distributor.name }}
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        {{ record.customer.name }}
+                    </td>
+                    <td class="text-center">
+                        <div>
+                            <span class="color-success" ng-if="!record.errorDuration">
+                                <i class="fa fa-thumbs-up"></i>
+                            </span>
+                            <span class="color-danger" ng-if="record.errorDuration">
+                                <i class="fa fa-warning"></i>
+                            </span>
+                            {{ getDurationDisplay(record.duration) }}
+                        </div>
+                        {{ getStartEndDisplay(record) }}
+                    </td>
+                    <td class="text-center">
+                        <div ng-if="isDistanceNormal(record) || isDistanceTooFar(record)">
+                        <span class="color-success" ng-if="isDistanceNormal(record)">
+                            <i class="fa fa-thumbs-up"></i>
+                        </span>
+                        <span class="color-danger" ng-if="isDistanceTooFar(record)">
+                            <i class="fa fa-warning"></i>
+                        </span>
+                            {{ getDistanceDisplay(record.distance) }}
+                        </div>
+                    <span class="label label-danger" ng-if="isLocationSalesmanUndefined(record)">
+                        {{ 'visit.salesman.location.undefined' | translate }}
+                    </span>
+                    <span class="label label-danger" ng-if="isLocationCustomerUndefined(record)">
+                        {{ 'visit.customer.location.undefined' | translate }}
+                    </span>
+                    </td>
+                    <td class="text-center">
+                        <div class="has-distance" ng-if="!isNoOrder(record)">
+                        <span class="color-success" ng-if="isOrderApproved(record)">
+                            <i class="fa fa-check"></i>
+                        </span>
+                        <span class="color-info" ng-if="isOrderPending(record)">
+                            <i class="fa fa-clock-o"></i>
+                        </span>
+                        <span class="color-danger" ng-if="isOrderRejected(record)">
+                            <i class="fa fa-ban"></i>
+                        </span>
+                            {{ record.grandTotal | number }}
+                        </div>
+                        <span class="label label-warning" ng-if="isNoOrder(record)"> {{ 'visit.no.order' | translate }} </span>
+                    </td>
+                    <td class="text-center">
+                        <div class="status-container text-left">
+                            <img class="status-icon closed" src="images/visit-closed.svg" ng-if="record.closed">
+                            <span class="status-icon color-success" ng-if="!record.closed && record.photo != null">
+                                <i class="fa fa-camera-retro"></i>
+                            </span>
+                            <span class="status-icon color-primary" ng-if="record.vanSales">
+                                <i class="fa fa-truck"></i>
+                            </span>
+                        </div>
+                    </td>
+                    <td class="text-right no-padder col-action">
+                        <button class="btn" ng-click="goToDetail(record)">
+                            <span class="fa fa-2x fa-angle-right"></span>
+                        </button>
+                    </td>
+                </tr>
+                <tr ng-if="isEmpty()">
+                    <td colspan="6">
+                        {{ 'no.data' | translate }}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="wrapper-sm pagination-container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <hr class="m-b-sm m-t-none m-l-n-sm m-r-n-sm">
+                    </div>
+
+                    <div class="col-xs-12 text-right">
+                        <pagination class="pagination pagination-sm pagination-right m-n"
+                                    boundary-links="true"
+                                    total-items="pagingData.count"
+                                    max-size="pagingData.pagingMaxSize"
+                                    items-per-page="pagingData.itemsPerPage"
+                                    ng-model="pagingData.currentPage"
+                                    previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"
+                                    ng-change="pageChange()">
+                        </pagination>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</basic-view>

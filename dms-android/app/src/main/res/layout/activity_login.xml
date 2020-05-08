@@ -1,0 +1,162 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?colorPrimary"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_login"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_login"
+            android:layout_width="312dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:layout_marginRight="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_large"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_short"
+                android:paddingRight="@dimen/padding_short">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edt_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/login_activity_edt_user"
+                    android:textCursorDrawable="@color/white"
+                    app:met_baseColor="@color/white"
+                    app:met_errorColor="?colorSecondary"
+                    app:met_primaryColor="@color/white"
+                    app:met_floatingLabel="highlight"
+                    app:met_floatingLabelText="@string/login_activity_edt_user"
+                    app:met_singleLineEllipsis="true" />
+
+                <com.joanzapata.iconify.widget.IconTextView
+                    android:id="@+id/Itv_User_Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/margin_large"
+                    android:gravity="center_vertical|right"
+                    android:text="{md-person @dimen/login_icon_size @color/White30}" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_short"
+                android:paddingRight="@dimen/padding_short">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edt_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/login_activity_edt_pass"
+                    android:textCursorDrawable="@color/white"
+                    app:met_baseColor="@color/white"
+                    app:met_errorColor="?colorSecondary"
+                    app:met_primaryColor="@color/white"
+                    android:inputType="textPassword"
+                    app:met_floatingLabel="highlight"
+                    app:met_floatingLabelText="@string/login_activity_edt_pass"
+                    app:met_singleLineEllipsis="true" />
+
+                <com.joanzapata.iconify.widget.IconTextView
+                    android:id="@+id/Itv_User_Pass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical|right"
+                    android:text="{md-lock @dimen/login_icon_size @color/White30}" />
+
+            </RelativeLayout>
+
+            <com.rey.material.widget.Button
+                android:id="@+id/btn_login"
+                style="@style/ViewDetailFlatColorButtonRippleStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_short"
+                android:background="@null"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="@dimen/padding_short"
+                android:paddingRight="@dimen/padding_short"
+                android:text="@string/login_activity_btn_login"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <com.rey.material.widget.ProgressView
+            android:id="@+id/pb_Login"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            app:pv_autostart="true"
+            app:pv_circular="true"
+            app:pv_progressMode="indeterminate"
+            app:pv_progressStyle="@style/NormalProgressBar" />
+
+        <LinearLayout
+            android:id="@+id/ll_Login_Error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:background="#ffffffff"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="75dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/error_no_network"
+                android:src="@drawable/img_no_conection" />
+
+            <TextView
+                android:id="@+id/tv_Message_Error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center_horizontal"
+                android:text="@string/error_no_network"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_ReLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:text="@string/login_retry_login" />
+
+                <!-- XXX: Remove this -->
+
+                <Button
+                    android:id="@+id/btn_Config"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:text="@string/login_setting_server" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

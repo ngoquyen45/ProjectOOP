@@ -1,0 +1,233 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.viettel.dms.ui.fragment.CustomerVisitFragment">
+
+    <include layout="@layout/view_customer_info"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.375"
+            android:background="@color/Grey98">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgCustomerImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@null"
+                    android:minHeight="200dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_customer_default" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/Black54" />
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/layout_Address"
+                            android:layout_width="match_parent"
+                            android:layout_height="64dp"
+                            android:gravity="center_vertical">
+
+
+                            <com.joanzapata.iconify.widget.IconTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="24dp"
+                                android:layout_marginRight="32dp"
+                                android:text="{md-location-on @color/Black54 24dp}" />
+
+                            <TextView
+                                android:id="@+id/tv_Customer_Address"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="24dp"
+                                android:layout_weight="1"
+                                android:ellipsize="end"
+                                android:lineSpacingMultiplier="1.15"
+                                android:singleLine="true"
+                                android:textAppearance="@style/TextAppearance.Regular.16.Black87" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layout_Mobile"
+                            android:layout_width="match_parent"
+                            android:layout_height="64dp"
+                            android:gravity="center_vertical">
+
+
+                            <com.joanzapata.iconify.widget.IconTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="24dp"
+                                android:layout_marginRight="32dp"
+                                android:text="{md-phone-iphone @color/Black54 24dp}" />
+
+                            <TextView
+                                android:id="@+id/tv_Customer_Mobile"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="24dp"
+                                android:layout_weight="1"
+                                android:ellipsize="end"
+                                android:lineSpacingMultiplier="1.15"
+                                android:singleLine="true"
+                                android:textAppearance="@style/TextAppearance.Regular.16.Black87" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/layout_Phone_Home"
+                            android:layout_width="match_parent"
+                            android:layout_height="64dp"
+                            android:gravity="center_vertical">
+
+
+                            <com.joanzapata.iconify.widget.IconTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="24dp"
+                                android:layout_marginRight="32dp"
+                                android:text="{md-phone @color/Black54 24dp}" />
+
+                            <TextView
+                                android:id="@+id/tv_Customer_Phone_Home"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="24dp"
+                                android:layout_weight="1"
+                                android:ellipsize="end"
+                                android:lineSpacingMultiplier="1.15"
+                                android:singleLine="true"
+                                android:textAppearance="@style/TextAppearance.Regular.16.Black87" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/layout_Email"
+                            android:layout_width="match_parent"
+                            android:layout_height="64dp"
+                            android:gravity="center_vertical">
+
+
+                            <com.joanzapata.iconify.widget.IconTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="24dp"
+                                android:layout_marginRight="32dp"
+                                android:text="{md-mail @color/Black54 24dp}" />
+
+                            <TextView
+                                android:id="@+id/tv_Customer_Email"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="24dp"
+                                android:layout_weight="1"
+                                android:ellipsize="end"
+                                android:lineSpacingMultiplier="1.15"
+                                android:singleLine="true"
+                                android:textAppearance="@style/TextAppearance.Regular.16.Black87" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/layout_Representative"
+                            android:layout_width="match_parent"
+                            android:layout_height="64dp"
+                            android:gravity="center_vertical">
+
+
+                            <com.joanzapata.iconify.widget.IconTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="24dp"
+                                android:layout_marginRight="32dp"
+                                android:text="{md-person @color/Black54 24dp}" />
+
+                            <TextView
+                                android:id="@+id/tv_Representative"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="24dp"
+                                android:layout_weight="1"
+                                android:ellipsize="end"
+                                android:lineSpacingMultiplier="1.15"
+                                android:singleLine="true"
+                                android:textAppearance="@style/TextAppearance.Regular.16.Black87" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="72dp">
+
+                            <com.rey.material.widget.Button
+                                android:id="@+id/btn_View_More"
+                                style="@style/ViewDetailFlatColorButtonRippleStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:gravity="left|center_vertical"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="8dp"
+                                android:text="@string/customer_visit_view_detail"
+                                android:textColor="?colorPrimary" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </ScrollView>
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/drawer_shadow_right_back" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.625"
+            android:background="?activityBackground">
+
+            <include
+                android:id="@+id/layoutActions"
+                layout="@layout/view_customer_visit_actions" />
+
+            <include
+                android:id="@+id/layoutStart"
+                layout="@layout/view_customer_visit_start" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/drawer_shadow_top" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

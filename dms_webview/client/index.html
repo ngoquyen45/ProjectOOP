@@ -1,0 +1,189 @@
+<!doctype html>
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>DMSPlus</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <link rel="shortcut icon" href="images/favicon2.png">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- needs images, font... therefore can not be part of ui.css -->
+        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="bower_components/weather-icons/css/weather-icons.min.css">
+        <!-- end needs images -->
+
+        <link rel="stylesheet" href="styles/main.css">
+
+    </head>
+    <body ng-app="app" id="app" custom-background ng-strict-di>
+        <!--[if lt IE 9]>
+            <p class="browsehappy">
+                You are using an <strong>outdated</strong> browser.
+                Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+            </p>
+        <![endif]-->
+
+        <div ng-controller="HeaderMenuCtrl" ng-class="getUserLanguage()">
+            <div class="loader-container full" ng-if="!isSpecificPage() && !$root.tokenVerified">
+                <div class="loader"></div>
+            </div>
+
+            <div ng-if="!isSpecificPage() && $root.tokenVerified"
+                 ng-cloak
+                 class="no-print">
+                <section ng-include=" 'views/header.html' " id="header" class="top-header"></section>
+
+                <aside ng-include=" 'views/nav.html' " id="nav-container"></aside>
+            </div>
+
+            <div class="view-container" ng-if="isSpecificPage() || $root.tokenVerified">
+                <section class="lock-content" toggle-off-canvas ng-hide="isSpecificPage()"></section>
+
+                <section ui-view="" id="content" class="animate-fade-up"></section>
+            </div>
+        </div>
+
+        <script src="http://maps.google.com/maps/api/js?key=AIzaSyB_lb0BqQV4NttJFYlbImW6XmArwvTT70U"></script>
+
+        <!-- build:js(client) scripts/vendor.js -->
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+        <script src="bower_components/lodash/lodash.min.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js(client) scripts/ui.js -->
+        <script src="bower_components/angular-ui-select/dist/select.min.js"></script>
+        <script src="bower_components/angular-file-upload/angular-file-upload.min.js"></script>
+        <script src="bower_components/angular-fcsa-number/src/fcsaNumber.min.js"></script>
+        <script src="bower_components/angular-translate/angular-translate.min.js"></script>
+        <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+        <script src="bower_components/angular-confirm-modal/angular-confirm.js"></script>
+        <script src="bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
+        <script src="bower_components/jquery-steps/build/jquery.steps.min.js"></script>
+        <script src="bower_components/toastr/toastr.min.js"></script>
+        <!--<script src="bower_components/bootstrap-file-input/bootstrap.file-input.js"></script>-->
+        <script src="bower_components/jquery.slimscroll/jquery.slimscroll.min.js"></script>
+        <!--<script src="bower_components/holderjs/holder.js"></script>-->
+        <script src="bower_components/raphael/raphael.min.js"></script>
+        <script src="bower_components/morris.js/morris.min.js"></script>
+        <script src="scripts/vendors/jquery.sparkline.min.js"></script>
+        <script src="bower_components/flot/jquery.flot.js"></script>
+        <script src="bower_components/flot/jquery.flot.resize.js"></script>
+        <script src="bower_components/flot/jquery.flot.pie.js"></script>
+        <script src="bower_components/flot/jquery.flot.stack.js"></script>
+        <script src="bower_components/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+        <script src="bower_components/flot/jquery.flot.time.js"></script>
+        <script src="bower_components/gauge.js/dist/gauge.min.js"></script>
+        <script src="bower_components/jquery.easy-pie-chart/dist/angular.easypiechart.min.js"></script>
+        <script src="bower_components/angular-wizard/dist/angular-wizard.min.js"></script>
+        <script src="bower_components/textAngular/dist/textAngular-rangy.min.js"></script>
+        <script src="bower_components/textAngular/dist/textAngular-sanitize.min.js"></script>
+        <script src="bower_components/textAngular/dist/textAngular.min.js"></script>
+        <script src="scripts/vendors/skycons.js"></script>
+        <script src="bower_components/angular-ui-tree/dist/angular-ui-tree.min.js"></script>
+        <script src="bower_components/ngmap/build/scripts/ng-map.min.js"></script>
+        <script src="bower_components/jqvmap/dist/jquery.vmap.min.js"></script>
+        <script src="bower_components/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+        <script src="bower_components/jqvmap/dist/maps/jquery.vmap.usa.js"></script>
+        <script src="bower_components/jqvmap/dist/maps/jquery.vmap.europe.js"></script>
+        <script src="bower_components/ng-tags-input/ng-tags-input.min.js"></script>
+        <script src="bower_components/moment/min/moment.min.js"></script>
+        <script src="bower_components/moment-duration-format/lib/moment-duration-format.js"></script>
+        <script src="bower_components/sockjs-client/dist/sockjs.min.js"></script>
+        <script src="bower_components/stomp-websocket/lib/stomp.min.js"></script>
+        <script src="bower_components/ng-idle/angular-idle.min.js"></script>
+        <!-- endbuild -->
+        <!-- TEST TECH-KHMER -->
+
+        <!-- build:js(.tmp) scripts/app.js -->
+        <script src="scripts/app.js"></script>
+
+        <!--DIRECTIVE-->
+        <script src="scripts/directive/system-directive.js"></script>
+        <script src="scripts/directive/i-check.js"></script>
+        <script src="scripts/directive/enter-pressed.js"></script>
+        <script src="scripts/directive/search-box.js"></script>
+        <script src="scripts/directive/file-image-chooser.js"></script>
+        <script src="scripts/directive/combobox.js"></script>
+        <script src="scripts/directive/common-view.js"></script>
+        <script src="scripts/directive/google-map.js"></script>
+        <script src="scripts/directive/location-selector.js"></script>
+        <script src="scripts/directive/chart.js"></script>
+
+        <!--UTILS-->
+        <script src="scripts/utils/toast.js"></script>
+        <script src="scripts/utils/global-utils.js"></script>
+        <script src="scripts/utils/push-utils.js"></script>
+        <script src="scripts/utils/filter.js"></script>
+        <script src="scripts/utils/factory.js"></script>
+        <script src="scripts/utils/ctrl-utils-service.js"></script>
+        <script src="scripts/utils/loading-utils-service.js"></script>
+
+        <!--SYSTEM-->
+        <script src="scripts/system/header-menu-ctrl.js"></script>
+        <script src="scripts/system/notification-ctrl.js"></script>
+        <script src="scripts/system/token.js"></script>
+        <script src="scripts/system/state-config.js"></script>
+        <script src="scripts/system/lang-ctrl.js"></script>
+        <script src="scripts/system/change-password-ctrl.js"></script>
+
+        <!--UTILS-->
+        <script src="scripts/common/ctrl-initiator-service.js"></script>
+        <script src="scripts/common/ctrl-category-initiator-service.js"></script>
+        <script src="scripts/common/category-popup-ctrl.js"></script>
+
+        <!--BUSINESS REQUIRE-->
+        <script src="scripts/require/config.js"></script>
+        <script src="scripts/require/menu.js"></script>
+        <script src="scripts/require/state.js"></script>
+
+        <!--DMS PLUS-->
+        <script src="scripts/business/super-admin/client-ctrl.js"></script>
+        <script src="scripts/business/import/import-master-data-ctrl.js"></script>
+        <script src="scripts/business/super-admin/system-config-ctrl.js"></script>
+        <script src="scripts/business/super-admin/system-action-ctrl.js"></script>
+        <script src="scripts/business/dashboard/dashboard-ctrl.js"></script>
+        <script src="scripts/business/system/user-ctrl.js"></script>
+        <script src="scripts/business/system/distributor-ctrl.js"></script>
+        <script src="scripts/business/system/client-config-ctrl.js"></script>
+        <script src="scripts/business/system/calendar-config-ctrl.js"></script>
+        <script src="scripts/business/product/uom-ctrl.js"></script>
+        <script src="scripts/business/product/product-category-ctrl.js"></script>
+        <script src="scripts/business/product/product-ctrl.js"></script>
+        <script src="scripts/business/product/promotion-ctrl.js"></script>
+        <script src="scripts/business/customer/customer-type-ctrl.js"></script>
+        <script src="scripts/business/customer/area-ctrl.js"></script>
+        <script src="scripts/business/customer/customer-ctrl.js"></script>
+        <script src="scripts/business/schedule/route-ctrl.js"></script>
+        <script src="scripts/business/schedule/customer-schedule-ctrl.js"></script>
+        <script src="scripts/business/survey/survey-ctrl.js"></script>
+        <script src="scripts/business/target/target-ctrl.js"></script>
+        <script src="scripts/business/visit-today/visit-today-map-ctrl.js"></script>
+        <script src="scripts/business/visit-today/visit-today-ctrl.js"></script>
+        <script src="scripts/business/visit-today/visit-detail-ctrl.js"></script>
+        <script src="scripts/business/approval/order-approval-ctrl.js"></script>
+        <script src="scripts/business/approval/customer-approval-ctrl.js"></script>
+        <script src="scripts/business/feedback/feedback-ctrl.js"></script>
+        <script src="scripts/business/history/order-ctrl.js"></script>
+        <script src="scripts/business/history/visit-ctrl.js"></script>
+        <script src="scripts/business/report/sales/sales-report-ctrl.js"></script>
+        <script src="scripts/business/report/visit/visit-report-ctrl.js"></script>
+        <script src="scripts/business/report/survey/survey-report-ctrl.js"></script>
+        <script src="scripts/business/report/performance/performance-report-ctrl.js"></script>
+        <script src="scripts/business/export/order-export-ctrl.js"></script>
+        <script src="scripts/business/export/exchange-return-export-ctrl.js"></script>
+        <script src="scripts/business/import/import-customer-ctrl.js"></script>
+        <script src="scripts/business/import/import-product-ctrl.js"></script>
+        <script src="scripts/business/import/import-customer-schedule-ctrl.js"></script>
+        <script src="scripts/business/price-list/price-list-ctrl.js"></script>
+        <script src="scripts/business/import/import-price-list-ctrl.js"></script>
+        <script src="scripts/business/van-sales/van-sales-ctrl.js"></script>
+        <script src="scripts/business/visit-photo/visit-photo-ctrl.js"></script>
+        <!-- endbuild -->
+    </body>
+</html>

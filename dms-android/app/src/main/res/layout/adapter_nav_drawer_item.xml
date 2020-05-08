@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/navigation_drawer_item_height"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <com.joanzapata.iconify.widget.IconTextView
+        android:id="@+id/itvItem"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/navigation_drawer_margin_horizontal"
+        android:gravity="center_vertical|left"
+        android:textColor="@color/White54"
+        android:text="{md-equalizer @dimen/navigation_drawer_item_icon_size}" />
+
+    <TextView
+        android:id="@+id/tvItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/navigation_drawer_item_margin_left"
+        android:ellipsize="end"
+        android:gravity="center_vertical|left"
+        android:singleLine="true"
+        android:textAppearance="@style/TextAppearance.Medium.14.Black87" />
+</RelativeLayout>

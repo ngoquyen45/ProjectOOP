@@ -1,0 +1,114 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.viettel.dms.ui.fragment.ProductListDetailFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin_standard"
+            android:layout_marginRight="@dimen/margin_standard"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_Product_Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:textAppearance="@style/TextAppearance.Medium.16.PrimaryColor"/>
+
+            <ImageView
+                android:id="@+id/img_Product_Image"
+                android:layout_width="wrap_content"
+                android:layout_height="224dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:maxHeight="224dp"
+                android:maxWidth="224dp"
+                />
+
+            <LinearLayout
+                android:id="@+id/ll_Product_Code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/product_list_detail_code"
+                    android:textAppearance="@style/TextAppearance.Regular.12.Black54"/>
+
+                <TextView
+                    android:id="@+id/tv_Product_Code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textAppearance="@style/TextAppearance.Regular.14.Black87"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_Product_Price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/product_list_detail_price"
+                    android:textAppearance="@style/TextAppearance.Regular.12.Black54"/>
+
+                <TextView
+                    android:id="@+id/tv_Product_Price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textAppearance="@style/TextAppearance.Regular.14.Black87"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_Product_Description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_standard"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/product_list_detail_description"
+                    android:textAppearance="@style/TextAppearance.Regular.12.Black54"/>
+
+                <TextView
+                    android:id="@+id/tv_Product_Description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.15"
+                    android:textAppearance="@style/TextAppearance.Regular.14.Black87"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/drawer_shadow_top"></View>
+</RelativeLayout>
