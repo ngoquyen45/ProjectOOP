@@ -74,7 +74,7 @@
 		<reactor.version>2.0.7.RELEASE</reactor.version>
 
 		<!-- Netty version -->
-		<netty.version>4.0.33.Final</netty.version>
+		<netty.version>4.1.42.Final</netty.version>
 
 		<!-- JUnit version -->
 		<junit.version>4.12</junit.version>
