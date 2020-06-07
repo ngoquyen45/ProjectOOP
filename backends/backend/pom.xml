@@ -49,7 +49,7 @@
 		<spring.security.version>3.2.9.RELEASE</spring.security.version>
 
 		<!-- Spring Security OAuth 2 -->
-		<spring.security.oauth2.version>2.0.7.RELEASE</spring.security.oauth2.version>
+		<spring.security.oauth2.version>2.0.18.RELEASE</spring.security.oauth2.version>
 
 		<!-- Spring Security Jwt -->
 		<spring.security.jwt>1.0.3.RELEASE</spring.security.jwt>
