@@ -77,7 +77,7 @@
 		<netty.version>4.0.33.Final</netty.version>
 
 		<!-- JUnit version -->
-		<junit.version>4.12</junit.version>
+		<junit.version>4.13.1</junit.version>
 
 	</properties>
 
