@@ -46,7 +46,7 @@
 		<spring-framework.version>4.2.3.RELEASE</spring-framework.version>
 
 		<!-- Spring Security version -->
-		<spring.security.version>3.2.9.RELEASE</spring.security.version>
+		<spring.security.version>5.2.10.RELEASE</spring.security.version>
 
 		<!-- Spring Security OAuth 2 -->
 		<spring.security.oauth2.version>2.0.7.RELEASE</spring.security.oauth2.version>
