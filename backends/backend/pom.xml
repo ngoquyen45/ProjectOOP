@@ -38,7 +38,7 @@
 		<servlet.version>3.1.0</servlet.version>
 
 		<!-- Spring Boot version -->
-		<spring.boot.version>1.3.0.RELEASE</spring.boot.version>
+		<spring.boot.version>2.5.12</spring.boot.version>
 		<tomcat.embedded.version>8.0.28</tomcat.embedded.version>
 		<winsw.version>1.18</winsw.version>
 
