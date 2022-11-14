@@ -43,7 +43,7 @@
 		<winsw.version>1.18</winsw.version>
 
 		<!-- Spring -->
-		<spring-framework.version>4.2.3.RELEASE</spring-framework.version>
+		<spring-framework.version>4.2.7.RELEASE</spring-framework.version>
 
 		<!-- Spring Security version -->
 		<spring.security.version>3.2.9.RELEASE</spring.security.version>
